@@ -2,8 +2,6 @@
 import start_window
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5 import QtGui, QtWidgets
-import alam
 
 app = QtWidgets.QApplication(sys.argv)
 start_w = start_window.Ui_Dialog()
@@ -147,7 +145,7 @@ class Ui_MainWindow(QMainWindow):
             path = os.path.dirname(os.path.realpath(__file__))+"\html\index.html"
             ie = webbrowser.get('c:\\program files\\internet explorer\\iexplore.exe')
             ie.open(path)
-        except Exception as b:
+        except BaseException as b:
             try:
                 tt = train_alam.Ui_Dialog("기본경로에 explorer가 없습니다.\nexplorer폴더를 기본경로로 이동해주세요. 기본경로는\n'C:/program files/internet explorer'\n입니다.")
                 aa = tt.showModal()
@@ -157,8 +155,8 @@ class Ui_MainWindow(QMainWindow):
                     ie.open(path)
                 else:
                     return
-            except Exception as e:
-                print(str(e))
+            except BaseException as b:
+                print(str(b))
                 return
 
 MainWindow = Ui_MainWindow()

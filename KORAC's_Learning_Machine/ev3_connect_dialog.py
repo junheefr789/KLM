@@ -151,7 +151,7 @@ class Ui_Dialog(QtWidgets.QDialog):
                     s = ev3_message_converter.encodeMessage(ev3_message_converter.MessageType.Text, 'abc', 'connect')
                     self.ev3.write(s)
                     available.append(self.ev3.portstr)
-                    self.ev3.close()   # explicit close 'cause of delayed GC in java
+                    self.ev3.close()   
                 except serial.SerialException:
                     pass
             if len(available)==1:
@@ -177,7 +177,7 @@ class Ui_Dialog(QtWidgets.QDialog):
             if self.connect == 1:
                 self.accept()
             else:
-                self.label_2.setText("먼저 장치를 찾아야합니다.")
+                self.label_2.setText("먼저 장치를 연결해야합니다.")
                 return
         except BaseException as b:
             print(b)

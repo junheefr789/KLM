@@ -1,7 +1,5 @@
 # -*- coding: euc-kr -*-
 
-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 import custom_widgets as cw
 import cv2

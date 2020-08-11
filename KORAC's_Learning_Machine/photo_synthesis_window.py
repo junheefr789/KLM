@@ -2,7 +2,6 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import custom_widgets as cw
-import portrait_explain_dialog
 import ctypes
 from tensorflow.keras.models import load_model
 import cv2
@@ -15,7 +14,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.cam = None
         self.capture = 0
         self.cam_stop = 0
-        self.model = load_model('unet_no_drop.h5')
+        self.model = load_model('./_models/unet_no_drop.h5')
         self.frame=[]
         self.frame2=[]
         self.synthesis = 0

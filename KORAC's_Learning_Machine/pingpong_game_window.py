@@ -46,7 +46,6 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.game_frame = QtWidgets.QFrame(self)
         self.game_frame_width = self.program_width*0.6+2*(self.border_px)
         self.game_frame_height = self.program_height*0.7+2*(self.border_px)
-        print(self.game_frame_width,self.game_frame_height)
         self.game_frame.setGeometry(QtCore.QRect(self.program_width*0.05-self.border_px,self.program_height*0.15-self.border_px,self.program_width*0.6+2*(self.border_px),self.program_height*0.7+2*(self.border_px)))
         self.game_frame.setStyleSheet("border-width:"+str(self.border_px)+"px;\n"
 "border-style:solid;\n"
@@ -177,9 +176,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def keyPressEvent(self, event):
         super(Ui_MainWindow,self).keyPressEvent(event)
         try:
-            if event.key() == QtCore.Qt.Key_W:
+            if event.key() == QtCore.Qt.Key_W or event.key() == QtCore.Qt.Key_Up:
                 self.player_pannel.move_up()
-            elif event.key() == QtCore.Qt.Key_S:
+            elif event.key() == QtCore.Qt.Key_S or event.key() == QtCore.Qt.Key_Down:
                 self.player_pannel.move_down()
             else:
                 return
@@ -300,8 +299,14 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         touched = False
         move_point = []
         lis = []
+        while_count = 0
         try:
             while True:
+                while_count += 1
+                if while_count>=300:
+                    lis = lis[len(lis)-25:len(lis)-5]
+                    self.training_data.append(lis)
+                    break
                 if self.low_screen==0:
                     cos_val = math.cos(math.radians(angle))
                     sin_val = math.sin(math.radians(angle))
@@ -360,7 +365,6 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                         self.touched = True
                         if re == 'x+':
                             ball_x = 629
-                            print(ball_y)
                             move_point.append(ball_x)
                             move_point.append(lis[len(lis)-1]-85)
                             self.label_data.append(move_point[1])
@@ -391,7 +395,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                 angle = 180 + (180-angle)
                     lis.append(ball_y)
             if self.low_screen==0:
-                if self.round==1 or self.model==None:
+                if self.round==1 or self.model==None or while_count>=300:
                     ball_x = 1013
                     ball_y = random.randint(0,490)
                     move_point = []
@@ -409,7 +413,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.ai_pannel.move(ball_x,move_point[1])
                 self.ai_pannel.y = move_point[1]
             else:
-                if self.round==1 or self.model==None:
+                if self.round==1 or self.model==None or while_count>=300:
                     ball_x = 629
                     ball_y = random.randint(0,490)
                     move_point = []
