@@ -661,8 +661,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.frame_2.hide()
         
         self.pushButton_50.clicked.connect(self.clicked_sound_listen)
-        self.line.textChanged.connect(self.line_set_accury)
-        self.slider.valueChanged.connect(self.slider_set_accury)
+        self.line.textChanged.connect(self.line_set_accuracy)
+        self.slider.valueChanged.connect(self.slider_set_accuracy)
         self.pushButton_29.clicked.connect(self.new_project)
         self.pushButton_2.clicked.connect(self.load_project)
         self.label.textChanged.connect(self.change_button_name)
@@ -745,13 +745,13 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         except BaseException as b:
             print(str(b))
         
-    def slider_set_accury(self):
+    def slider_set_accuracy(self):
         try:
             self.line.setText(str(self.slider.value()))
             self.send_point = int(self.slider.value())
         except BaseException as b:
             print(str(b))
-    def line_set_accury(self):
+    def line_set_accuracy(self):
         try:
             num = int(self.line.text())
             if num>=10 and num<50:
