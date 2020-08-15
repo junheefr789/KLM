@@ -102,7 +102,6 @@ class MoveLabel(QtWidgets.QLabel):
         else:
             if x+35>=634 and x+35<664:
                 if y+20>self.y and y<self.y+130:
-                    print('check')
                     return True
             return False
     

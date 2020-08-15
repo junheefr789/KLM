@@ -221,10 +221,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.ball.move(317,195)
             num = random.randint(0,1)
             if num == 0:
-                num = random.randint(200,250)
+                num = random.randint(200,230)
                 self.angle = num
             elif num == 1:
-                num = random.randint(110,160)
+                num = random.randint(130,160)
                 self.angle = num
             self.t1 = ball_coord(self.ball,self.angle,self.player_pannel,self.ai_pannel,self.low_screen)
             self.t1.BallCoordSignal.connect(self.move_ball)
@@ -303,16 +303,19 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         try:
             while True:
                 while_count += 1
-                if while_count>=300:
-                    lis = lis[len(lis)-25:len(lis)-5]
-                    self.training_data.append(lis)
-                    break
                 if self.low_screen==0:
                     cos_val = math.cos(math.radians(angle))
                     sin_val = math.sin(math.radians(angle))
                     pre_x = ball_x
                     pre_y = ball_y
                     ball_x = int(ball_x+(speed*cos_val))
+                    if ball_x>1053:
+                        move_point.append(ball_x)
+                        move_point.append(lis[len(lis)-1]-85)
+                        self.label_data.append(move_point[1])
+                        lis = lis[len(lis)-25:len(lis)-5]
+                        self.training_data.append(lis)
+                        break
                     ball_y = int(ball_y+(speed*sin_val))
                     bol, re = self.ball.sensing_touch(ball_x, ball_y)
                     if touched:
@@ -325,9 +328,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                             move_point.append(ball_x)
                             move_point.append(lis[len(lis)-1]-85)
                             self.label_data.append(move_point[1])
-                            if len(lis)>25:
-                                lis = lis[len(lis)-25:len(lis)-5]
-                                self.training_data.append(lis)
+                            lis = lis[len(lis)-25:len(lis)-5]
+                            self.training_data.append(lis)
                             break
                         elif re == 'y-':
                             ball_y = 1
@@ -356,6 +358,13 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     pre_x = ball_x
                     pre_y = ball_y
                     ball_x = int(ball_x+(speed*cos_val))
+                    if ball_x>664:
+                        move_point.append(ball_x)
+                        move_point.append(lis[len(lis)-1]-65)
+                        self.label_data.append(move_point[1])
+                        lis = lis[len(lis)-25:len(lis)-5]
+                        self.training_data.append(lis)
+                        break
                     ball_y = int(ball_y+(speed*sin_val))
                     bol, re = self.ball.sensing_touch(ball_x, ball_y)
                     if touched:
@@ -366,11 +375,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                         if re == 'x+':
                             ball_x = 629
                             move_point.append(ball_x)
-                            move_point.append(lis[len(lis)-1]-85)
+                            move_point.append(lis[len(lis)-1]-65)
                             self.label_data.append(move_point[1])
-                            if len(lis)>25:
-                                lis = lis[len(lis)-25:len(lis)-5]
-                                self.training_data.append(lis)
+                            lis = lis[len(lis)-25:len(lis)-5]
+                            self.training_data.append(lis)
                             break
                         
                         elif re == 'y-':
@@ -395,7 +403,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                 angle = 180 + (180-angle)
                     lis.append(ball_y)
             if self.low_screen==0:
-                if self.round==1 or self.model==None or while_count>=300:
+                print(while_count)
+                if self.round==1 or self.model==None:
                     ball_x = 1013
                     ball_y = random.randint(0,490)
                     move_point = []
@@ -413,9 +422,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.ai_pannel.move(ball_x,move_point[1])
                 self.ai_pannel.y = move_point[1]
             else:
-                if self.round==1 or self.model==None or while_count>=300:
+                if self.round==1 or self.model==None:
                     ball_x = 629
-                    ball_y = random.randint(0,490)
+                    ball_y = random.randint(0,260)
                     move_point = []
                     move_point.append(ball_x)
                     move_point.append(ball_y)
@@ -427,7 +436,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     move_point = []
                     move_point.append(ball_x)
                     move_point.append(ball_y)
-                self.label_2.setText("공의 예상 좌표 : "+str(move_point[1]+85))
+                self.label_2.setText("공의 예상 좌표 : "+str(move_point[1]+65))
                 self.ai_pannel.move(ball_x,move_point[1])
                 self.ai_pannel.y = move_point[1]
         except BaseException as b:
@@ -513,29 +522,28 @@ class ball_coord(QtCore.QThread):
                                     self.ball_y = int(pre_y - ((pre_x-self.ball_x)*(math.tan(math.radians(self.angle-180)))))
                                     if self.angle<180:
                                         if self.player_pannel.get_direct()==1:
-                                            if int(self.angle*0.9)>90:
+                                            if int(self.angle*0.9)>100:
                                                 self.angle = 180 - int(self.angle*0.9)
                                             else:
                                                 self.angle = 180 - self.angle
                                         else:
-                                            if int(self.angle*1.1)<180:
+                                            if int(self.angle*1.1)<170:
                                                 self.angle = 180 - int(self.angle*1.1)
                                             else:
                                                 self.angle = 180 - self.angle
                                     else:
                                         if self.player_pannel.get_direct()==1:
-                                            if int((self.angle-180)*1.1)<360:
+                                            if int((self.angle-180)*1.1)<350:
                                                 self.angle = 360 - int((self.angle - 180)*1.1)
                                             else:
                                                 self.angle = 360 - (self.angle - 180)
                                         else:
-                                            if int((self.angle-180)*0.9)>270:
+                                            if int((self.angle-180)*0.9)>280:
                                                 self.angle = 360 - int((self.angle - 180)*0.9)
                                             else:
                                                 self.angle = 360 - (self.angle - 180)
                                 except BaseException as b:
                                     print(str(b))
-                                    print('1')
                             else:
                                 try:
                                     self.ball_x = 40
@@ -546,7 +554,6 @@ class ball_coord(QtCore.QThread):
                                         self.angle = 360 - (self.angle - 180)
                                 except BaseException as b:
                                     print(str(b))
-                                    print('2')
                             ai_data.append(self.angle)
                             ai_data.append(self.ball_x)
                             ai_data.append(self.ball_y)
@@ -658,7 +665,7 @@ class ball_coord(QtCore.QThread):
                                 self.touched = False
                             if bol:
                                 self.touched = True
-                                self.ball_x = 589
+                                self.ball_x = 599
                                 if self.angle>270:
                                     an = self.angle-270
                                     self.ball_y = int(pre_y - ((self.ball_x-pre_x)*(math.tan(math.radians(an)))))
