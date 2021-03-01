@@ -56,14 +56,14 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.label_9.setText("")
         self.label_9.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_9.setObjectName("label_9")
-        self.lineEdit_3 = QtWidgets.QLineEdit(self)
+        self.lineEdit_3 = QtWidgets.QLabel(self)
         self.lineEdit_3.setGeometry(QtCore.QRect(self.program_width*0.18,self.program_height*0.31,self.program_width*0.13,self.program_height*0.05))
         font = QtGui.QFont()
         font.setFamily("ÈÞ¸Õ¿¢½ºÆ÷")
         font.setPointSize(self.program_height/45)
         self.lineEdit_3.setFont(font)
         self.lineEdit_3.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.lineEdit_3.setObjectName("lineEdit_3")
+    
         self.lineEdit_4 = QtWidgets.QLineEdit(self)
         self.lineEdit_4.setGeometry(QtCore.QRect(self.program_width*0.18,self.program_height*0.4,self.program_width*0.13,self.program_height*0.05))
         font = QtGui.QFont()
@@ -241,9 +241,9 @@ class Ui_Dialog(QtWidgets.QDialog):
 
         self.label_9.setText(str(len(self.image_data)))
         self.label_5.setText("3")
-        self.lineEdit_3.setText("0.0001")
-        self.lineEdit_4.setText("8")
-        self.lineEdit_5.setText("10")
+        self.lineEdit_3.setText("0.001")
+        self.lineEdit_4.setText("16")
+        self.lineEdit_5.setText("50")
         self.pushButton_2.setText("ÇÐ½À½ÃÅ°±â")
         self.pushButton_3.setText("´Ý±â")
         self.label_3.setText("224 * 224")
@@ -311,7 +311,7 @@ class Ui_Dialog(QtWidgets.QDialog):
         try:
             for step in range(len(self.image_data)):
                 self.count = step + 1
-                self.train_count = int((len(self.image_data[step])/10)*8)
+                self.train_count = int(len(self.image_data[step])*0.8)+1
                 self.val_count = len(self.image_data[step]) - self.train_count
                 for t1 in range(self.train_count):
                     self.train_data.append((self.image_data[step][t1]/127.0) -1)
@@ -319,9 +319,11 @@ class Ui_Dialog(QtWidgets.QDialog):
                     self.val_data.append((self.image_data[step][v1+self.train_count]/127.0) -1)
                     self.val_label.append(step)
                 self.label_arr.append(self.train_count)
+                
             for st in range(len(self.label_arr)):
                 for st2 in range(self.label_arr[st]):
                     self.train_label.append(st)
+        
             
             for step in range(len(self.train_data)):
                 num = random.randint(0,len(self.train_data)-1)
@@ -331,9 +333,7 @@ class Ui_Dialog(QtWidgets.QDialog):
                 self.train_label[step] = self.train_label[num]
                 self.train_data[num] = a
                 self.train_label[num] = b
-                num2 = random.randint(0,2)
-                if num2 == 0:
-                    self.train_data[step]=cv2.flip(self.train_data[step],1)
+                
                     
             self.accept()
             

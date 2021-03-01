@@ -228,7 +228,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.angle = num
             self.t1 = ball_coord(self.ball,self.angle,self.player_pannel,self.ai_pannel,self.low_screen)
             self.t1.BallCoordSignal.connect(self.move_ball)
-            self.t1.aiSignal.connect(self.cal_ai_pannel)
+            self.t1.aiSignal.connect(self.call_ai)
             self.t1.LearinigSignal.connect(self.learning_data)
             self.t1.overSignal.connect(self.game_over)
             self.t1.start()
@@ -271,7 +271,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         
     @QtCore.pyqtSlot()
     def learning_data(self):
-        epoch = self.round*5
+        epoch = self.round *5
         try:
             al = pingpong_alert.Ui_Dialog(self.training_data,self.label_data,epoch)
             aaa = al.showModal()
@@ -291,7 +291,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             print(str(b))
             
     @QtCore.pyqtSlot(list)
-    def cal_ai_pannel(self,data):
+    def call_ai(self,data):
         angle = data[0]
         ball_x = data[1]
         ball_y = data[2]
@@ -299,23 +299,14 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         touched = False
         move_point = []
         lis = []
-        while_count = 0
         try:
             while True:
-                while_count += 1
                 if self.low_screen==0:
                     cos_val = math.cos(math.radians(angle))
                     sin_val = math.sin(math.radians(angle))
                     pre_x = ball_x
                     pre_y = ball_y
                     ball_x = int(ball_x+(speed*cos_val))
-                    if ball_x>1053:
-                        move_point.append(ball_x)
-                        move_point.append(lis[len(lis)-1]-85)
-                        self.label_data.append(move_point[1])
-                        lis = lis[len(lis)-25:len(lis)-5]
-                        self.training_data.append(lis)
-                        break
                     ball_y = int(ball_y+(speed*sin_val))
                     bol, re = self.ball.sensing_touch(ball_x, ball_y)
                     if touched:
@@ -325,10 +316,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                         self.touched = True
                         if re == 'x+':
                             ball_x = 1013
-                            move_point.append(ball_x)
-                            move_point.append(lis[len(lis)-1]-85)
-                            self.label_data.append(move_point[1])
-                            lis = lis[len(lis)-25:len(lis)-5]
+                            self.label_data.append(ball_y)
+                            lis = lis[len(lis)-35:len(lis)-5]
                             self.training_data.append(lis)
                             break
                         elif re == 'y-':
@@ -358,13 +347,6 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     pre_x = ball_x
                     pre_y = ball_y
                     ball_x = int(ball_x+(speed*cos_val))
-                    if ball_x>664:
-                        move_point.append(ball_x)
-                        move_point.append(lis[len(lis)-1]-65)
-                        self.label_data.append(move_point[1])
-                        lis = lis[len(lis)-25:len(lis)-5]
-                        self.training_data.append(lis)
-                        break
                     ball_y = int(ball_y+(speed*sin_val))
                     bol, re = self.ball.sensing_touch(ball_x, ball_y)
                     if touched:
@@ -374,10 +356,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                         self.touched = True
                         if re == 'x+':
                             ball_x = 629
-                            move_point.append(ball_x)
-                            move_point.append(lis[len(lis)-1]-65)
-                            self.label_data.append(move_point[1])
-                            lis = lis[len(lis)-25:len(lis)-5]
+                            
+                            self.label_data.append(ball_y)
+                            lis = lis[len(lis)-35:len(lis)-5]
                             self.training_data.append(lis)
                             break
                         
@@ -403,7 +384,6 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                 angle = 180 + (180-angle)
                     lis.append(ball_y)
             if self.low_screen==0:
-                print(while_count)
                 if self.round==1 or self.model==None:
                     ball_x = 1013
                     ball_y = random.randint(0,490)
@@ -412,15 +392,15 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     move_point.append(ball_y)
                 else:
                     lis = np.asarray(lis)
-                    lis = lis.reshape(1,20)
-                    ball_y = int(self.model.predict(lis))
+                    lis = lis.reshape(1,30)
+                    ball_y = self.model.predict(lis)
                     ball_x = 1013
                     move_point = []
                     move_point.append(ball_x)
                     move_point.append(ball_y)
-                self.label_2.setText("°øÀÇ ¿¹»ó ÁÂÇ¥ : "+str(ball_y))
-                self.ai_pannel.move(ball_x,move_point[1])
-                self.ai_pannel.y = move_point[1]
+                self.label_2.setText("°øÀÇ ¿¹»ó ÁÂÇ¥ : "+str(int(move_point[1])))
+                self.ai_pannel.move(move_point[0],int(move_point[1])-85)
+                self.ai_pannel.y = int(move_point[1])-85
             else:
                 if self.round==1 or self.model==None:
                     ball_x = 629
@@ -430,15 +410,15 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     move_point.append(ball_y)
                 else:
                     lis = np.asarray(lis)
-                    lis = lis.reshape(1,20)
-                    ball_y = int(self.model.predict(lis))
+                    lis = lis.reshape(1,30)
+                    ball_y = self.model.predict(lis)
                     ball_x = 629
                     move_point = []
                     move_point.append(ball_x)
                     move_point.append(ball_y)
-                self.label_2.setText("°øÀÇ ¿¹»ó ÁÂÇ¥ : "+str(move_point[1]+65))
-                self.ai_pannel.move(ball_x,move_point[1])
-                self.ai_pannel.y = move_point[1]
+                self.label_2.setText("°øÀÇ ¿¹»ó ÁÂÇ¥ : "+str(int(move_point[1])))
+                self.ai_pannel.move(move_point[0],int(move_point[1])-65)
+                self.ai_pannel.y = int(move_point[1])-65
         except BaseException as b:
             print(str(b))
             pass
@@ -450,7 +430,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             self.close()
         except BaseException as b:
             print(str(b))
-
+        
+            
+            
+        
 class ball_coord(QtCore.QThread):
     
     BallCoordSignal = QtCore.pyqtSignal(list)
@@ -621,23 +604,23 @@ class ball_coord(QtCore.QThread):
                                     self.ball_y = int(pre_y - ((pre_x-self.ball_x)*(math.tan(math.radians(self.angle-180)))))
                                     if self.angle<180:
                                         if self.player_pannel.get_direct()==1:
-                                            if int(self.angle*0.9)>90:
+                                            if int(self.angle*0.9)>100:
                                                 self.angle = 180 - int(self.angle*0.9)
                                             else:
                                                 self.angle = 180 - self.angle
                                         else:
-                                            if int(self.angle*1.1)<180:
+                                            if int(self.angle*1.1)<170:
                                                 self.angle = 180 - int(self.angle*1.1)
                                             else:
                                                 self.angle = 180 - self.angle
                                     else:
                                         if self.player_pannel.get_direct()==1:
-                                            if int((self.angle-180)*1.1)<360:
+                                            if int((self.angle-180)*1.1)<350:
                                                 self.angle = 360 - int((self.angle - 180)*1.1)
                                             else:
                                                 self.angle = 360 - (self.angle - 180)
                                         else:
-                                            if int((self.angle-180)*0.9)>270:
+                                            if int((self.angle-180)*0.9)>280:
                                                 self.angle = 360 - int((self.angle - 180)*0.9)
                                             else:
                                                 self.angle = 360 - (self.angle - 180)

@@ -17,8 +17,6 @@ matplotlib.use("Qt5AGG")
 import matplotlib.pyplot as plt
 import ev3_message_converter
 import tensorflow as tf
-from tensorflow.keras.layers import Dense, Conv2D, Flatten, Dropout, MaxPooling2D
-
 class Ui_MainWindow(QtWidgets.QMainWindow):
     
     VideoSignal1 = QtCore.pyqtSignal(QtGui.QImage)
@@ -63,7 +61,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             self.label_4.setText('기다려주세요. 준비중입니다.')
             self.cam = cv2.VideoCapture(0)
             if self.program_width*0.34 < 480:
-                self.cam.set(3,640)
+                self.cam.set(3,640) 
                 self.cam.set(4,480)
             else:
                 self.cam.set(3,960)
@@ -506,13 +504,13 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.bar_8.setStyleSheet("color:white;")
         
         self.progress_label = QtWidgets.QLabel(self.centralwidget)
-        self.progress_label.setGeometry(QtCore.QRect(self.program_width*1.03,self.program_height*0.82,self.program_width*0.34,self.program_height*0.08))
+        self.progress_label.setGeometry(QtCore.QRect(self.program_width*1.03,self.program_height*0.88,self.program_width*0.34,self.program_height*0.08))
         self.progress_label.setStyleSheet(
-            "font-size:"+str(int(self.program_height/45))+"pt;"
+            "font-size:"+str(int(self.program_height/55))+"pt;"
             "background-color:black;\n"
             "color:white;"
             )
-        self.progress_label.setText("학습 진행 상황")
+        self.progress_label.setText("학습 중입니다. 기다려주세요.")
         self.progress_label.setAlignment(QtCore.Qt.AlignCenter)
         self.progress_bar = QtWidgets.QProgressBar(self.centralwidget)
         self.progress_bar.setGeometry(QtCore.QRect(self.program_width*1.03,self.program_height*0.91,self.program_width*0.34,self.program_height*0.06))
@@ -1262,10 +1260,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         try:
             if self.check_capture():
                 return
-            if len(self.image_data) <= 1  and self.current_class==1:
+            if len(self.image_data) <= 1 and len(self.class_image)==0:
                 self.label_4.setText('클래스가 2개 이상이어야 합니다.')
                 return
-            
             if self.learning==1:
                 self.learning -=1
                 self.t1.stop_learning()
@@ -1294,7 +1291,6 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.learning += 1
                     self.frame_23.hide()
                     self.progress_bar.setValue(0)
-                    self.progress_bar.show()
                     self.progress_label.show()
                     self.label_4.setText('학습중 입니다.')
                     td = dialog.train_data
@@ -1322,6 +1318,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     r= self.save_project()
                     if r=='e':
                         return
+                else:
+                    self.saved = 1
                 self.preview = self.preview-1
                 self.label.setReadOnly(False)
                 self.textEdit.setReadOnly(False)
@@ -2057,7 +2055,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.label_4.setText('학습중에는 안됩니다.')
                 return
             if self.check_capture():
-                self.label_4.setText('녹음중에는 불러올수 없습니다.')
+                self.label_4.setText('사진 촬영중에는 불러올 수 없습니다.')
                 return
             if self.connect == 1:
                 self.label_4.setText('EV3 연결중에는 안됩니다.')
@@ -2260,30 +2258,64 @@ class ML_class(QtCore.QThread):
             self.val_data = np.asarray(self.val_data, dtype = np.float32)
             self.val_label = np.asarray(self.val_label, dtype = np.float32)
             
-            self.model = tf.keras.Sequential([
-                Conv2D(16, 3, padding='same', activation='relu', 
-                       input_shape=(224,224,3)),
-                MaxPooling2D(),
-                Dropout(0.2),
-                Conv2D(32, 3, padding='same', activation='relu'),
-                MaxPooling2D(),
-                Conv2D(64, 3, padding='same', activation='relu'),
-                MaxPooling2D(),
-                Dropout(0.2),
-                Flatten(),
-                Dense(512, activation='relu'),
-                Dense(self.class_count, activation='softmax')
-                ])
             otmz = tf.keras.optimizers.Adam(learning_rate=self.learning_rate)
+            IMG_SHAPE = (224, 224, 3)
+            base_model = tf.keras.applications.MobileNetV2(input_shape=IMG_SHAPE,
+                                               include_top=False,
+                                               weights='imagenet')
+            base_model.trainable = True
             
-            self.model.compile(otmz,
+            global_average_layer = tf.keras.layers.GlobalAveragePooling2D()
+            prediction_layer = tf.keras.layers.Dense(self.class_count,activation='softmax')
+            
+            self.model = tf.keras.Sequential([
+                      base_model,
+                      global_average_layer,
+                      prediction_layer
+                    ])
+            
+            self.model.compile(optimizer=otmz,
                 loss='sparse_categorical_crossentropy',
                 metrics=['accuracy'])
             acc = []
             val_acc = []
             loss = []
             val_loss = []
+            datagen = tf.keras.preprocessing.image.ImageDataGenerator(
+                featurewise_center=True,
+                featurewise_std_normalization=True,
+                rotation_range=20,
+                width_shift_range=0.2,
+                height_shift_range=0.2,
+                horizontal_flip=True)
+          
+            datagen.fit(self.train_data)
             
+            earlystop = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=1, mode='min',baseline=0.001)
+            self.learning_history = self.model.fit_generator(datagen.flow(self.train_data, self.train_label, batch_size=self.batch_size), validation_data=(self.val_data,self.val_label),callbacks=[earlystop],steps_per_epoch=len(self.train_data) / self.batch_size, epochs=self.epoch_size)
+            acc.append(self.learning_history.history['acc'][0])
+            val_acc.append(self.learning_history.history['val_acc'][0])
+            loss.append(self.learning_history.history['loss'][0])
+            val_loss.append(self.learning_history.history['val_loss'][0])
+            ac = np.asarray(self.learning_history.history['acc'])
+            print(ac.shape)
+           
+            '''
+            for e in range(self.epoch_size):
+                batches = 0
+                for x_batch, y_batch in datagen.flow(self.train_data, self.train_label, batch_size=self.batch_size,shuffle=True):
+                    self.learning_history = self.model.fit(x = x_batch, y = y_batch, validation_data=(self.val_data,self.val_label))
+                    acc.append(self.learning_history.history['acc'][0])
+                    val_acc.append(self.learning_history.history['val_acc'][0])
+                    loss.append(self.learning_history.history['loss'][0])
+                    val_loss.append(self.learning_history.history['val_loss'][0])
+                    process = int(100*((e*len(self.train_data)/self.batch_size)+(batches+1))/(self.epoch_size*len(self.train_data)/self.batch_size))
+                    self.process_signal.emit(process)
+                    batches += 1
+                    if batches >= len(self.train_data) / self.batch_size or len(x_batch)<self.batch_size:
+                   
+                        break
+          
             bt = len(self.train_data)//self.batch_size
             for step in range(self.epoch_size):
                 for step2 in range(bt):
@@ -2300,12 +2332,13 @@ class ML_class(QtCore.QThread):
                         loss.append(self.learning_history.history['loss'][0])
                         val_loss.append(self.learning_history.history['val_loss'][0])
                         process = int(100*((step*bt)+(step2+1))/(self.epoch_size*bt))
-                        self.process_signal.emit(process)
+                        self.process_signal.emit(process)'''
             his = []
             his.append(acc)
             his.append(val_acc)
             his.append(loss)
             his.append(val_loss)
+            print(his)
             self.finish_signal.emit(his)
         except BaseException as b:
             print(str(b))

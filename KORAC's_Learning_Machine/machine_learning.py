@@ -134,17 +134,19 @@ class pingpong_linear:
     def __init__(self,train,label,epoch):
         self.train = np.asarray(train)
         self.label = np.asarray(label)
+        
         self.epoch = epoch
         self.model = None
     def start_learning(self):
         try:
             self.model = tf.keras.Sequential([
-                    tf.keras.layers.Dense(32, activation='relu', input_shape=[20]),
+                    tf.keras.layers.Dense(32, activation='relu', input_shape=[30]),
                     tf.keras.layers.Dense(64, activation='relu'),
                     tf.keras.layers.Dense(1)
                     ])
             if self.epoch <50:
                 self.epoch = int(2*self.epoch)
+                
                 optimizer = tf.keras.optimizers.Adam(0.0001)
             else:
                 self.epoch = 3*self.epoch
