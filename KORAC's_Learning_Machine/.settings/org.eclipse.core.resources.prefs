@@ -5,6 +5,7 @@ encoding/drawing_portrait_window.py=euc-kr
 encoding/ev3_connect_dialog.py=euc-kr
 encoding/machine_learning.py=euc-kr
 encoding/motion_learning_window.py=euc-kr
+encoding/motion_train_dialog.py=euc-kr
 encoding/photo_synthesis_window.py=euc-kr
 encoding/picture_image_window.py=euc-kr
 encoding/picture_train_dialog.py=euc-kr

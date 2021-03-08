@@ -6,6 +6,9 @@ import custom_widgets as cw
 import cv2
 import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
+config = tf.ConfigProto()
+config.gpu_options.allow_growth = True
+session = tf.Session(config=config)
 import numpy as np
 from PyQt5.Qt import QFileDialog
 from custom_widgets import ImageViewer
@@ -1900,6 +1903,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                         output_stride=self.output_stride,
                         max_pose_detections=10,
                         min_pose_score=0.15)
+                    print(pose_scores[0])
+                    print(keypoint_scores[0])
+                    print(keypoint_coords[0])
                     
                     keypoint_coords *= output_scale
                     overlay_image = posenet.draw_skel_and_kp(
@@ -1930,11 +1936,11 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                         data=[]
                         for step2 in range(17):
                             keypoint_count.append(keypoint_scores[0][step2]*pose_scores[0]*2)
-                            keypoint_count.append(keypoint_coords[0][step2][0]/self.nomal)
-                            keypoint_count.append(keypoint_coords[0][step2][1]/self.nomal)
+                            keypoint_count.append((keypoint_coords[0][step2][0]/self.nomal)*keypoint_scores[0][step2])
+                            keypoint_count.append((keypoint_coords[0][step2][1]/self.nomal)*keypoint_scores[0][step2])
                             keypoint_count.append(keypoint_scores[1][step2]*pose_scores[1]*2)
-                            keypoint_count.append(keypoint_coords[1][step2][0]/self.nomal)
-                            keypoint_count.append(keypoint_coords[1][step2][1]/self.nomal)
+                            keypoint_count.append((keypoint_coords[1][step2][0]/self.nomal)*keypoint_scores[1][step2])
+                            keypoint_count.append((keypoint_coords[1][step2][1]/self.nomal)*keypoint_scores[1][step2])
                             score.append(keypoint_count)
                             keypoint_count = []
                         motion_count.append(score)
