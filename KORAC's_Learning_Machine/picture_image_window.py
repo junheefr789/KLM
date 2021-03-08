@@ -2216,71 +2216,81 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         except BaseException as b:
             print(str(b))
             
-class ML_class(QtCore.QThread):
+class ML_class(QtCore.QThread):#학습 및 예측을 위한 서브 스레드-> QThread 상속을 받아 구현
     
-    finish_signal = QtCore.pyqtSignal(list)
-    error_signal = QtCore.pyqtSignal()
-    process_signal = QtCore.pyqtSignal(int)
-    predict_signal = QtCore.pyqtSignal(list)
+    #pyqt5의 경우 스레드간의 통신을 할때 시그널과 슬롯을 이용하여 진행한다.(기본적으로 이벤트에도 사용)
+    #시그널(메세지)을 보내는 스레드에서는 시그널의 종류와 데이터 타입을 정의 
+    #로직을 수행하는 중 신호를 보내야할때 emit() 메서드를 사용하여 수신측에 메세지 전달
+    #신호를 받는 쪽에서는 해당 시그널을 받을 함수(메서드)를 정의. 송신측의 시그널이 정의가 되면 해당 시그널과 수신메서드를 connect() 메서드를 사용하여 연결한다. ->  기본적인 이벤트와 동작방식과 비슷하다.
+
+    finish_signal = QtCore.pyqtSignal(list) #학습 완료 시그널. 메인 스레드에서 해당 시그널을 받는 메서드는 finish_learning() -> 해당 시그널이 수신되면 예측을 위한 Preview 화면을 띄운다.
+    error_signal = QtCore.pyqtSignal() #에러 시그널. 학습도중 에러가 발생하면 해당 시그널을 내보낸다. 메인스레드에서 해당 시그널을 받는 메서드는 error_learning() -> 해당 시그널이 수신되면 학습이 취소되며, 서브스레드는 종료.        
+    process_signal = QtCore.pyqtSignal(int) #(새롭게 수정한 코드에서는 사용하지 않음)진행 시그널. 학습진행률을 내보내는 시그널. 메인스레드에서 해당 시그널을 받는 메서드는 learning_process() -> 해당 시그널이 수신되면 progress_bar의 값이 바뀜.
+    predict_signal = QtCore.pyqtSignal(list) #예측 시그널. preivew화면이 띄어지고난 후 메인스레드에서 보내는 image data를 학습한 모델을 거쳐 예측값을 산출하고, 메인스레드로 반환 ->
+                                             #메인스레드에서 해당 시그널을 받는 메서드는 receive_function() -> 해당 시그널이 도착하면 preiview layout내의 progress_bar의 값을 변환.
     
-    def __init__(self,train_data,val_data,train_label,val_label,learning_rate,batch_size,epoch,class_count):
+    def __init__(self,train_data,val_data,train_label,val_label,learning_rate,batch_size,epoch,class_count):#constructor
         super().__init__()
-        self.model = None
-        self.train_data = train_data
-        self.val_data = val_data
-        self.train_label = train_label
-        self.val_label = val_label
-        self.learning_rate = learning_rate
-        self.batch_size = batch_size
-        self.epoch_size = epoch
-        self.class_count = class_count
-        self.receive=1
-        self.learning_history = None
-        self.br = 0
-        self.data = None
+        self.model = None #모델을 담는 변수
+        self.train_data = train_data # 훈련데이터를 담는 변수
+        self.val_data = val_data # 평가데이터를 담는 변수
+        self.train_label = train_label # 훈련 라벨을 담는 변수 
+        self.val_label = val_label # 평가 라벨을 담는 변수
+        self.learning_rate = learning_rate # 학습률
+        self.batch_size = batch_size # 작업수량
+        self.epoch_size = epoch # 학습횟수
+        self.class_count = class_count # 클래스 수량
+        self.receive=1 # preview 화면이 띄어졌을시 메인스레드에서 보낸 이미지가 존재하는지를 확인하기 위한 변수
+        self.learning_history = None # 학습이 진행되는 동안의 history를 담는 변수
+        self.br = 0  #서브스레드를 종료시키기위한 변수
+        self.data = None #메인스레드로부터 받은 image data를 담기위한 변수
         
-    def stop_learning(self):
-        self.br = 1
+    def stop_learning(self):#해당 메서드가 호출되면 서브스레드 종료
+        self.br = 1 
         
-    def get_model(self):
+    def get_model(self):#모델을 저장하기위한 메서드
         return self.model
     
-    def receive_data(self,data):
+    def receive_data(self,data):#메인스레드에서 이미지 전송시 해당 메서드로 전송
         if self.receive==0:
             self.receive+=1
             self.data = data
     
         
-    def run(self):
+    def run(self):#핵심 메서드. start() 메서드호출시 해당 메서드가 불러와진다.
         try:
+            #데이터를 ndarray로 바꾸는 과정. data shape은 샘플 하나당 (224,224,3)
             self.train_data = np.asarray(self.train_data, dtype= np.float32)
             self.train_label = np.asarray(self.train_label, dtype = np.float32)
             self.val_data = np.asarray(self.val_data, dtype = np.float32)
             self.val_label = np.asarray(self.val_label, dtype = np.float32)
             
-            otmz = tf.keras.optimizers.Adam(learning_rate=self.learning_rate)
+            otmz = tf.keras.optimizers.Adam(learning_rate=self.learning_rate)#optimizer선언 -> Adam optimizer사용. 현재까지는 가장 발전된 optimizer가 Adam으로 알고 있음. 이 전단계가 RMSprop
             IMG_SHAPE = (224, 224, 3)
-            base_model = tf.keras.applications.MobileNetV2(input_shape=IMG_SHAPE,
-                                               include_top=False,
+            base_model = tf.keras.applications.MobileNetV2(input_shape=IMG_SHAPE, #mobilenetV2
+                                               include_top=False, #해당 파라미터는 최상위층(제일 마지막)에 fully-connected-layer를 포함시킬지의 여부를 선택, False시 mobilenet이 분류층이 없는 convolution network로 변환.
+                                                                  # -> 전이학습을 하기위하여 False는 필수
                                                weights='imagenet')
-            base_model.trainable = True
+            base_model.trainable = True #mobilenetV2를 추가 학습이 가능하게끔 함.
             
-            global_average_layer = tf.keras.layers.GlobalAveragePooling2D()
-            prediction_layer = tf.keras.layers.Dense(self.class_count,activation='softmax')
+            global_average_layer = tf.keras.layers.GlobalAveragePooling2D() #pooling layer선언
+            prediction_layer = tf.keras.layers.Dense(self.class_count,activation='softmax') # fully-connected-layer선언
             
-            self.model = tf.keras.Sequential([
+            self.model = tf.keras.Sequential([ #모델 생성
                       base_model,
                       global_average_layer,
                       prediction_layer
                     ])
             
-            self.model.compile(optimizer=otmz,
+            self.model.compile(optimizer=otmz, #모델 컴파일 -> optimizer, 손실함수, trace를 위한 metrics값 설정.
                 loss='sparse_categorical_crossentropy',
                 metrics=['accuracy'])
+            # 그래프를 그리기위하여 self.history에 담긴 변수를 분류하기 위한 변수들
             acc = []
             val_acc = []
             loss = []
             val_loss = []
+            # 이미지데이터를 시각적으로 변화시키기위한 ImageDataGenerator 객체선언
             datagen = tf.keras.preprocessing.image.ImageDataGenerator(
                 featurewise_center=True,
                 featurewise_std_normalization=True,
@@ -2289,17 +2299,18 @@ class ML_class(QtCore.QThread):
                 height_shift_range=0.2,
                 horizontal_flip=True)
           
-            datagen.fit(self.train_data)
+            datagen.fit(self.train_data)#훈련데이터를 위에서 선언한 ImageDataGenerator를 사용하여 시각적으로 변화시킴.
             
-            earlystop = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=1, mode='min',baseline=0.001)
+            earlystop = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=1, mode='min',baseline=0.001)#조기종료를 위한 earlystop객체 선언(추적할 변수,조건을 만족한 후 학습을 더 수행할 횟수, 추적할 값이 커지는지 작아지는지에 대한 설정값, 학습을 멈출 추적대상의 값) 
+                                                                                                                   #-> val_loss값을 추적하여 해당 값이 0.001이하일시 한번 더 학습을 수행하고 종료
+            #모델 학습
             self.learning_history = self.model.fit_generator(datagen.flow(self.train_data, self.train_label, batch_size=self.batch_size), validation_data=(self.val_data,self.val_label),callbacks=[earlystop],steps_per_epoch=len(self.train_data) / self.batch_size, epochs=self.epoch_size)
-            acc.append(self.learning_history.history['acc'][0])
-            val_acc.append(self.learning_history.history['val_acc'][0])
-            loss.append(self.learning_history.history['loss'][0])
-            val_loss.append(self.learning_history.history['val_loss'][0])
-            ac = np.asarray(self.learning_history.history['acc'])
-            print(ac.shape)
-           
+            #학습한 history를 변수별로 분류하여 담음(그래프를 그리기위한 조치)
+            acc.append(self.learning_history.history['accuracy'])
+            val_acc.append(self.learning_history.history['val_accuracy'])
+            loss.append(self.learning_history.history['loss'])
+            val_loss.append(self.learning_history.history['val_loss'])
+            
             '''
             for e in range(self.epoch_size):
                 batches = 0
@@ -2338,22 +2349,21 @@ class ML_class(QtCore.QThread):
             his.append(val_acc)
             his.append(loss)
             his.append(val_loss)
-            print(his)
-            self.finish_signal.emit(his)
+            
+            self.finish_signal.emit(his)#학습완료 학습완료 시그널 송신
         except BaseException as b:
             print(str(b))
-            self.error_signal.emit()
+            self.error_signal.emit()#에러발생시 에러 시그널 송신
             return
-        self.receive = 0
+        self.receive = 0 #메인스레드로부터 예측을 위한 이미지데이터 수신준비
         while True:
-            if self.br == 1:
+            if self.br == 1:#해당스레드 종료
                 break
             else:
                 if self.receive==1:
-                    predict = self.model.predict(self.data)
+                    predict = self.model.predict(self.data)#학습한 모델을 사용하여 클래스 예측
                     predict = predict.tolist()
-                    self.predict_signal.emit(predict)
-                    self.receive = 0
-        
+                    self.predict_signal.emit(predict)#예측 시그널 송신
+                    self.receive = 0 #메인스레드로부터 예측을 위한 이미지데이터 수신준비
         
         
