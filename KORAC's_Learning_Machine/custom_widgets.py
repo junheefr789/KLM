@@ -17,7 +17,7 @@ class ImageViewer(QtWidgets.QWidget):
     @QtCore.pyqtSlot(QtGui.QImage)
     def setImage(self, image):
         if image.isNull():
-            print("이미지가 없습니다.")
+            pass
         if image.size() != self.size():
             self.setFixedSize(image.size())
         self.image = image
@@ -183,3 +183,104 @@ class DrawingWidget(QtWidgets.QWidget):
         self.drawed = 0
         self.image.fill(QtCore.Qt.black)
         self.update()
+
+class ScrollLabel(QtWidgets.QLabel):
+
+    def __init__(self,parent):
+        super(ScrollLabel,self).__init__(parent)
+     
+
+    def createScroll(self):
+        height = self.height()
+        QtWidgets.QScrollBar()
+        width = self.width()
+        self.vertical_scrollbar = QtWidgets.QScrollBar(self)
+        self.vertical_scrollbar.setGeometry(QtCore.QRect(width-(width//40),1,width//40,height-2))
+        self.horizon_scrollbar = QtWidgets.QScrollBar(self)
+        self.horizon_scrollbar.setOrientation(QtCore.Qt.Horizontal)
+        self.horizon_scrollbar.setGeometry(QtCore.QRect(1,height-(width//40),width-(width//40+1),width//40))
+        self.vertical_scrollbar.valueChanged.connect(self.move_vertical_scroll)
+        self.horizon_scrollbar.valueChanged.connect(self.move_horizontal_scroll)
+        self.message_label = QtWidgets.QLabel(self)
+        self.message_label.move(0,0)
+        self.message_label.stackUnder(self.vertical_scrollbar)
+        self.vertical_scrollbar.stackUnder(self.horizon_scrollbar)
+        self.message_label.setMinimumSize(width-(width//40),height-(width//40))
+    
+    @QtCore.pyqtSlot()
+    def move_vertical_scroll(self):
+        scoll_position=self.vertical_scrollbar.value()
+        label_height = self.message_label.height()
+        if self.message_label.height()<self.height():
+            self.vertical_scrollbar.setValue(0)
+            return
+        per_height = (label_height-self.height())//100
+        move_posision = scoll_position*per_height*-1
+        self.message_label.move(0,move_posision)
+
+    
+    @QtCore.pyqtSlot()
+    def move_horizontal_scroll(self):
+        scoll_position=self.horizon_scrollbar.value()
+        label_width = self.message_label.width()
+        if self.message_label.width()<self.width():
+            self.horizon_scrollbar.setValue(0)
+            return
+        per_width = (label_width-self.width())//100
+        move_posision = scoll_position*per_width*-1
+        self.message_label.move(move_posision,3)
+
+    def setText(self,message):
+        if type(message)!=str:
+            return
+        before_height = self.message_label.height()
+        font_size_point = self.message_label.font().pointSize()
+        message_list = message.split('\n')
+        count = 0
+        index = 0
+        for step in range(len(message_list)):
+            if len(message_list[step])>count:
+                count = len(message_list[step])
+                index = step
+        blank_count = []
+        for step in range(len(message_list)):
+            co = 0
+            for step2 in range(len(message_list[step])):
+                if message_list[step][len(message_list[step])-step2-1:len(message_list[step])-step2]==' ':
+                    co+=1      
+                else:
+                    blank_count.append(co)
+                    break
+        for step in range(len(blank_count)):
+            message_list[step] = message_list[step][:len(message_list[step])-blank_count[step]]
+        message = '\n'.join(message_list)
+        blank = 0
+        word = 0
+        sign = 0
+        for w in list(message_list[index]):
+            if w in ["\"","'",",",".","?","!"]:
+                sign+=1
+            elif w == " ":
+                blank += 1
+            else:
+                word += 1
+        width = int((font_size_point*word*1.5)+(font_size_point*blank*0.5)+(font_size_point*sign*0.3))
+        height = int(font_size_point*len(message_list)*1.6)
+        self.message_label.setFixedSize(width,height)
+        parent_height = self.height()-(self.width()//40)
+        self.message_label.setText(message)
+        after_height = self.message_label.height()
+        self.horizon_scrollbar.setValue(0)
+        if after_height>parent_height and after_height>before_height:
+            move_height = parent_height-after_height
+            self.message_label.move(0,move_height)
+            self.vertical_scrollbar.setValue(100)
+        else:
+            self.message_label.move(0,0)
+            self.vertical_scrollbar.setValue(0)
+        self.message_label.setFixedSize(width,height)
+
+    def setStyleSheet(self,style):
+        self.message_label.setStyleSheet(style)  
+
+
