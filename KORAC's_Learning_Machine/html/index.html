@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>KORAC's Learning Machine</title>
+<script type="text/javascript">
+
+function mouse_on_menu(num){
+	if(num==1){
+		var menu_table = document.getElementById("menu_table_1");
+		menu_table.style.visibility = "visible";
+	}else if(num==2){
+		var menu_table = document.getElementById("menu_table_2");
+		menu_table.style.visibility = "visible";
+	}else if(num==3){
+		var menu_table = document.getElementById("menu_table_3");
+		menu_table.style.visibility = "visible";
+	}
+	
+}
+
+function mouse_out_menu(num){
+	if(num==1){
+		var menu_table = document.getElementById("menu_table_1");
+		menu_table.style.visibility = "hidden";
+	}else if(num==2){
+		var menu_table = document.getElementById("menu_table_2");
+		menu_table.style.visibility = "hidden";
+	}else if(num==3){
+		var menu_table = document.getElementById("menu_table_3");
+		menu_table.style.visibility = "hidden";
+	}
+}
+
+</script>
+<style type="text/css">
+span{
+	color:#FFA726;
+}
+</style>
+</head>
+<body style="height:1100px;">
+	<table style="width:1200px; height:1000px; top:50px; left:150px; position:absolute; border-spacing:0;">
+		<tr style="height:100px; border-spacing:0;">
+			<td class="menu" style="cursor:pointer;border-spacing:0;color:white; font-size: 24pt; font-weight:bold; width:300px; text-align:center; border: 1px black solid; background-color:#C8E6C9;" onmouseover="mouse_on_menu(1);" onmouseout="mouse_out_menu(1);">
+			KORAC
+			</td>
+			<td class="menu" style="cursor:pointer;border-spacing:0;color:white; font-size: 24pt; font-weight:bold; width:300px; text-align:center; border: 1px black solid; background-color:#C8E6C9;"onmouseover="mouse_on_menu(2);" onmouseout="mouse_out_menu(2);">
+			프로그램
+			</td>
+			<td class="menu" style="cursor:pointer;border-spacing:0;color:white; font-size: 24pt; font-weight:bold;width:300px; text-align:center; border: 1px black solid; background-color:#C8E6C9;"onmouseover="mouse_on_menu(3);" onmouseout="mouse_out_menu(3);">
+			AI
+			</td>
+			<td class="menu" style="cursor:pointer;border-spacing:0;color:white; font-size: 24pt; font-weight:bold;width:300px; text-align:center; border: 1px black solid; background-color:#C8E6C9;">
+			FAQ
+			</td>
+		</tr>
+		<tr style="border-spacing:0;">
+			<td colspan="4" style="border-spacing:0;border: 1px black solid; background-color:#E8F5E9;">
+				<div style="color:#66BB6A; font-weight:bold; font-size: 16pt; width:1180px; height:880px; top:10px; margin-left:auto;margin-right:auto; background-color:white; border: 1px #C8E6C9 solid">
+					
+				</div>
+			</td>
+		</tr>
+	</table>
+	<table id="menu_table_1" style="cursor:pointer;color:white; font-size: 24pt; font-weight:bold;width:300px; height:300px; position:absolute; top:150px; left:150px; text-align:center; border-spacing:0; visibility:hidden;" onmouseover="mouse_on_menu(1);" onmouseout="mouse_out_menu(1);">
+		<tr>
+			<td class="menu" style="border: 1px black solid; background-color:#C8E6C9;">
+				KORAC은?
+			</td>
+		</tr>
+		<tr>
+			<td class="menu" style="border: 1px black solid; background-color:#C8E6C9;">
+				KORAC의 활동
+			</td>
+		</tr>
+		<tr>
+			<td class="menu" style="border: 1px black solid; background-color:#C8E6C9;">
+				교구
+			</td>
+		</tr>
+	</table>
+	<table id="menu_table_2" style="cursor:pointer;color:white; font-size: 24pt; font-weight:bold;width:300px; height:300px; position:absolute; top:150px; left:450px; text-align:center; border-spacing:0; visibility:hidden;" onmouseover="mouse_on_menu(2);" onmouseout="mouse_out_menu(2);">
+		<tr>
+			<td class="menu" style="border: 1px black solid; background-color:#C8E6C9;">
+				이미지학습
+			</td>
+		</tr>
+		<tr>
+			<td class="menu" style="border: 1px black solid; background-color:#C8E6C9;">
+				자세학습
+			</td>
+		</tr>
+		<tr>
+			<td class="menu" style="border: 1px black solid; background-color:#C8E6C9;">
+				사운드학습
+			</td>
+		</tr>
+		<tr>
+			<td class="menu" style="border: 1px black solid; background-color:#C8E6C9;">
+				EV3 연결
+			</td>
+		</tr>
+	</table>
+	<table id="menu_table_3" style="cursor:pointer;color:white; font-size: 24pt; font-weight:bold;width:300px; height:300px; position:absolute; top:150px; left:750px; text-align:center; border-spacing:0; visibility:hidden;" onmouseover="mouse_on_menu(3);" onmouseout="mouse_out_menu(3);">
+		<tr>
+			<td class="menu" style="border: 1px black solid; background-color:#C8E6C9;">
+				AI개요
+			</td>
+		</tr>
+		<tr>
+			<td class="menu" style="border: 1px black solid; background-color:#C8E6C9;">
+				머신러닝이란?
+			</td>
+		</tr>
+		<tr>
+			<td class="menu" style="border: 1px black solid; background-color:#C8E6C9;">
+				딥러닝이란?
+			</td>
+		</tr>
+		<tr>
+			<td class="menu" style="border: 1px black solid; background-color:#C8E6C9;">
+				AI활용 및 예
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
