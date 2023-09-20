@@ -1,5 +1,3 @@
-# -*- coding: euc-kr -*-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 import ctypes
 
@@ -26,7 +24,7 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.label.setGeometry(QtCore.QRect(self.width*0.01, self.height*0.02, self.width*0.98, self.height*0.58))
         self.label.setStyleSheet('border:none;')
         font = QtGui.QFont()
-        font.setFamily("ÈÞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("ç»’åˆšç«£èƒ¶å™¨")
         font.setPointSize(int(self.width/35))
         self.label.setFont(font)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
@@ -40,12 +38,12 @@ class Ui_Dialog(QtWidgets.QDialog):
                                          "border-width:"+str(border_px)+"px;\n"
                                          "border-radius:"+str(border_px*10)+"px;")
         font = QtGui.QFont()
-        font.setFamily("ÈÞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("ç»’åˆšç«£èƒ¶å™¨")
         font.setPointSize(int(self.width/35))
         self.pushButton_2.setFont(font)
         self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton_2.setText('È®ÀÎ')
+        self.pushButton_2.setText('çŠ¬ç‰¢')
         
         
         self.pushButton_2.clicked.connect(self.check)
@@ -56,6 +54,3 @@ class Ui_Dialog(QtWidgets.QDialog):
         
     def showModal(self):
         return super().exec_()
-        
-        
-        

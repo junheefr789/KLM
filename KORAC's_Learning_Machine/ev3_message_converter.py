@@ -32,6 +32,3 @@ def encodeMessage(msgType, mail, value):
     payloadSize = 7 + mailSize + valueSize
     s = struct.pack(fmt, payloadSize, 0x01, 0x00, 0x81, 0x9e, mailSize, mailBytes, valueSize, valueBytes)
     return s
-
-
-    

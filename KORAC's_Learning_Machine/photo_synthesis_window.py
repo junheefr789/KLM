@@ -1,5 +1,3 @@
-# -*- coding: euc-kr -*-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 import custom_widgets as cw
 import ctypes
@@ -22,7 +20,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.m_window = m_window
         self.setWindowFlags(QtCore.Qt.WindowSystemMenuHint)
         self.setupUi()
-        self.label_4.setText('¿øº»»çÁøÀÇ »ç¶÷À» ¿À·Á¼­\n¹è°æ»çÁø¿¡ ºÙÇôÁİ´Ï´Ù.')
+        self.label_4.setText('ì›ë³¸ì‚¬ì§„ì˜ ì‚¬ëŒì„ ì˜¤ë ¤ì„œ\në°°ê²½ì‚¬ì§„ì— ë¶™í˜€ì¤ë‹ˆë‹¤.')
     
     def setupUi(self):
         screen_height = ctypes.windll.user32.GetSystemMetrics(1)
@@ -37,7 +35,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label = QtWidgets.QLabel(self)
         self.label.setGeometry(QtCore.QRect(self.program_width*0.05,self.program_height*0.15,self.program_width*0.3,self.program_height*0.1))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/40))
         self.label.setFont(font)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
@@ -54,7 +52,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_2 = QtWidgets.QPushButton(self)
         self.pushButton_2.setGeometry(QtCore.QRect(self.program_width*0.05,self.program_height*0.31+self.program_width*0.3,self.program_width*0.14,self.program_height*0.06))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.pushButton_2.setCursor(QtCore.Qt.PointingHandCursor)
         self.pushButton_2.setFont(font)
@@ -66,7 +64,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_7 = QtWidgets.QPushButton(self)
         self.pushButton_7.setGeometry(QtCore.QRect(self.program_width*0.21,self.program_height*0.31+self.program_width*0.3,self.program_width*0.14,self.program_height*0.06))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.pushButton_7.setCursor(QtCore.Qt.PointingHandCursor)
         self.pushButton_7.setFont(font)
@@ -81,7 +79,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         font_pt = int(self.program_width/55)
         self.pushButton_3.setStyleSheet("border:none;\n"
 "background-color: rgba(0, 0, 0, 0);\n"
-"font: "+str(font_pt)+"pt \"ÈŞ¸Õ¿¢½ºÆ÷\";"
+"font: "+str(font_pt)+"pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\";"
 "color:white;")
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_4 = QtWidgets.QPushButton(self)
@@ -89,7 +87,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_4.setStyleSheet("border:none;\n"
 "background-color: rgba(0, 0, 0, 0);\n"
 "color:white;\n"
-"font: "+str(font_pt)+"pt \"ÈŞ¸Õ¿¢½ºÆ÷\";")
+"font: "+str(font_pt)+"pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\";")
         self.pushButton_4.setText("")
         self.pushButton_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_4.setObjectName("pushButton_4")
@@ -97,7 +95,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton = QtWidgets.QPushButton(self)
         self.pushButton.setGeometry(QtCore.QRect(self.program_width*0.4, self.program_width*0.02, self.program_width*0.2, self.program_width*0.06))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_width/55))
         self.pushButton.setCursor(QtCore.Qt.PointingHandCursor)
         self.pushButton.setFont(font)
@@ -108,7 +106,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_5 = QtWidgets.QPushButton(self)
         self.pushButton_5.setGeometry(QtCore.QRect(self.program_width*0.4, self.program_height*0.45, self.program_width*0.2, self.program_width*0.1))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_width/55))
         self.pushButton_5.setCursor(QtCore.Qt.PointingHandCursor)
         self.pushButton_5.setFont(font)
@@ -129,14 +127,14 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                          "border-color:black;\n"
                                          "border-width:"+str(self.border_px)+"px;\n")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_width/80))
         self.label_4.setFont(font)
         
         self.pushButton_6 = QtWidgets.QPushButton(self)
         self.pushButton_6.setGeometry(QtCore.QRect(self.program_width*0.65,self.program_height*0.31+self.program_width*0.3,self.program_width*0.14,self.program_height*0.06))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.pushButton_6.setCursor(QtCore.Qt.PointingHandCursor)
         self.pushButton_6.setFont(font)
@@ -148,7 +146,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_8 = QtWidgets.QPushButton(self)
         self.pushButton_8.setGeometry(QtCore.QRect(self.program_width*0.81,self.program_height*0.31+self.program_width*0.3,self.program_width*0.14,self.program_height*0.06))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.pushButton_8.setCursor(QtCore.Qt.PointingHandCursor)
         self.pushButton_8.setFont(font)
@@ -161,7 +159,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label_3 = QtWidgets.QLabel(self)
         self.label_3.setGeometry(QtCore.QRect(self.program_width*0.65,self.program_height*0.15,self.program_width*0.3,self.program_height*0.1))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/40))
         self.label_3.setFont(font)
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
@@ -171,16 +169,16 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                          "border-width:"+str(self.border_px)+"px;\n"
                                          "border-radius:"+str(self.border_px*10)+"px;")
         
-        self.pushButton_8.setText("ÆÄÀÏ¿­±â")
-        self.pushButton_6.setText("±× ¸² Àú Àå")
-        self.pushButton.setText("µµ ¿ò ¸»")
-        self.pushButton_5.setText("»çÁø ÇÕ¼ºÇÏ±â")
-        self.pushButton_2.setText("Ä·¿­±â")
-        self.pushButton_3.setText("ÀÌÀü")
-        self.pushButton_4.setText("Á¾·á")
-        self.pushButton_7.setText("ÆÄÀÏ¿­±â")
-        self.label.setText("¿ø º» »ç Áø")
-        self.label_3.setText("¹è °æ »ç Áø")
+        self.pushButton_8.setText("íŒŒì¼ì—´ê¸°")
+        self.pushButton_6.setText("ê·¸ ë¦¼ ì € ì¥")
+        self.pushButton.setText("ë„ ì›€ ë§")
+        self.pushButton_5.setText("ì‚¬ì§„ í•©ì„±í•˜ê¸°")
+        self.pushButton_2.setText("ìº ì—´ê¸°")
+        self.pushButton_3.setText("ì´ì „")
+        self.pushButton_4.setText("ì¢…ë£Œ")
+        self.pushButton_7.setText("íŒŒì¼ì—´ê¸°")
+        self.label.setText("ì› ë³¸ ì‚¬ ì§„")
+        self.label_3.setText("ë°° ê²½ ì‚¬ ì§„")
         
         
         self.pushButton_6.clicked.connect(self.save_img)
@@ -220,14 +218,14 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def save_img(self):
         try:
             if self.synthesis==0:
-                self.label_4.setText("¸ÕÀú ÇÕ¼ºÀ» ÇØ¾ßÇÕ´Ï´Ù.")
+                self.label_4.setText("ë¨¼ì € í•©ì„±ì„ í•´ì•¼í•©ë‹ˆë‹¤.")
                 return
             file = QtWidgets.QFileDialog.getSaveFileName()
             if file[0]:
                 self.synimg = cv2.cvtColor(self.synimg, cv2.COLOR_BGR2RGB)
                 cv2.imwrite(file[0]+'.jpg',self.synimg)
                 self.synthesis=0
-                self.label_4.setText('ÀúÀåµÇ¾ú½À´Ï´Ù.')
+                self.label_4.setText('ì €ì¥ë˜ì—ˆìŠµë‹ˆë‹¤.')
         except BaseException as b:
             print(str(b))
     def preprocess(self,img):
@@ -253,10 +251,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def subtract_image(self):
         try:
             if len(self.frame)==0:
-                self.label_4.setText('¿øº»ÀÌ¹ÌÁö°¡ ¾ø½À´Ï´Ù.')
+                self.label_4.setText('ì›ë³¸ì´ë¯¸ì§€ê°€ ì—†ìŠµë‹ˆë‹¤.')
                 return
             if len(self.frame2)==0:
-                self.label_4.setText('¹è°æÀÌ¹ÌÁö°¡ ¾ø½À´Ï´Ù.')
+                self.label_4.setText('ë°°ê²½ì´ë¯¸ì§€ê°€ ì—†ìŠµë‹ˆë‹¤.')
                 return
             self.synthesis = 1
             img = self.frame
@@ -300,14 +298,14 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     if b==4:
                         img = cv2.cvtColor(img, cv2.COLOR_RGBA2RGB)
                 except:
-                    self.label_4.setText('ÀÌ¹ÌÁöÆÄÀÏÀÌ ¾Æ´Õ´Ï´Ù.')
+                    self.label_4.setText('ì´ë¯¸ì§€íŒŒì¼ì´ ì•„ë‹™ë‹ˆë‹¤.')
                     return
                 if self.cam!=None:
                     self.cam_stop = 1
                     self.capture = 0
                     self.cam.release()
                     self.cam = None
-                    self.pushButton_2.setText("Ä·¿­±â")
+                    self.pushButton_2.setText("ìº ì—´ê¸°")
                 height, width, _ = img.shape
                 if height>=width:
                     img = cv2.resize(img,(360,int(height*(360/width))))
@@ -337,14 +335,14 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     if b==4:
                         img = cv2.cvtColor(img, cv2.COLOR_RGBA2RGB)
                 except:
-                    self.label_4.setText('ÀÌ¹ÌÁöÆÄÀÏÀÌ ¾Æ´Õ´Ï´Ù.')
+                    self.label_4.setText('ì´ë¯¸ì§€íŒŒì¼ì´ ì•„ë‹™ë‹ˆë‹¤.')
                     return
                 if self.cam!=None:
                     self.cam_stop = 1
                     self.capture = 0
                     self.cam.release()
                     self.cam = None
-                    self.pushButton_2.setText("Ä·¿­±â")
+                    self.pushButton_2.setText("ìº ì—´ê¸°")
                 height, width, _ = img.shape
                 if height>=width:
                     img = cv2.resize(img,(360,int(height*(360/width))))
@@ -398,21 +396,21 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             self.frame=[]
             self.cam_stop=0
             self.capture=1
-            self.pushButton_2.setText('»çÁøÃÔ¿µ')
+            self.pushButton_2.setText('ì‚¬ì§„ì´¬ì˜')
             try:
                 self.cam = cv2.VideoCapture(0)
                 self.cam.set(3,640)
                 self.cam.set(4,480)
             except BaseException as b:
                 print(str(b))
-                self.label_4.setText("Ä·À» Ã£Áö ¸øÇß½À´Ï´Ù.")
+                self.label_4.setText("ìº ì„ ì°¾ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.")
                 
             try:
                 _, image = self.cam.read()
                 self.height, self.width = image.shape[:2]
             except BaseException as b:
                 print(str(b))
-                self.label_4.setText("Ä·¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù.")
+                self.label_4.setText("ìº ì— ë¬¸ì œê°€ ìˆìŠµë‹ˆë‹¤.")
             
             while True:
                 try:
@@ -445,7 +443,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             self.capture = 0
             self.cam.release()
             self.cam = None
-            self.pushButton_2.setText("Ä·¿­±â")
+            self.pushButton_2.setText("ìº ì—´ê¸°")
     def clear_widget(self):
         try:
             self.ori_label.clear()
@@ -459,7 +457,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.cam.release()
                 self.cam=None
                 self.capture = 0
-                self.pushButton_2.setText("Ä·¿­±â")
+                self.pushButton_2.setText("ìº ì—´ê¸°")
             self.label_4.setText('')
             self.hide()
             self.m_window.show()
@@ -473,4 +471,3 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             self.cam_stop=1
             self.cam.release()
         self.close()
-    

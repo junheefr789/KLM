@@ -1,4 +1,3 @@
-# -*- coding: euc-kr -*-
 import start_window
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -39,7 +38,7 @@ class Ui_MainWindow(QMainWindow):
             label.setGeometry(QtCore.QRect(0,0,screen_width*0.4,screen_height*0.4))
             label.setAlignment(QtCore.Qt.AlignCenter)
             label.setStyleSheet("font-size:"+str(int(screen_width/80))+"pt;")
-            label.setText("ÇØ»óµµ°¡ ³·½À´Ï´Ù.\n°¡·Î´Â '1200ÇÈ¼¿'ÀÌ»ó\n¼¼·Î´Â '600ÇÈ¼¿'ÀÌ»óÀ¸·Î\n¼³Á¤ÇØÁÖ¼¼¿ä!!")
+            label.setText("í•´ìƒë„ê°€ ë‚®ìŠµë‹ˆë‹¤.\nê°€ë¡œëŠ” '1200í”½ì…€'ì´ìƒ\nì„¸ë¡œëŠ” '600í”½ì…€'ì´ìƒìœ¼ë¡œ\nì„¤ì •í•´ì£¼ì„¸ìš”!!")
         else:
             self.program_height = screen_height*0.8
             self.program_width = self.program_height*1.5
@@ -72,7 +71,7 @@ class Ui_MainWindow(QMainWindow):
             font_pt = int(self.program_width/55)
             self.label_3.setStyleSheet(
                 '''
-                QPushButton{font: '''+str(font_pt)+'''pt \"ÈŞ¸Õ¿¢½ºÆ÷\"; color: white; background-color: rgba(0, 0, 0, 0);text-align:left;}
+                QPushButton{font: '''+str(font_pt)+'''pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\"; color: white; background-color: rgba(0, 0, 0, 0);text-align:left;}
                 QPushButton:hover{font: '''+str(font_pt)+'''pt; color: yellow;}
                 '''
                 )
@@ -81,7 +80,7 @@ class Ui_MainWindow(QMainWindow):
             self.label_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
             self.label_4.setStyleSheet(
                 '''
-                QPushButton{font: '''+str(font_pt)+'''pt \"ÈŞ¸Õ¿¢½ºÆ÷\"; color: white; background-color: rgba(0, 0, 0, 0);text-align:left;}
+                QPushButton{font: '''+str(font_pt)+'''pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\"; color: white; background-color: rgba(0, 0, 0, 0);text-align:left;}
                 QPushButton:hover{font: '''+str(font_pt)+'''pt; color: yellow;}
                 '''
                 )
@@ -90,7 +89,7 @@ class Ui_MainWindow(QMainWindow):
             self.label_5.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
             self.label_5.setStyleSheet(
                 '''
-                QPushButton{font: '''+str(font_pt)+'''pt \"ÈŞ¸Õ¿¢½ºÆ÷\"; color: white; background-color: rgba(0, 0, 0, 0);text-align:left;}
+                QPushButton{font: '''+str(font_pt)+'''pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\"; color: white; background-color: rgba(0, 0, 0, 0);text-align:left;}
                 QPushButton:hover{font: '''+str(font_pt)+'''pt; color: yellow;}
                 '''
                 )
@@ -99,14 +98,14 @@ class Ui_MainWindow(QMainWindow):
             self.label_6.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
             self.label_6.setStyleSheet(
                 '''
-                QPushButton{font: '''+str(font_pt)+'''pt \"ÈŞ¸Õ¿¢½ºÆ÷\"; color: white; background-color: rgba(0, 0, 0, 0);text-align:left;}
+                QPushButton{font: '''+str(font_pt)+'''pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\"; color: white; background-color: rgba(0, 0, 0, 0);text-align:left;}
                 QPushButton:hover{font: '''+str(font_pt)+'''pt; color: yellow;}
                 '''
                 )
             self.label_2.setText("KORAC's Learning Machine")
-            self.label_3.setText("ÇÁ·Î±×·¥ ¼³¸í")
-            self.label_4.setText("ÇĞ½À½ÃÄÑº¸±â")
-            self.label_5.setText("AI¿Í ³î±â")
+            self.label_3.setText("í”„ë¡œê·¸ë¨ ì„¤ëª…")
+            self.label_4.setText("í•™ìŠµì‹œì¼œë³´ê¸°")
+            self.label_5.setText("AIì™€ ë†€ê¸°")
             self.label_6.setText("EXIT")
             self.label_3.clicked.connect(self.go_explain)
             self.label_4.clicked.connect(self.go_practice)
@@ -147,7 +146,7 @@ class Ui_MainWindow(QMainWindow):
             ie.open(path)
         except BaseException as b:
             try:
-                tt = train_alam.Ui_Dialog("±âº»°æ·Î¿¡ explorer°¡ ¾ø½À´Ï´Ù.\nexplorerÆú´õ¸¦ ±âº»°æ·Î·Î ÀÌµ¿ÇØÁÖ¼¼¿ä. ±âº»°æ·Î´Â\n'C:/program files/internet explorer'\nÀÔ´Ï´Ù.")
+                tt = train_alam.Ui_Dialog("ê¸°ë³¸ê²½ë¡œì— explorerê°€ ì—†ìŠµë‹ˆë‹¤.\nexplorerí´ë”ë¥¼ ê¸°ë³¸ê²½ë¡œë¡œ ì´ë™í•´ì£¼ì„¸ìš”. ê¸°ë³¸ê²½ë¡œëŠ”\n'C:/program files/internet explorer'\nì…ë‹ˆë‹¤.")
                 aa = tt.showModal()
                 if aa:
                     path = os.path.dirname(os.path.realpath(__file__))+"\html\index.html"

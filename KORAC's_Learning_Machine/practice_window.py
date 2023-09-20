@@ -1,5 +1,3 @@
-# -*- coding: euc-kr -*-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 import picture_image_window
 import sound_learning_window
@@ -39,7 +37,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         font_pt = int(self.program_width/55)
         self.pushButton_3.setStyleSheet("border:none;\n"
 "background-color: rgba(0, 0, 0, 0);\n"
-"font: "+str(font_pt)+"pt \"ÈŞ¸Õ¿¢½ºÆ÷\";"
+"font: "+str(font_pt)+"pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\";"
 "color:white;")
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
@@ -47,7 +45,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_4.setStyleSheet("border:none;\n"
 "background-color: rgba(0, 0, 0, 0);\n"
 "color:white;\n"
-"font: "+str(font_pt)+"pt \"ÈŞ¸Õ¿¢½ºÆ÷\";")
+"font: "+str(font_pt)+"pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\";")
         self.pushButton_4.setText("")
         self.pushButton_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_4.setObjectName("pushButton_4")
@@ -58,7 +56,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton.setStyleSheet("border:none;\n"
 "border-top-left-radius:20px;\n"
 "border-top-right-radius:20px;\n"
-"font: "+str(font_pt)+"pt \"ÈŞ¸Õ¿¢½ºÆ÷\";"
+"font: "+str(font_pt)+"pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\";"
 "background-color: rgb(255, 255, 255);")
         self.pushButton.setObjectName("pushButton")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
@@ -67,7 +65,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_2.setStyleSheet("border:none;\n"
 "border-top-left-radius:20px;\n"
 "border-top-right-radius:20px;\n"
-"font: "+str(font_pt)+"pt \"ÈŞ¸Õ¿¢½ºÆ÷\";"
+"font: "+str(font_pt)+"pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\";"
 "background-color: rgb(255, 255, 255);")
         self.pushButton_2.setObjectName("pushButton_2")
         self.listView = QtWidgets.QListView(self.centralwidget)
@@ -88,10 +86,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.verticalLayout.setObjectName("verticalLayout")
         self.setCentralWidget(self.centralwidget)
 
-        self.pushButton_3.setText("ÀÌÀü")
-        self.pushButton_4.setText("Á¾·á")
-        self.pushButton.setText("ÀÌ¹ÌÁö")
-        self.pushButton_2.setText("»ç¿îµå")
+        self.pushButton_3.setText("ì´ì „")
+        self.pushButton_4.setText("ì¢…ë£Œ")
+        self.pushButton.setText("ì´ë¯¸ì§€")
+        self.pushButton_2.setText("ì‚¬ìš´ë“œ")
         
         self.pushButton_3.clicked.connect(self.go_back)
         self.pushButton_4.clicked.connect(self.quit)
@@ -116,12 +114,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     "border-width:"+str(self.border_px)+"px;\n"
     "border-radius:50px;")
             self.pushButton.setStyleSheet("border:none;\n"
-    "font: "+str(font_pt)+"pt \"ÈŞ¸Õ¿¢½ºÆ÷\";"
+    "font: "+str(font_pt)+"pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\";"
     "border-top-left-radius:20px;\n"
     "border-top-right-radius:20px;\n"
     "background-color: rgb(255, 255, 255);")
             self.pushButton_2.setStyleSheet("border:none;\n"
-    "font: "+str(font_pt)+"pt \"ÈŞ¸Õ¿¢½ºÆ÷\";"
+    "font: "+str(font_pt)+"pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\";"
     "border-top-left-radius:20px;\n"
     "border-top-right-radius:20px;\n"
     "background-color: rgb(170, 170, 255);")
@@ -141,11 +139,11 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             font_pt = int(self.program_width/50)
             self.pushButton_7.setStyleSheet(
                 '''
-                QPushButton{border:none;background-color: rgba(0, 0, 0, 0);text-align:left;font: '''+str(font_pt)+'''pt \"ÈŞ¸Õ¿¢½ºÆ÷\";color:white;}
+                QPushButton{border:none;background-color: rgba(0, 0, 0, 0);text-align:left;font: '''+str(font_pt)+'''pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\";color:white;}
                 QPushButton:hover{color:rgb(170, 170, 255);}
                 '''
                 )
-            self.pushButton_7.setText("1. ¸¶ÀÌÅ©¸¦ È°¿ëÇÑ ¼Ò¸®ÇĞ½À")
+            self.pushButton_7.setText("1. ë§ˆì´í¬ë¥¼ í™œìš©í•œ ì†Œë¦¬í•™ìŠµ")
             self.verticalLayout.addWidget(self.pushButton_7)
             self.pushButton_7.clicked.connect(self.connect_mic_sound_window)
         except BaseException as b:
@@ -159,12 +157,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     "border-width:"+str(self.border_px)+"px;\n"
     "border-radius:50px;")
             self.pushButton.setStyleSheet("border:none;\n"
-    "font: "+str(font_pt)+"pt \"ÈŞ¸Õ¿¢½ºÆ÷\";"
+    "font: "+str(font_pt)+"pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\";"
     "border-top-left-radius:20px;\n"
     "border-top-right-radius:20px;\n"
     "background-color: rgb(255, 170, 255);")
             self.pushButton_2.setStyleSheet("border:none;\n"
-    "font: "+str(font_pt)+"pt \"ÈŞ¸Õ¿¢½ºÆ÷\";"
+    "font: "+str(font_pt)+"pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\";"
     "border-top-left-radius:20px;\n"
     "border-top-right-radius:20px;\n"
     "background-color: rgb(255, 255, 255);")
@@ -184,23 +182,23 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             font_pt = int(self.program_width/50)
             self.pushButton_5.setStyleSheet(
                 '''
-                QPushButton{border:none;background-color: rgba(0, 0, 0, 0);text-align:left;font: '''+str(font_pt)+'''pt \"ÈŞ¸Õ¿¢½ºÆ÷\";color:white;}
+                QPushButton{border:none;background-color: rgba(0, 0, 0, 0);text-align:left;font: '''+str(font_pt)+'''pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\";color:white;}
                 QPushButton:hover{color:rgb(255, 170, 255);}
                 '''
                 )
             self.pushButton_5.setObjectName("pushButton_5")
-            self.pushButton_5.setText("1. »çÁøÀ» È°¿ëÇÑ ÀÌ¹ÌÁö ÇĞ½À")
+            self.pushButton_5.setText("1. ì‚¬ì§„ì„ í™œìš©í•œ ì´ë¯¸ì§€ í•™ìŠµ")
             self.verticalLayout.addWidget(self.pushButton_5)
             self.pushButton_6 = QtWidgets.QPushButton(self.verticalLayoutWidget)
             self.pushButton_6.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
             self.pushButton_6.setStyleSheet(
                 '''
-                QPushButton{border:none;background-color: rgba(0, 0, 0, 0);text-align:left;font: '''+str(font_pt)+'''pt \"ÈŞ¸Õ¿¢½ºÆ÷\";color:white;}
+                QPushButton{border:none;background-color: rgba(0, 0, 0, 0);text-align:left;font: '''+str(font_pt)+'''pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\";color:white;}
                 QPushButton:hover{color:rgb(255, 170, 255);}
                 '''
                 )
             self.pushButton_6.setObjectName("pushButton_6")
-            self.pushButton_6.setText("2. »çÁøÀ» È°¿ëÇÑ Æ÷Áî ÇĞ½À")
+            self.pushButton_6.setText("2. ì‚¬ì§„ì„ í™œìš©í•œ í¬ì¦ˆ í•™ìŠµ")
             self.verticalLayout.addWidget(self.pushButton_6)
             self.pushButton_5.clicked.connect(self.connect_picture_image_window)
             self.pushButton_6.clicked.connect(self.connect_picture_motion_window)

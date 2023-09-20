@@ -1,5 +1,3 @@
-# -*- coding: euc-kr -*-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 import custom_widgets as cw
 import portrait_explain_dialog
@@ -34,7 +32,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label = QtWidgets.QLabel(self)
         self.label.setGeometry(QtCore.QRect(self.program_width*0.05,self.program_height*0.15,self.program_width*0.3,self.program_height*0.1))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/40))
         self.label.setFont(font)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
@@ -50,7 +48,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_2 = QtWidgets.QPushButton(self)
         self.pushButton_2.setGeometry(QtCore.QRect(self.program_width*0.1,self.program_height*0.31+self.program_width*0.3,self.program_width*0.2,self.program_height*0.06))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.pushButton_2.setCursor(QtCore.Qt.PointingHandCursor)
         self.pushButton_2.setFont(font)
@@ -65,7 +63,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         font_pt = int(self.program_width/55)
         self.pushButton_3.setStyleSheet("border:none;\n"
 "background-color: rgba(0, 0, 0, 0);\n"
-"font: "+str(font_pt)+"pt \"ÈŞ¸Õ¿¢½ºÆ÷\";"
+"font: "+str(font_pt)+"pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\";"
 "color:white;")
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_4 = QtWidgets.QPushButton(self)
@@ -73,7 +71,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_4.setStyleSheet("border:none;\n"
 "background-color: rgba(0, 0, 0, 0);\n"
 "color:white;\n"
-"font: "+str(font_pt)+"pt \"ÈŞ¸Õ¿¢½ºÆ÷\";")
+"font: "+str(font_pt)+"pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\";")
         self.pushButton_4.setText("")
         self.pushButton_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_4.setObjectName("pushButton_4")
@@ -81,7 +79,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton = QtWidgets.QPushButton(self)
         self.pushButton.setGeometry(QtCore.QRect(self.program_width*0.4, self.program_width*0.02, self.program_width*0.2, self.program_width*0.06))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_width/55))
         self.pushButton.setCursor(QtCore.Qt.PointingHandCursor)
         self.pushButton.setFont(font)
@@ -92,7 +90,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_5 = QtWidgets.QPushButton(self)
         self.pushButton_5.setGeometry(QtCore.QRect(self.program_width*0.4, self.program_height*0.45, self.program_width*0.2, self.program_width*0.1))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_width/55))
         self.pushButton_5.setCursor(QtCore.Qt.PointingHandCursor)
         self.pushButton_5.setFont(font)
@@ -111,7 +109,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_6 = QtWidgets.QPushButton(self)
         self.pushButton_6.setGeometry(QtCore.QRect(self.program_width*0.7,self.program_height*0.31+self.program_width*0.3,self.program_width*0.2,self.program_height*0.06))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.pushButton_6.setCursor(QtCore.Qt.PointingHandCursor)
         self.pushButton_6.setFont(font)
@@ -124,7 +122,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label_3 = QtWidgets.QLabel(self)
         self.label_3.setGeometry(QtCore.QRect(self.program_width*0.65,self.program_height*0.15,self.program_width*0.3,self.program_height*0.1))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/40))
         self.label_3.setFont(font)
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
@@ -134,14 +132,14 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                          "border-width:"+str(self.border_px)+"px;\n"
                                          "border-radius:"+str(self.border_px*10)+"px;")
         
-        self.pushButton_6.setText("±× ¸² Àú Àå")
-        self.pushButton.setText("µµ ¿ò ¸»")
-        self.pushButton_5.setText("ÃÊ»óÈ­\n±×¸®±â")
-        self.pushButton_2.setText("Áö  ¿ì  ±â")
-        self.pushButton_3.setText("ÀÌÀü")
-        self.pushButton_4.setText("Á¾·á")
-        self.label.setText("¾ó±¼ À±°û¼± ±×¸²ÆÇ")
-        self.label_3.setText("ÃÊ  »ó  È­")
+        self.pushButton_6.setText("ê·¸ ë¦¼ ì € ì¥")
+        self.pushButton.setText("ë„ ì›€ ë§")
+        self.pushButton_5.setText("ì´ˆìƒí™”\nê·¸ë¦¬ê¸°")
+        self.pushButton_2.setText("ì§€  ìš°  ê¸°")
+        self.pushButton_3.setText("ì´ì „")
+        self.pushButton_4.setText("ì¢…ë£Œ")
+        self.label.setText("ì–¼êµ´ ìœ¤ê³½ì„  ê·¸ë¦¼íŒ")
+        self.label_3.setText("ì´ˆ  ìƒ  í™”")
         
         self.pushButton.clicked.connect(self.open_explain)
         self.pushButton_2.clicked.connect(self.clear_widget)
@@ -193,4 +191,3 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 return
         except BaseException as b:
             print(str(b))
-    

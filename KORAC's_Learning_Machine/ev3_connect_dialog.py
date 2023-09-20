@@ -1,5 +1,3 @@
-# -*- coding: euc-kr -*-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 import ctypes
 import serial
@@ -26,17 +24,17 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.label.setGeometry(QtCore.QRect(self.width*0.02, self.height*0.02, self.width*0.96, self.height*0.1))
         self.label.setStyleSheet('border:none;')
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.width/35))
         self.label.setFont(font)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label_5")
-        self.label.setText("ºí·çÅõ½º´Â EV3 1´ëÇÏ°í¸¸ ¿¬°áÇØÁÖ¼¼¿ä.")
+        self.label.setText("ë¸”ë£¨íˆ¬ìŠ¤ëŠ” EV3 1ëŒ€í•˜ê³ ë§Œ ì—°ê²°í•´ì£¼ì„¸ìš”.")
         self.line = QtWidgets.QLineEdit(self)
         self.line.setGeometry(QtCore.QRect(self.width*0.05, self.height*0.2, self.width*0.3, self.height*0.2))
         self.line.setAlignment(QtCore.Qt.AlignCenter)
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.width/25))
         self.line.setFont(font)
         self.line.setStyleSheet("background-color:white;\n"
@@ -52,10 +50,10 @@ class Ui_Dialog(QtWidgets.QDialog):
                                          "border-width:"+str(border_px)+"px;\n"
                                          "border-radius:"+str(border_px*10)+"px;\n")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.width/35))
         self.pushButton_4.setFont(font)
-        self.pushButton_4.setText("°Ë»öÇÏ±â")
+        self.pushButton_4.setText("ê²€ìƒ‰í•˜ê¸°")
         self.pushButton_5 = QtWidgets.QPushButton(self)
         self.pushButton_5.setGeometry(QtCore.QRect(self.width*0.7, self.height*0.2, self.width*0.28, self.height*0.2))
         self.pushButton_5.setStyleSheet("background-color:white;\n"
@@ -64,10 +62,10 @@ class Ui_Dialog(QtWidgets.QDialog):
                                          "border-width:"+str(border_px)+"px;\n"
                                          "border-radius:"+str(border_px*10)+"px;\n")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.width/35))
         self.pushButton_5.setFont(font)
-        self.pushButton_5.setText("¿¬°áÇÏ±â")
+        self.pushButton_5.setText("ì—°ê²°í•˜ê¸°")
         
         self.label_2 = QtWidgets.QLabel(self)
         self.label_2.setGeometry(QtCore.QRect(self.width*0.05, self.height*0.43, self.width*0.9, self.height*0.25))
@@ -77,7 +75,7 @@ class Ui_Dialog(QtWidgets.QDialog):
                                          "border-width:"+str(border_px)+"px;\n"
                                          "border-radius:"+str(border_px*10)+"px;\n")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.width/55))
         self.label_2.setFont(font)
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
@@ -90,12 +88,12 @@ class Ui_Dialog(QtWidgets.QDialog):
                                          "border-width:"+str(border_px)+"px;\n"
                                          "border-radius:"+str(border_px*10)+"px;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.width/50))
         self.pushButton_2.setFont(font)
         self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton_2.setText('È®ÀÎ')
+        self.pushButton_2.setText('í™•ì¸')
         self.pushButton_3 = QtWidgets.QPushButton(self)
         self.pushButton_3.setGeometry(QtCore.QRect(self.width*0.52, self.height*0.75, self.width*0.46, self.height*0.2))
         self.pushButton_3.setStyleSheet("background-color:white;\n"
@@ -104,11 +102,11 @@ class Ui_Dialog(QtWidgets.QDialog):
                                          "border-width:"+str(border_px)+"px;\n"
                                          "border-radius:"+str(border_px*10)+"px;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.width/50))
         self.pushButton_3.setFont(font)
         self.pushButton_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_3.setText('Ãë¼Ò')
+        self.pushButton_3.setText('ì·¨ì†Œ')
         
         self.pushButton_4.clicked.connect(self.search_ev3)
         self.pushButton_5.clicked.connect(self.connect_ev3)
@@ -116,32 +114,32 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.pushButton_3.clicked.connect(self.rejected)
     def connect_ev3(self):
         if self.connect==1:
-            self.label_2.setText("ÀÌ¹Ì ¿¬°áµÇ¾ú½À´Ï´Ù.")
+            self.label_2.setText("ì´ë¯¸ ì—°ê²°ë˜ì—ˆìŠµë‹ˆë‹¤.")
             return
         try:
             num = int(self.line.text())
             if num <= 0:
-                self.label_2.setText("0º¸´Ù Å« ¼ıÀÚ¸¦ ³Ö¾î¾ßÇÕ´Ï´Ù.")
+                self.label_2.setText("0ë³´ë‹¤ í° ìˆ«ìë¥¼ ë„£ì–´ì•¼í•©ë‹ˆë‹¤.")
                 return
         except:
-            self.label_2.setText("¼ıÀÚ¸¸ ÀÔ·ÂÇØ¾ßÇÕ´Ï´Ù.")
+            self.label_2.setText("ìˆ«ìë§Œ ì…ë ¥í•´ì•¼í•©ë‹ˆë‹¤.")
             return
         try:
             self.ev3 = serial.Serial('COM'+str(num),timeout=3,write_timeout=3)
             s = ev3_message_converter.encodeMessage(ev3_message_converter.MessageType.Text, 'abc', 'connect')
             self.ev3.write(s)
             self.connect = 1
-            self.label_2.setText("¿¬°áµÇ¾ú½À´Ï´Ù.")
+            self.label_2.setText("ì—°ê²°ë˜ì—ˆìŠµë‹ˆë‹¤.")
         except:
-            self.label_2.setText('Àß¸øµÈ Æ÷Æ®¹øÈ£ÀÔ´Ï´Ù.')
+            self.label_2.setText('ì˜ëª»ëœ í¬íŠ¸ë²ˆí˜¸ì…ë‹ˆë‹¤.')
             return
         
     def search_ev3(self):
         if self.connect==1:
-            self.label_2.setText("ÀÌ¹Ì ¿¬°áµÇ¾ú½À´Ï´Ù.")
+            self.label_2.setText("ì´ë¯¸ ì—°ê²°ë˜ì—ˆìŠµë‹ˆë‹¤.")
             return
-        self.label_2.setText("ÀåÄ¡¸¦ Ã£´Â ÁßÀÔ´Ï´Ù.")
-        at = train_alam.Ui_Dialog('ºí·çÅõ½º ¿¬°áµÈ ÀåÄ¡¸¦ Ã£´Âµ¥\n10ÃÊ¿¡¼­ 1ºĞÁ¤µµÀÇ ½Ã°£ÀÌ ¼Ò¿äµË´Ï´Ù.\nÁøÇàÇÏ½Ã°Ú½À´Ï±î?\n(EV3¸¸ ¿¬°áÇØÁÖ¼Å¾ßÇÕ´Ï´Ù.)')
+        self.label_2.setText("ì¥ì¹˜ë¥¼ ì°¾ëŠ” ì¤‘ì…ë‹ˆë‹¤.")
+        at = train_alam.Ui_Dialog('ë¸”ë£¨íˆ¬ìŠ¤ ì—°ê²°ëœ ì¥ì¹˜ë¥¼ ì°¾ëŠ”ë°\n10ì´ˆì—ì„œ 1ë¶„ì •ë„ì˜ ì‹œê°„ì´ ì†Œìš”ë©ë‹ˆë‹¤.\nì§„í–‰í•˜ì‹œê² ìŠµë‹ˆê¹Œ?\n(EV3ë§Œ ì—°ê²°í•´ì£¼ì…”ì•¼í•©ë‹ˆë‹¤.)')
         ata = at.showModal()
         if ata:
             available = []
@@ -156,7 +154,7 @@ class Ui_Dialog(QtWidgets.QDialog):
                     pass
             if len(available)==1:
                 try:
-                    self.label_2.setText("¿¬°áµÈ ÀåÄ¡¸¦ Ã£¾Ò½À´Ï´Ù.")
+                    self.label_2.setText("ì—°ê²°ëœ ì¥ì¹˜ë¥¼ ì°¾ì•˜ìŠµë‹ˆë‹¤.")
                     self.ev3 = serial.Serial(available[0])
                     self.connect = 1
                     self.line.setReadOnly(True)
@@ -164,10 +162,10 @@ class Ui_Dialog(QtWidgets.QDialog):
                 except:
                     pass
             elif len(available)>1:    
-                self.label_2.setText('2°³ ÀÌ»óÀÇ ÀåÄ¡°¡ ¿¬°áµÇ¾îÀÖ½À´Ï´Ù.\n1´ëÀÇ EV3¸¸ ¿¬°áÇØ ÁÖ¼¼¿ä.')
+                self.label_2.setText('2ê°œ ì´ìƒì˜ ì¥ì¹˜ê°€ ì—°ê²°ë˜ì–´ìˆìŠµë‹ˆë‹¤.\n1ëŒ€ì˜ EV3ë§Œ ì—°ê²°í•´ ì£¼ì„¸ìš”.')
                 return
             else:
-                self.label_2.setText('¸Ş¼¼Áö¸¦ Àü¼ÛÇÒ ¼ö ÀÖ´Â ÀåÄ¡°¡ ¾ø½À´Ï´Ù.\nºí·çÅõ½º Æä¾î¸µÀ» »èÁ¦ÇÏ°í ´Ù½Ã ¿¬°áÇØÁÖ¼¼¿ä.\n¹İµå½Ã PC¿¡¼­ ºí·çÅõ½º ¿äÃ»À» º¸³»¾ßÇÕ´Ï´Ù.')
+                self.label_2.setText('ë©”ì„¸ì§€ë¥¼ ì „ì†¡í•  ìˆ˜ ìˆëŠ” ì¥ì¹˜ê°€ ì—†ìŠµë‹ˆë‹¤.\në¸”ë£¨íˆ¬ìŠ¤ í˜ì–´ë§ì„ ì‚­ì œí•˜ê³  ë‹¤ì‹œ ì—°ê²°í•´ì£¼ì„¸ìš”.\në°˜ë“œì‹œ PCì—ì„œ ë¸”ë£¨íˆ¬ìŠ¤ ìš”ì²­ì„ ë³´ë‚´ì•¼í•©ë‹ˆë‹¤.')
                 return
         else:
             self.label_2.setText("")
@@ -177,7 +175,7 @@ class Ui_Dialog(QtWidgets.QDialog):
             if self.connect == 1:
                 self.accept()
             else:
-                self.label_2.setText("¸ÕÀú ÀåÄ¡¸¦ ¿¬°áÇØ¾ßÇÕ´Ï´Ù.")
+                self.label_2.setText("ë¨¼ì € ì¥ì¹˜ë¥¼ ì—°ê²°í•´ì•¼í•©ë‹ˆë‹¤.")
                 return
         except BaseException as b:
             print(b)
@@ -186,5 +184,3 @@ class Ui_Dialog(QtWidgets.QDialog):
         
     def showModal(self):
         return super().exec_()
-
-        

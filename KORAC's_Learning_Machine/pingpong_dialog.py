@@ -1,5 +1,3 @@
-# -*- coding: euc-kr -*-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 import ctypes
 
@@ -25,16 +23,16 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.label.setGeometry(QtCore.QRect(self.width*0.04, self.height*0.04, self.width*0.92, self.height*0.65))
         self.label.setStyleSheet('border:none;')
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.width/70))
         self.label.setFont(font)
-        self.label.setText("1. AI°¡ ¶ó¿îµå¸¦ °ÅµìÇÏ¸ç ÇÎÆş°ÔÀÓ¿¡ ´ëÇÏ¿© ¹è¿ó´Ï´Ù.\n    AI°¡ Áö¸é ¿©ÅÂ±îÁöÀÇ °ÔÀÓ¿¡ ´ëÇÏ¿© ÇĞ½ÀÀ» ÇÏ°í ´ÙÀ½ ¶ó¿îµå°¡ ½ÃÀÛµË´Ï´Ù.\n   (1¶ó¿îµå´Â ·£´ıÇÏ°Ô ¿òÁ÷ÀÔ´Ï´Ù.)\n\n"
-                           "2. 'w'Å°¸¦ ´©¸£¸é ÆĞ³ÎÀÌ À§·Î ¿Ã¶ó°¡°í, 's'Å°¸¦ ´©¸£¸é ÆĞ³ÎÀÌ ¾Æ·¡·Î ³»·Á°©´Ï´Ù.\n\n"
-                           "3. ÇÃ·¹ÀÌ¾î°¡ ÆĞ³ÎÀ» ¿òÁ÷ÀÌ´Â »óÅÂ¿¡¼­ °øÀ» ÃÄ³»¸é\n   °øÀÇ °¢µµ°¡ ÃÄ³½¹æÇâÀ¸·Î ´õ ±â¿ï¾îÁ®¼­ ¿òÁ÷ÀÔ´Ï´Ù.\n\n"
-                           "4. °øÀÇ °¢µµ´Â 'x+'ÃàÀ» ±âÁØÀ¸·Î ½Ã°è¹æÇâÀ¸·Î ´Ã¾î³³´Ï´Ù.\n\n"
-                           "5. ÁÂÇ¥´Â Á¦ÀÏ À§°¡ 0, Á¦ÀÏ ¾Æ·¡°¡ 683ÀÔ´Ï´Ù.\n\n"
-                           "6. °øÀÇ ¼Óµµ´Â ½Ã°£ÀÌ Áö³¯¼ö·Ï »¡¶óÁö°í ¶ó¿îµå°¡ »õ·Î ½ÃÀÛÇÏ¸é ÃÊ±âÈ­µË´Ï´Ù.\n\n"
-                           "7. ÃÑ AI¿¡°Ô ¸î¶ó¿îµå±îÁö ÀÌ±æ¼ö ÀÖ´ÂÁö µµÀüÇØº¸¼¼¿ä!!")
+        self.label.setText("1. AIê°€ ë¼ìš´ë“œë¥¼ ê±°ë“­í•˜ë©° í•‘íê²Œì„ì— ëŒ€í•˜ì—¬ ë°°ì›ë‹ˆë‹¤.\n    AIê°€ ì§€ë©´ ì—¬íƒœê¹Œì§€ì˜ ê²Œì„ì— ëŒ€í•˜ì—¬ í•™ìŠµì„ í•˜ê³  ë‹¤ìŒ ë¼ìš´ë“œê°€ ì‹œì‘ë©ë‹ˆë‹¤.\n   (1ë¼ìš´ë“œëŠ” ëœë¤í•˜ê²Œ ì›€ì§ì…ë‹ˆë‹¤.)\n\n"
+                           "2. 'w'í‚¤ë¥¼ ëˆ„ë¥´ë©´ íŒ¨ë„ì´ ìœ„ë¡œ ì˜¬ë¼ê°€ê³ , 's'í‚¤ë¥¼ ëˆ„ë¥´ë©´ íŒ¨ë„ì´ ì•„ë˜ë¡œ ë‚´ë ¤ê°‘ë‹ˆë‹¤.\n\n"
+                           "3. í”Œë ˆì´ì–´ê°€ íŒ¨ë„ì„ ì›€ì§ì´ëŠ” ìƒíƒœì—ì„œ ê³µì„ ì³ë‚´ë©´\n   ê³µì˜ ê°ë„ê°€ ì³ë‚¸ë°©í–¥ìœ¼ë¡œ ë” ê¸°ìš¸ì–´ì ¸ì„œ ì›€ì§ì…ë‹ˆë‹¤.\n\n"
+                           "4. ê³µì˜ ê°ë„ëŠ” 'x+'ì¶•ì„ ê¸°ì¤€ìœ¼ë¡œ ì‹œê³„ë°©í–¥ìœ¼ë¡œ ëŠ˜ì–´ë‚©ë‹ˆë‹¤.\n\n"
+                           "5. ì¢Œí‘œëŠ” ì œì¼ ìœ„ê°€ 0, ì œì¼ ì•„ë˜ê°€ 683ì…ë‹ˆë‹¤.\n\n"
+                           "6. ê³µì˜ ì†ë„ëŠ” ì‹œê°„ì´ ì§€ë‚ ìˆ˜ë¡ ë¹¨ë¼ì§€ê³  ë¼ìš´ë“œê°€ ìƒˆë¡œ ì‹œì‘í•˜ë©´ ì´ˆê¸°í™”ë©ë‹ˆë‹¤.\n\n"
+                           "7. ì´ AIì—ê²Œ ëª‡ë¼ìš´ë“œê¹Œì§€ ì´ê¸¸ìˆ˜ ìˆëŠ”ì§€ ë„ì „í•´ë³´ì„¸ìš”!!")
         
         
         self.pushButton_2 = QtWidgets.QPushButton(self)
@@ -45,15 +43,15 @@ class Ui_Dialog(QtWidgets.QDialog):
                                          "border-width:"+str(border_px)+"px;\n"
                                          "border-radius:"+str(border_px*10)+"px;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.width/35))
         self.pushButton_2.setFont(font)
         self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton_2.setText('È® ÀÎ')
+        self.pushButton_2.setText('í™• ì¸')
         
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.width/35))
         
         self.pushButton_2.clicked.connect(self.check)
@@ -63,4 +61,3 @@ class Ui_Dialog(QtWidgets.QDialog):
         
     def showModal(self):
         return super().exec_()
-

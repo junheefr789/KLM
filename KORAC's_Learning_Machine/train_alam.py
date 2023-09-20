@@ -1,5 +1,3 @@
-# -*- coding: euc-kr -*-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 import ctypes
 
@@ -26,7 +24,7 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.label.setGeometry(QtCore.QRect(self.width*0.01, self.height*0.02, self.width*0.98, self.height*0.58))
         self.label.setStyleSheet('border:none;')
         font = QtGui.QFont()
-        font.setFamily("»ﬁ∏’ø¢Ω∫∆˜")
+        font.setFamily("Ìú¥Î®ºÏóëÏä§Ìè¨")
         font.setPointSize(int(self.width/35))
         self.label.setFont(font)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
@@ -40,12 +38,12 @@ class Ui_Dialog(QtWidgets.QDialog):
                                          "border-width:"+str(border_px)+"px;\n"
                                          "border-radius:"+str(border_px*10)+"px;")
         font = QtGui.QFont()
-        font.setFamily("»ﬁ∏’ø¢Ω∫∆˜")
+        font.setFamily("Ìú¥Î®ºÏóëÏä§Ìè¨")
         font.setPointSize(int(self.width/35))
         self.pushButton_2.setFont(font)
         self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton_2.setText('øπ')
+        self.pushButton_2.setText('Ïòà')
         self.pushButton_3 = QtWidgets.QPushButton(self)
         self.pushButton_3.setGeometry(QtCore.QRect(self.width*0.52, self.height*0.65, self.width*0.46, self.height*0.3))
         self.pushButton_3.setStyleSheet("background-color:white;\n"
@@ -54,11 +52,11 @@ class Ui_Dialog(QtWidgets.QDialog):
                                          "border-width:"+str(border_px)+"px;\n"
                                          "border-radius:"+str(border_px*10)+"px;")
         font = QtGui.QFont()
-        font.setFamily("»ﬁ∏’ø¢Ω∫∆˜")
+        font.setFamily("Ìú¥Î®ºÏóëÏä§Ìè¨")
         font.setPointSize(int(self.width/35))
         self.pushButton_3.setFont(font)
         self.pushButton_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_3.setText('æ∆ ¥œ ø¿')
+        self.pushButton_3.setText('ÏïÑ Îãà Ïò§')
         
         self.pushButton_2.clicked.connect(self.check)
         self.pushButton_3.clicked.connect(self.rejected)
@@ -71,6 +69,3 @@ class Ui_Dialog(QtWidgets.QDialog):
         
     def showModal(self):
         return super().exec_()
-        
-        
-        

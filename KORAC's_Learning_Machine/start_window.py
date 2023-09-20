@@ -1,5 +1,3 @@
-# -*- coding: euc-kr -*-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 import ctypes
 
@@ -25,12 +23,12 @@ class Ui_Dialog(QtWidgets.QMainWindow):
         self.label.setGeometry(QtCore.QRect(self.width*0.01, self.height*0.02, self.width*0.98, self.height*0.96))
         self.label.setStyleSheet('border:none;')
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.width/20))
         self.label.setFont(font)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label_5")
-        self.label.setText('½ÇÇàÁßÀÔ´Ï´Ù.\n±â´Ù·ÁÁÖ¼¼¿ä.')
+        self.label.setText('ì‹¤í–‰ì¤‘ì…ë‹ˆë‹¤.\nê¸°ë‹¤ë ¤ì£¼ì„¸ìš”.')
         
         
         
@@ -41,6 +39,3 @@ class Ui_Dialog(QtWidgets.QMainWindow):
         
     def showModal(self):
         return super().exec_()
-        
-        
-        

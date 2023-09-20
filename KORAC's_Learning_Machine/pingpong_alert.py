@@ -1,5 +1,3 @@
-# -*- coding: euc-kr -*-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 import ctypes
 import numpy as np
@@ -32,7 +30,7 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.label.setGeometry(QtCore.QRect(self.width*0.01, self.height*0.02, self.width*0.98, self.height*0.58))
         self.label.setStyleSheet('border:none;')
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.width/35))
         self.label.setFont(font)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
@@ -45,13 +43,13 @@ class Ui_Dialog(QtWidgets.QDialog):
                                          "border-width:"+str(border_px)+"px;\n"
                                          "border-radius:"+str(border_px*10)+"px;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.width/35))
-        self.label.setText("´ÙÀ½ ¶ó¿îµå¸¦ ½ÃÀÛÇÕ´Ï´Ù.")
+        self.label.setText("ë‹¤ìŒ ë¼ìš´ë“œë¥¼ ì‹œì‘í•©ë‹ˆë‹¤.")
         self.pushButton_2.setFont(font)
         self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton_2.setText('È®ÀÎ')
+        self.pushButton_2.setText('í™•ì¸')
         self.pushButton_2.clicked.connect(self.check)
         self.pushButton_2.hide()
         
@@ -88,5 +86,3 @@ class m1(QtCore.QThread):
                 self.model = tt.start_learning()
         except BaseException as b:
             print(str(b))
-        
-        

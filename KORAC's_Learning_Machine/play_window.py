@@ -1,5 +1,3 @@
-# -*- coding: euc-kr -*-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 import photo_synthesis_window
 import ctypes
@@ -38,7 +36,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         font_pt = int(self.program_width/55)
         self.pushButton_3.setStyleSheet("border:none;\n"
 "background-color: rgba(0, 0, 0, 0);\n"
-"font: "+str(font_pt)+"pt \"ÈŞ¸Õ¿¢½ºÆ÷\";"
+"font: "+str(font_pt)+"pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\";"
 "color:white;")
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
@@ -46,7 +44,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_4.setStyleSheet("border:none;\n"
 "background-color: rgba(0, 0, 0, 0);\n"
 "color:white;\n"
-"font: "+str(font_pt)+"pt \"ÈŞ¸Õ¿¢½ºÆ÷\";")
+"font: "+str(font_pt)+"pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\";")
         self.pushButton_4.setText("")
         self.pushButton_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_4.setObjectName("pushButton_4")
@@ -80,26 +78,26 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         font_pt = int(self.program_width/50)
         self.pushButton_7.setStyleSheet(
             '''
-            QPushButton{border:none;background-color: rgba(0, 0, 0, 0);text-align:left;font: '''+str(font_pt)+'''pt \"ÈŞ¸Õ¿¢½ºÆ÷\";color:white;}
+            QPushButton{border:none;background-color: rgba(0, 0, 0, 0);text-align:left;font: '''+str(font_pt)+'''pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\";color:white;}
             QPushButton:hover{color:rgb(255, 170, 255);}
             '''
             )
-        self.pushButton_7.setText("1. ÇÎÆş°ÔÀÓÀ» ÇĞ½ÀÇÏ´Â AI")
+        self.pushButton_7.setText("1. í•‘íê²Œì„ì„ í•™ìŠµí•˜ëŠ” AI")
         self.pushButton_8 = QtWidgets.QPushButton(self.verticalLayoutWidget)
         self.pushButton_8.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         font_pt = int(self.program_width/50)
         self.pushButton_8.setStyleSheet(
             '''
-            QPushButton{border:none;background-color: rgba(0, 0, 0, 0);text-align:left;font: '''+str(font_pt)+'''pt \"ÈŞ¸Õ¿¢½ºÆ÷\";color:white;}
+            QPushButton{border:none;background-color: rgba(0, 0, 0, 0);text-align:left;font: '''+str(font_pt)+'''pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\";color:white;}
             QPushButton:hover{color:rgb(255, 170, 255);}
             '''
             )
-        self.pushButton_8.setText("2. »çÁøÀ» ÇÕ¼ºÇØÁÖ´Â AI")
+        self.pushButton_8.setText("2. ì‚¬ì§„ì„ í•©ì„±í•´ì£¼ëŠ” AI")
         self.verticalLayout.addWidget(self.pushButton_7)
         self.verticalLayout.addWidget(self.pushButton_8)
 
-        self.pushButton_3.setText("ÀÌÀü")
-        self.pushButton_4.setText("Á¾·á")
+        self.pushButton_3.setText("ì´ì „")
+        self.pushButton_4.setText("ì¢…ë£Œ")
         
         self.pushButton_3.clicked.connect(self.go_back)
         self.pushButton_4.clicked.connect(self.quit)
@@ -136,4 +134,3 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             self.photo_synthesis_window.show()
         except BaseException as b:
             print(str(b))
-        

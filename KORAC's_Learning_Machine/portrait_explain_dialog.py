@@ -1,5 +1,3 @@
-# -*- coding: euc-kr -*-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 import ctypes
 
@@ -25,11 +23,11 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.label.setGeometry(QtCore.QRect(self.width*0.04, self.height*0.04, self.width*0.92, self.height*0.35))
         self.label.setStyleSheet('border:none;')
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.width/55))
         self.label.setFont(font)
         self.label.setObjectName("label_5")
-        self.label.setText("1. ¾Æ·¡ ±×¸²°ú °°ÀÌ ¾ó±¼ÀÇ À±°û¼±À» ±×·ÁÁÖ¼¼¿ä.\n    (´«½ç, ´«, ÄÚ, ÀÔ, À±°û¼±Àº ²À ±×·ÁÁÖ¼¼¿ä!)\n\n2. 'ÃÊ»óÈ­±×¸®±â'¹öÆ°À» Å¬¸¯ÇØÁÖ¼¼¿ä.\n\n3. AI°¡ ¿©·¯ºĞÀÌ ±×·ÁÁØ ±×¸²À» ¹ÙÅÁÀ¸·Î \n    ¸ÚÀÖ´Â ÃÊ»óÈ­¸¦ ±×·ÁÁİ´Ï´Ù.")
+        self.label.setText("1. ì•„ë˜ ê·¸ë¦¼ê³¼ ê°™ì´ ì–¼êµ´ì˜ ìœ¤ê³½ì„ ì„ ê·¸ë ¤ì£¼ì„¸ìš”.\n    (ëˆˆì¹, ëˆˆ, ì½”, ì…, ìœ¤ê³½ì„ ì€ ê¼­ ê·¸ë ¤ì£¼ì„¸ìš”!)\n\n2. 'ì´ˆìƒí™”ê·¸ë¦¬ê¸°'ë²„íŠ¼ì„ í´ë¦­í•´ì£¼ì„¸ìš”.\n\n3. AIê°€ ì—¬ëŸ¬ë¶„ì´ ê·¸ë ¤ì¤€ ê·¸ë¦¼ì„ ë°”íƒ•ìœ¼ë¡œ \n    ë©‹ìˆëŠ” ì´ˆìƒí™”ë¥¼ ê·¸ë ¤ì¤ë‹ˆë‹¤.")
         
         self.label_2 = QtWidgets.QLabel(self)
         self.label_2.setGeometry(QtCore.QRect(self.width*0.1, self.height*0.47, self.height*0.3, self.height*0.3))
@@ -54,11 +52,11 @@ class Ui_Dialog(QtWidgets.QDialog):
                                    "border:none;\n"
                                     "color:black;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.width/80))
         self.label_5.setFont(font)
         self.label_5.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_5.setText("ÃâÃ³ : https://github.com/kairess/edges2portrait_gan")
+        self.label_5.setText("ì¶œì²˜ : https://github.com/kairess/edges2portrait_gan")
         
         self.pushButton_2 = QtWidgets.QPushButton(self)
         self.pushButton_2.setGeometry(QtCore.QRect(self.width*0.27, self.height*0.8, self.width*0.46, self.height*0.1))
@@ -68,15 +66,15 @@ class Ui_Dialog(QtWidgets.QDialog):
                                          "border-width:"+str(border_px)+"px;\n"
                                          "border-radius:"+str(border_px*10)+"px;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.width/35))
         self.pushButton_2.setFont(font)
         self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton_2.setText('È® ÀÎ')
+        self.pushButton_2.setText('í™• ì¸')
         
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.width/35))
         
         self.pushButton_2.clicked.connect(self.check)
@@ -86,5 +84,3 @@ class Ui_Dialog(QtWidgets.QDialog):
         
     def showModal(self):
         return super().exec_()
-    
-        

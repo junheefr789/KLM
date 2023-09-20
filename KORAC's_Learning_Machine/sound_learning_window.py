@@ -1,5 +1,3 @@
-# -*- coding: euc-kr -*-
-
 from PyQt5 import QtCore, QtGui, QtWidgets, QtMultimedia
 import numpy as np
 from PyQt5.Qt import QFileDialog
@@ -69,7 +67,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.setupUi()
     def set_mic(self):
         try:
-            self.label_4.setText('±â´Ù·ÁÁÖ¼¼¿ä. ÁØºñÁßÀÔ´Ï´Ù.')
+            self.label_4.setText('ê¸°ë‹¤ë ¤ì£¼ì„¸ìš”. ì¤€ë¹„ì¤‘ì…ë‹ˆë‹¤.')
             self.setCursor(QtCore.Qt.BusyCursor)
             self.quit_clicked = False
             self.p = pyaudio.PyAudio()
@@ -78,12 +76,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 try:
                     data = self.stream.read(self.CHUNK)
                 except:
-                    self.label_4.setText('¿Àµğ¿ÀÀåÄ¡ÀÇ È£½ºÆ®¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.\nPC¸¦ ´Ù½Ã½ÃÀÛÇØÁÖ¼¼¿ä.')
-            self.label_4.setText('ÁØºñ°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù.')
+                    self.label_4.setText('ì˜¤ë””ì˜¤ì¥ì¹˜ì˜ í˜¸ìŠ¤íŠ¸ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\nPCë¥¼ ë‹¤ì‹œì‹œì‘í•´ì£¼ì„¸ìš”.')
+            self.label_4.setText('ì¤€ë¹„ê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.')
             self.setCursor(QtCore.Qt.ArrowCursor)
             self.open_mic()
         except:
-            self.label_4.setText('¸¶ÀÌÅ©¿¡ ¹®Á¦°¡ »ı°å½À´Ï´Ù.\nÈ®ÀÎÈÄ ´Ù½Ã ½ÇÇàÇØÁÖ¼¼¿ä.')
+            self.label_4.setText('ë§ˆì´í¬ì— ë¬¸ì œê°€ ìƒê²¼ìŠµë‹ˆë‹¤.\ní™•ì¸í›„ ë‹¤ì‹œ ì‹¤í–‰í•´ì£¼ì„¸ìš”.')
             return
             
     def setupUi(self):
@@ -119,7 +117,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.cam_viewer1.setGeometry(QtCore.QRect(self.program_width*0.01,self.program_width*0.1,self.program_width*0.34,self.program_width*0.1))
         self.cam_viewer1.setAlignment(QtCore.Qt.AlignCenter)
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/30))
         self.cam_viewer1.setFont(font)
         self.cam_viewer1.setValue(0)
@@ -137,7 +135,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_29 = QtWidgets.QPushButton(self.frame_2)
         self.pushButton_29.setGeometry(QtCore.QRect(0, self.program_height*0.2, self.program_width*0.3, self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.pushButton_29.setFont(font)
         self.pushButton_29.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -146,7 +144,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_2 = QtWidgets.QPushButton(self.frame_2)
         self.pushButton_2.setGeometry(QtCore.QRect(0, self.program_height*0.3, self.program_width*0.3, self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.pushButton_2.setFont(font)
         self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -156,7 +154,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_3 = QtWidgets.QPushButton(self.frame_2)
         self.pushButton_3.setGeometry(QtCore.QRect(0, self.program_height*0.4, self.program_width*0.3, self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.pushButton_3.setFont(font)
         self.pushButton_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -168,7 +166,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_4 = QtWidgets.QPushButton(self.frame_2)
         self.pushButton_4.setGeometry(QtCore.QRect(0, self.program_height*0.5, self.program_width*0.3, self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.pushButton_4.setFont(font)
         self.pushButton_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -181,7 +179,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_13 = QtWidgets.QPushButton(self.frame_2)
         self.pushButton_13.setGeometry(QtCore.QRect(0, self.program_height*0.6, self.program_width*0.3, self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.pushButton_13.setFont(font)
         self.pushButton_13.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -191,7 +189,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label_2.setGeometry(QtCore.QRect(self.program_width*0.48, self.program_height*0.03, self.program_width*0.44, self.program_height*0.06))
         self.label_2.setStyleSheet("background-color: rgb(194, 194, 194);border-style:solid;border-color:white;border-width:"+str(self.border_px)+"px;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
@@ -204,7 +202,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label_6 = QtWidgets.QLabel(self.centralwidget)
         self.label_6.setGeometry(QtCore.QRect(self.program_width*0.02, self.program_width*0.36+self.program_height*0.11, self.program_width*0.36, self.program_width*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_width/60))
         self.label_6.setFont(font)
         self.label_6.setStyleSheet("background-color:black;\n"
@@ -213,7 +211,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label = QtWidgets.QLineEdit(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(self.program_width*0.02, self.program_width*0.36+self.program_height*0.17, self.program_width*0.36, self.program_width*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_width/60))
         self.label.setFont(font)
         self.label.setStyleSheet("background-color: rgb(194, 194, 194);\n"
@@ -225,7 +223,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label_7 = QtWidgets.QLabel(self.centralwidget)
         self.label_7.setGeometry(QtCore.QRect(self.program_width*0.02, self.program_width*0.36+self.program_height*0.26, self.program_width*0.36, self.program_width*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_width/60))
         self.label_7.setFont(font)
         self.label_7.setStyleSheet("background-color:black;\n"
@@ -234,7 +232,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
         self.textEdit.setGeometry(QtCore.QRect(self.program_width*0.02, self.program_width*0.36+self.program_height*0.32, self.program_width*0.36, self.program_width*0.2))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_width/70))
         self.textEdit.setFont(font)
         self.textEdit.setStyleSheet("background-color: rgb(194, 194, 194);\n"
@@ -251,7 +249,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 "border-width:"+str(self.border_px)+"px;")
         self.pushButton_50 = QtWidgets.QPushButton(self.frame_23)
         self.pushButton_50.setGeometry(QtCore.QRect(self.program_width*0.02,self.program_height*0.01,self.program_width*0.32,self.program_height*0.06))
-        self.pushButton_50.setText('¼Ò ¸® µè ±â')
+        self.pushButton_50.setText('ì†Œ ë¦¬ ë“£ ê¸°')
         self.pushButton_50.setStyleSheet(
             "font-size:"+str(int(self.program_height/50))+"pt;"
             "background-color:rgb(170, 170, 255);"
@@ -385,7 +383,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.line = QtWidgets.QLineEdit(self.frame_22)
         self.line.setGeometry(QtCore.QRect(self.program_width*0.3, self.program_height*0.89, self.program_width*0.05, self.program_height*0.03))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_width/80))
         self.line.setFont(font)
         self.line.setAlignment(QtCore.Qt.AlignCenter)
@@ -407,7 +405,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             "border-width:"+str(self.border_px)+"px;"
             "border-radius:"+str(self.border_px*7)+"px;"
             )
-        self.pushButton_15.setText("EV3 ¿¬°áÇÏ±â")
+        self.pushButton_15.setText("EV3 ì—°ê²°í•˜ê¸°")
         
         self.frame_4 = QtWidgets.QFrame(self.frame_22)
         self.frame_4.setGeometry(QtCore.QRect(0, self.program_height*0.57, self.program_width*0.36, self.program_height*0.32))
@@ -418,9 +416,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_1.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_1.setText("1¹ø Å¬·¡½º")
+        self.la_1.setText("1ë²ˆ í´ë˜ìŠ¤")
         self.la_1.setFont(font)
         self.la_2 = QtWidgets.QLabel(self.frame_4)
         self.la_2.setGeometry(QtCore.QRect(0,self.program_height*0.038,self.program_width*0.095, self.program_height*0.038))
@@ -428,9 +426,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_2.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_2.setText("2¹ø Å¬·¡½º")
+        self.la_2.setText("2ë²ˆ í´ë˜ìŠ¤")
         self.la_2.setFont(font)
         self.la_3 = QtWidgets.QLabel(self.frame_4)
         self.la_3.setGeometry(QtCore.QRect(0,self.program_height*0.076,self.program_width*0.095, self.program_height*0.038))
@@ -438,9 +436,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_3.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_3.setText("3¹ø Å¬·¡½º")
+        self.la_3.setText("3ë²ˆ í´ë˜ìŠ¤")
         self.la_3.setFont(font)
         self.la_4 = QtWidgets.QLabel(self.frame_4)
         self.la_4.setGeometry(QtCore.QRect(0,self.program_height*0.114,self.program_width*0.095, self.program_height*0.038))
@@ -448,9 +446,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_4.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_4.setText("4¹ø Å¬·¡½º")
+        self.la_4.setText("4ë²ˆ í´ë˜ìŠ¤")
         self.la_4.setFont(font)
         self.la_5 = QtWidgets.QLabel(self.frame_4)
         self.la_5.setGeometry(QtCore.QRect(0,self.program_height*0.152,self.program_width*0.095, self.program_height*0.038))
@@ -458,9 +456,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_5.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_5.setText("5¹ø Å¬·¡½º")
+        self.la_5.setText("5ë²ˆ í´ë˜ìŠ¤")
         self.la_5.setFont(font)
         self.la_6 = QtWidgets.QLabel(self.frame_4)
         self.la_6.setGeometry(QtCore.QRect(0,self.program_height*0.190,self.program_width*0.095, self.program_height*0.038))
@@ -468,9 +466,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_6.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_6.setText("6¹ø Å¬·¡½º")
+        self.la_6.setText("6ë²ˆ í´ë˜ìŠ¤")
         self.la_6.setFont(font)
         self.la_7 = QtWidgets.QLabel(self.frame_4)
         self.la_7.setGeometry(QtCore.QRect(0,self.program_height*0.228,self.program_width*0.095, self.program_height*0.038))
@@ -478,9 +476,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_7.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_7.setText("7¹ø Å¬·¡½º")
+        self.la_7.setText("7ë²ˆ í´ë˜ìŠ¤")
         self.la_7.setFont(font)
         self.la_8 = QtWidgets.QLabel(self.frame_4)
         self.la_8.setGeometry(QtCore.QRect(0,self.program_height*0.266,self.program_width*0.095, self.program_height*0.038))
@@ -488,9 +486,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_8.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_8.setText("8¹ø Å¬·¡½º")
+        self.la_8.setText("8ë²ˆ í´ë˜ìŠ¤")
         self.la_8.setFont(font)
         self.bar_1 = QtWidgets.QProgressBar(self.frame_4)
         self.bar_1.setGeometry(QtCore.QRect(self.program_width*0.095,0,self.program_width*0.265,self.program_height*0.038))
@@ -524,7 +522,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             "background-color:black;\n"
             "color:white;"
             )
-        self.progress_label.setText("ÇĞ½À ÁøÇà »óÈ²")
+        self.progress_label.setText("í•™ìŠµ ì§„í–‰ ìƒí™©")
         self.progress_label.setAlignment(QtCore.Qt.AlignCenter)
         self.progress_bar = QtWidgets.QProgressBar(self.centralwidget)
         self.progress_bar.setGeometry(QtCore.QRect(self.program_width*1.03,self.program_height*0.91,self.program_width*0.34,self.program_height*0.06))
@@ -543,7 +541,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                          "border-width:"+str(self.border_px)+"px;\n"
                                          "border-radius:"+str(self.border_px*10)+"px;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/45))
         self.pushButton_8.setFont(font)
         self.pushButton_9 = QtWidgets.QPushButton(self.centralwidget)
@@ -556,7 +554,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                          "border-width:"+str(self.border_px)+"px;\n"
                                          "border-radius:"+str(self.border_px*7)+"px;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/55))
         self.pushButton_9.setFont(font)
         self.pushButton_10 = QtWidgets.QPushButton(self.centralwidget)
@@ -569,7 +567,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                          "border-width:"+str(self.border_px)+"px;\n"
                                          "border-radius:"+str(self.border_px*7)+"px;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/55))
         self.pushButton_10.setFont(font)
         self.pushButton_11 = QtWidgets.QPushButton(self.centralwidget)
@@ -582,7 +580,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                          "border-radius:"+str(self.border_px*7)+"px;")
         self.pushButton_11.setObjectName("pushButton_11")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/55))
         self.pushButton_11.setFont(font)
         self.pushButton_12 = QtWidgets.QPushButton(self.centralwidget)
@@ -595,14 +593,14 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                          "border-radius:"+str(self.border_px*7)+"px;")
         self.pushButton_12.setObjectName("pushButton_12")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/55))
         self.pushButton_12.setFont(font)
         self.label_5 = QtWidgets.QLabel(self.centralwidget)
         self.label_5.setGeometry(QtCore.QRect(self.program_width*0.42, self.program_height*0.84, self.program_width*0.56, self.program_height*0.04))
         self.label_5.setAlignment(QtCore.Qt.AlignCenter)
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.label_5.setFont(font)
         self.label_5.setStyleSheet("background-color: black;\n"
@@ -610,7 +608,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
         self.label_4.setGeometry(QtCore.QRect(self.program_width*0.42, self.program_height*0.88, self.program_width*0.56, self.program_height*0.11))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/60))
         self.label_4.setFont(font)
         self.label_4.setStyleSheet("background-color: rgb(194, 194, 194);\n"
@@ -642,21 +640,21 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
 
         self.label_2.setText("CLASS_1")
-        self.pushButton_2.setText("ÇÁ·ÎÁ§Æ® ºÒ·¯¿À±â")
-        self.pushButton_3.setText("ÇÁ·ÎÁ§Æ® ÀúÀåÇÏ±â")
-        self.pushButton_4.setText("¸ŞÀÎ¸Ş´º·Î ÀÌµ¿")
-        self.pushButton_8.setText("¼Ò ¸® ³ì À½ ÇÏ ±â")
-        self.pushButton_9.setText("»ç¿îµå ºÒ·¯¿À±â")
-        self.pushButton_10.setText("»ç¿îµå »èÁ¦ÇÏ±â")
-        self.pushButton_11.setText("Å¬·¡½º »èÁ¦ÇÏ±â")
-        self.pushButton_12.setText("ÇĞ½ÀÇÏ·¯°¡±â")
-        self.pushButton_13.setText("Á¾·áÇÏ±â")
-        self.label_6.setText("Å¬·¡½º ÀÌ¸§")
-        self.label_7.setText("Å¬·¡½º ¼³¸í")
+        self.pushButton_2.setText("í”„ë¡œì íŠ¸ ë¶ˆëŸ¬ì˜¤ê¸°")
+        self.pushButton_3.setText("í”„ë¡œì íŠ¸ ì €ì¥í•˜ê¸°")
+        self.pushButton_4.setText("ë©”ì¸ë©”ë‰´ë¡œ ì´ë™")
+        self.pushButton_8.setText("ì†Œ ë¦¬ ë…¹ ìŒ í•˜ ê¸°")
+        self.pushButton_9.setText("ì‚¬ìš´ë“œ ë¶ˆëŸ¬ì˜¤ê¸°")
+        self.pushButton_10.setText("ì‚¬ìš´ë“œ ì‚­ì œí•˜ê¸°")
+        self.pushButton_11.setText("í´ë˜ìŠ¤ ì‚­ì œí•˜ê¸°")
+        self.pushButton_12.setText("í•™ìŠµí•˜ëŸ¬ê°€ê¸°")
+        self.pushButton_13.setText("ì¢…ë£Œí•˜ê¸°")
+        self.label_6.setText("í´ë˜ìŠ¤ ì´ë¦„")
+        self.label_7.setText("í´ë˜ìŠ¤ ì„¤ëª…")
         self.label.setText("CLASS_1")
-        self.label_5.setText("¾Ë ¸² ÆÇ")
+        self.label_5.setText("ì•Œ ë¦¼ íŒ")
         self.textEdit.setText("")
-        self.pushButton_29.setText("»õ ÇÁ·ÎÁ§Æ®")
+        self.pushButton_29.setText("ìƒˆ í”„ë¡œì íŠ¸")
         
         self.frame_2.hide()
         
@@ -700,12 +698,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if len(self.clicked_label_position)==0:
-                self.label_4.setText("¼±ÅÃµÈ ¼Ò¸®°¡ ¾ø½À´Ï´Ù.\n"
-                                    "µè°íÀÚ ÇÏ´Â ¼Ò¸®¸¦ Å¬¸¯ÇØÁÖ¼¼¿ä")
+                self.label_4.setText("ì„ íƒëœ ì†Œë¦¬ê°€ ì—†ìŠµë‹ˆë‹¤.\n"
+                                    "ë“£ê³ ì í•˜ëŠ” ì†Œë¦¬ë¥¼ í´ë¦­í•´ì£¼ì„¸ìš”")
                 return
             elif len(self.clicked_label_position)>=2:
-                self.label_4.setText("¼±ÅÃµÈ ¼Ò¸®°¡ 2°³ ÀÌ»óÀÔ´Ï´Ù.\n"
-                                    "ÇÏ³ª¸¸ ¼±ÅÃÇØÁÖ¼¼¿ä")
+                self.label_4.setText("ì„ íƒëœ ì†Œë¦¬ê°€ 2ê°œ ì´ìƒì…ë‹ˆë‹¤.\n"
+                                    "í•˜ë‚˜ë§Œ ì„ íƒí•´ì£¼ì„¸ìš”")
                 return
             else:
                 try:
@@ -777,13 +775,13 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 aaa = dda.showModal()
                 if aaa:
                     self.ev3 = dda.ev3
-                    self.pushButton_15.setText("EV3 ¿¬°á²÷±â")
+                    self.pushButton_15.setText("EV3 ì—°ê²°ëŠê¸°")
                     self.connect = 1
             else:
                 self.connect = 0
                 self.ev3.write(ev3_message_converter.encodeMessage(ev3_message_converter.MessageType.Text, 'abc', '0'))
                 self.ev3.close()
-                self.pushButton_15.setText("EV3 ¿¬°áÇÏ±â")
+                self.pushButton_15.setText("EV3 ì—°ê²°í•˜ê¸°")
                 self.ev3 = None
         except BaseException as b:
             print(str(b))
@@ -793,7 +791,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.sound_data)+1 and len(self.class_sound)>0 and self.current_class>1:
                 self.sound_data.append(self.class_sound)
@@ -829,7 +827,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 "border-style:solid;\n"
                 "border-color:white;\n")
                 font = QtGui.QFont()
-                font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+                font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
                 font.setPointSize(int(self.program_height/40))
                 capture_label.setFont(font)
                 capture_label.setText(str(step+1))
@@ -843,7 +841,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"°³")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"ê°œ")
         except BaseException as b:
             print(str(b))
     def move_class_2(self):
@@ -851,7 +849,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.sound_data)+1 and len(self.class_sound)>0 and self.current_class>2:
                 self.sound_data.append(self.class_sound)
@@ -887,7 +885,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 "border-style:solid;\n"
                 "border-color:white;\n")
                 font = QtGui.QFont()
-                font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+                font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
                 font.setPointSize(int(self.program_height/40))
                 capture_label.setFont(font)
                 capture_label.setText(str(step+1))
@@ -901,7 +899,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"°³")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"ê°œ")
         except BaseException as b:
             print(str(b))
     def move_class_3(self):
@@ -909,7 +907,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.sound_data)+1 and len(self.class_sound)>0 and self.current_class>3:
                 self.sound_data.append(self.class_sound)
@@ -945,7 +943,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 "border-style:solid;\n"
                 "border-color:white;\n")
                 font = QtGui.QFont()
-                font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+                font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
                 font.setPointSize(int(self.program_height/40))
                 capture_label.setFont(font)
                 capture_label.setText(str(step+1))
@@ -959,7 +957,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"°³")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"ê°œ")
         except BaseException as b:
             print(str(b))
     def move_class_4(self):
@@ -967,7 +965,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.sound_data)+1 and len(self.class_sound)>0 and self.current_class>4:
                 self.sound_data.append(self.class_sound)
@@ -1003,7 +1001,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 "border-style:solid;\n"
                 "border-color:white;\n")
                 font = QtGui.QFont()
-                font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+                font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
                 font.setPointSize(int(self.program_height/40))
                 capture_label.setFont(font)
                 capture_label.setText(str(step+1))
@@ -1017,7 +1015,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"°³")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"ê°œ")
         except BaseException as b:
             print(str(b))
     def move_class_5(self):
@@ -1025,7 +1023,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.sound_data)+1 and len(self.class_sound)>0 and self.current_class>5:
                 self.sound_data.append(self.class_sound)
@@ -1061,7 +1059,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 "border-style:solid;\n"
                 "border-color:white;\n")
                 font = QtGui.QFont()
-                font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+                font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
                 font.setPointSize(int(self.program_height/40))
                 capture_label.setFont(font)
                 capture_label.setText(str(step+1))
@@ -1075,7 +1073,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"°³")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"ê°œ")
         except BaseException as b:
             print(str(b))
     def move_class_6(self):
@@ -1083,7 +1081,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.sound_data)+1 and len(self.class_sound)>0 and self.current_class>6:
                 self.sound_data.append(self.class_sound)
@@ -1119,7 +1117,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 "border-style:solid;\n"
                 "border-color:white;\n")
                 font = QtGui.QFont()
-                font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+                font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
                 font.setPointSize(int(self.program_height/40))
                 capture_label.setFont(font)
                 capture_label.setText(str(step+1))
@@ -1133,7 +1131,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"°³")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"ê°œ")
         except BaseException as b:
             print(str(b))
     def move_class_7(self):
@@ -1141,7 +1139,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.sound_data)+1 and len(self.class_sound)>0 and self.current_class>7:
                 self.sound_data.append(self.class_sound)
@@ -1177,7 +1175,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 "border-style:solid;\n"
                 "border-color:white;\n")
                 font = QtGui.QFont()
-                font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+                font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
                 font.setPointSize(int(self.program_height/40))
                 capture_label.setFont(font)
                 capture_label.setText(str(step+1))
@@ -1191,7 +1189,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"°³")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"ê°œ")
         except BaseException as b:
             print(str(b))
     def move_class_8(self):
@@ -1199,7 +1197,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.sound_data)+1 and len(self.class_sound)>0 and self.current_class>8:
                 self.sound_data.append(self.class_sound)
@@ -1233,7 +1231,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 "border-style:solid;\n"
                 "border-color:white;\n")
                 font = QtGui.QFont()
-                font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+                font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
                 font.setPointSize(int(self.program_height/40))
                 capture_label.setFont(font)
                 capture_label.setText(str(step+1))
@@ -1247,7 +1245,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"°³")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"ê°œ")
         except BaseException as b:
             print(str(b))   
     def change_button_name(self):
@@ -1271,7 +1269,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 elif self.current_class == 8:
                     self.pushButton_38.setText(self.label.text())
             else:
-                self.label_4.setText("Å¬·¡½ºÀÌ¸§Àº 16ÀÚÀÌ³»·Î ÀÛ¼ºÇØÁÖ¼¼¿ä")
+                self.label_4.setText("í´ë˜ìŠ¤ì´ë¦„ì€ 16ìì´ë‚´ë¡œ ì‘ì„±í•´ì£¼ì„¸ìš”")
                 self.label.setText("")
                 return
         except BaseException as b:
@@ -1285,11 +1283,11 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.t2.stop()
                 self.progress_bar.hide()
                 self.progress_label.hide()
-                self.pushButton_12.setText("ÇĞ½ÀÇÏ·¯ °¡±â")
+                self.pushButton_12.setText("í•™ìŠµí•˜ëŸ¬ ê°€ê¸°")
                 self.frame_23.show()
                 return
             if len(self.sound_data)<=1  and self.current_class==1:
-                self.label_4.setText('Å¬·¡½º°¡ 2°³ ÀÌ»óÀÌ¾î¾ß ÇÕ´Ï´Ù.')
+                self.label_4.setText('í´ë˜ìŠ¤ê°€ 2ê°œ ì´ìƒì´ì–´ì•¼ í•©ë‹ˆë‹¤.')
                 return
             if self.learning == 1:
                 return
@@ -1304,8 +1302,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.class_explain.append(self.textEdit.toPlainText())
                 for step in range(len(self.sound_data)):
                     if len(self.sound_data[step]) < 16:
-                        self.label_4.setText("ÀúÀåµÈ ¼Ò¸®°¡ 16°³ ÀÌ»óÀÌ¾î¾ß ÇÕ´Ï´Ù.\n"
-                                         "ÇöÀç CLASS_"+str(step+1)+" -> "+str(len(self.sound_data[step]))+"°³")
+                        self.label_4.setText("ì €ì¥ëœ ì†Œë¦¬ê°€ 16ê°œ ì´ìƒì´ì–´ì•¼ í•©ë‹ˆë‹¤.\n"
+                                         "í˜„ì¬ CLASS_"+str(step+1)+" -> "+str(len(self.sound_data[step]))+"ê°œ")
                         return
                 
                 aaa = sound_train_dialog.Ui_Dialog(self.sound_data)
@@ -1314,14 +1312,14 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     learning_rate = aaa.learning_rate
                     batch_size = aaa.batch_size
                     epoch_size = aaa.epoch_size
-                    self.label_4.setText('ÇĞ½À ÁßÀÔ´Ï´Ù.')
+                    self.label_4.setText('í•™ìŠµ ì¤‘ì…ë‹ˆë‹¤.')
                     try:
                         self.saved=0
                         self.learning += 1
                         self.frame_23.hide()
                         self.progress_bar.setValue(0)
                         self.progress_bar.show()
-                        self.pushButton_12.setText("ÇĞ½ÀÃë¼ÒÇÏ±â")
+                        self.pushButton_12.setText("í•™ìŠµì·¨ì†Œí•˜ê¸°")
                         self.progress_label.show()
                         self.t2 = predict_worker(self.sound_data,learning_rate,batch_size,epoch_size,len(self.sound_data))
                         self.t2.predictSignal.connect(self.receive_function)
@@ -1335,7 +1333,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     return
                 
             else:
-                tt = train_alam.Ui_Dialog('ÇöÀç ÇÁ·ÎÁ§Æ®¸¦\nÀúÀå ÇÏ½Ã°Ú½À´Ï±î?')
+                tt = train_alam.Ui_Dialog('í˜„ì¬ í”„ë¡œì íŠ¸ë¥¼\nì €ì¥ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?')
                 aa = tt.showModal()
                 if aa:
                     r= self.save_project()
@@ -1352,7 +1350,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.ev3.write(ev3_message_converter.encodeMessage(ev3_message_converter.MessageType.Text, 'abc', '0'))
                     self.ev3.close()
                     self.ev3 = None
-                self.pushButton_12.setText("ÇĞ½ÀÇÏ·¯°¡±â")
+                self.pushButton_12.setText("í•™ìŠµí•˜ëŸ¬ê°€ê¸°")
         except BaseException as b:
             print(str(b))
     @QtCore.pyqtSlot(int)        
@@ -1361,12 +1359,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     @QtCore.pyqtSlot()        
     def error_learning(self):
         try:
-            self.label_4.setText('ÇĞ½ÀµµÁß ¿¡·¯°¡ ¹ß»ıÇß½À´Ï´Ù.\n ´Ù½ÃÇØÁÖ¼¼¿ä.')
+            self.label_4.setText('í•™ìŠµë„ì¤‘ ì—ëŸ¬ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤.\n ë‹¤ì‹œí•´ì£¼ì„¸ìš”.')
             self.progress_bar.hide()
             self.progress_label.hide()
             self.frame_23.show()
             self.learning -= 1
-            self.pushButton_12.setText("ÇĞ½ÀÇÏ·¯°¡±â")
+            self.pushButton_12.setText("í•™ìŠµí•˜ëŸ¬ê°€ê¸°")
         except:
             pass
     @QtCore.pyqtSlot(list)
@@ -1396,8 +1394,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             self.preview += 1
             self.model = True
             self.frame_22.show()
-            self.label_4.setText('ÇĞ½ÀÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.')
-            self.pushButton_12.setText("¿¹Ãø ÁßÁö")
+            self.label_4.setText('í•™ìŠµì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.')
+            self.pushButton_12.setText("ì˜ˆì¸¡ ì¤‘ì§€")
         except BaseException as b:
             print(str(b))
             
@@ -1408,8 +1406,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if len(self.clicked_label_position)==0:
-                self.label_4.setText("¼±ÅÃµÈ ¼Ò¸®°¡ ¾ø½À´Ï´Ù.\n"
-                                    "Áö¿ì·Á´Â ¼Ò¸®¸¦ Å¬¸¯ÇØÁÖ¼¼¿ä")
+                self.label_4.setText("ì„ íƒëœ ì†Œë¦¬ê°€ ì—†ìŠµë‹ˆë‹¤.\n"
+                                    "ì§€ìš°ë ¤ëŠ” ì†Œë¦¬ë¥¼ í´ë¦­í•´ì£¼ì„¸ìš”")
                 return
             else:
                 self.clicked_label_position.sort()
@@ -1428,7 +1426,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                                 "border-style:solid;\n"
                                                 "border-color:white;\n")
                     font = QtGui.QFont()
-                    font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+                    font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
                     font.setPointSize(int(self.program_height/40))
                     capture_label.setFont(font)
                     capture_label.setText(str(step+1))
@@ -1442,7 +1440,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.table.scrollToBottom()
                 if len(self.class_sound)==0:
                     self.delete_class()
-                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"°³")
+                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"ê°œ")
         except BaseException as b:
             print(str(b))
     def clicked_sound(self, row, col):
@@ -1515,7 +1513,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                             wf = wave.open(paths[step], 'rb')
                             wf.close()
                         except:
-                            self.label_4.setText(".wav ÆÄÀÏ¸¸ ¼±ÅÃÇØÁÖ¼¼¿ä")
+                            self.label_4.setText(".wav íŒŒì¼ë§Œ ì„ íƒí•´ì£¼ì„¸ìš”")
                             return
                     
                     long_play_file = ''
@@ -1531,11 +1529,11 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                         norm_S = self.normalize(log_S,min_level_db)
                         if len(norm_S[0])>63:
                             if long_play_file == '':
-                                long_play_file = str(step+1)+'¹ø'
+                                long_play_file = str(step+1)+'ë²ˆ'
                             elif len(long_play_file) > 25:
-                                long_play_file = long_play_file + '\n'+str(step+1)+'¹ø'
+                                long_play_file = long_play_file + '\n'+str(step+1)+'ë²ˆ'
                             else:
-                                long_play_file = long_play_file + ', '+str(step+1)+'¹ø'
+                                long_play_file = long_play_file + ', '+str(step+1)+'ë²ˆ'
                         sound_data = norm_S[:,0:63]
                         if len(sound_data[0])==63:
                             mfccs = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=80)
@@ -1555,7 +1553,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     "border-style:solid;\n"
                     "border-color:white;\n")
                                 font = QtGui.QFont()
-                                font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+                                font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
                                 font.setPointSize(int(self.program_height/40))
                                 capture_label.setFont(font)
                                 capture_label.setText(str(len(self.class_sound)))
@@ -1567,12 +1565,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                     self.table.setRowHeight(self.table_row-1,self.program_height*0.09)
                                     self.table.setCellWidget(self.table_row-1,0,capture_label)
                                     self.table.scrollToBottom()
-                                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"°³")
+                                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"ê°œ")
                             else:
-                                self.label_4.setText(str(step)+'¹ø ÆÄÀÏ¿¡¼­ µ¥ÀÌÅÍÃ³¸®½Ã ¿À·ù°¡ ³³´Ï´Ù.')
+                                self.label_4.setText(str(step)+'ë²ˆ íŒŒì¼ì—ì„œ ë°ì´í„°ì²˜ë¦¬ì‹œ ì˜¤ë¥˜ê°€ ë‚©ë‹ˆë‹¤.')
                                 return
                     if long_play_file!='':
-                        self.label_4.setText('Àç»ı½Ã°£ÀÌ ±ä ÆÄÀÏÀÌ ÀÖ½À´Ï´Ù./n'+long_play_file+'ÆÄÀÏ ÀÔ´Ï´Ù.')
+                        self.label_4.setText('ì¬ìƒì‹œê°„ì´ ê¸´ íŒŒì¼ì´ ìˆìŠµë‹ˆë‹¤./n'+long_play_file+'íŒŒì¼ ì…ë‹ˆë‹¤.')
         except BaseException as b:
             print(str(b))
     def delete_class(self):
@@ -1637,7 +1635,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                                     "border-style:solid;\n"
                                                     "border-color:white;\n")
                         font = QtGui.QFont()
-                        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+                        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
                         font.setPointSize(int(self.program_height/40))
                         capture_label.setFont(font)
                         capture_label.setText(str(step+1))
@@ -1649,7 +1647,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                             self.table.setRowHeight(self.table_row-1,self.program_height*0.09)
                             self.table.setCellWidget(self.table_row-1,0,capture_label)
                     self.table.scrollToBottom()
-                    self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"°³")
+                    self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"ê°œ")
         except BaseException as b:
             print(str(b))
     def go_next_class(self):
@@ -1657,7 +1655,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if len(self.sound_data)>self.current_class:
                 self.clicked_label_position = []
@@ -1682,7 +1680,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                                 "border-style:solid;\n"
                                                 "border-color:white;\n")
                     font = QtGui.QFont()
-                    font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+                    font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
                     font.setPointSize(int(self.program_height/40))
                     capture_label.setFont(font)
                     capture_label.setText(str(step+1))
@@ -1697,10 +1695,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.current_class = self.current_class+1
                 self.label.setText(self.class_name[self.current_class-1])
                 self.textEdit.setText(self.class_explain[self.current_class-1])
-                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"°³")
+                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"ê°œ")
             else:
                 if self.current_class == 8:
-                    self.label_4.setText("Å¬·¡½º´Â 8°³±îÁö »ı¼ºÇÒ¼ö ÀÖ½À´Ï´Ù.")
+                    self.label_4.setText("í´ë˜ìŠ¤ëŠ” 8ê°œê¹Œì§€ ìƒì„±í• ìˆ˜ ìˆìŠµë‹ˆë‹¤.")
                     return
                 self.clicked_label_position = []
                 if self.current_class==len(self.sound_data)+1 and len(self.class_sound)>0:
@@ -1740,7 +1738,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.label_2.setText("CLASS_"+str(self.current_class))
                     self.frame_23.resize(QtCore.QSize(self.program_width*0.36,self.program_height*0.17+((self.current_class-1)*self.program_height*0.08)))
                 else:
-                    self.label_4.setText("ÇöÀç Å¬·¡½º¿¡ ¼Ò¸®°¡ ÀÖ¾î¾ßÇÕ´Ï´Ù.")
+                    self.label_4.setText("í˜„ì¬ í´ë˜ìŠ¤ì— ì†Œë¦¬ê°€ ìˆì–´ì•¼í•©ë‹ˆë‹¤.")
                     return
         except BaseException as b:
             print(str(b))
@@ -1749,10 +1747,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==1:
-                self.label_4.setText("Ã¹¹øÂ° Å¬·¡½ºÀÔ´Ï´Ù.")
+                self.label_4.setText("ì²«ë²ˆì§¸ í´ë˜ìŠ¤ì…ë‹ˆë‹¤.")
                 return
             else:
                 self.clicked_label_position = []
@@ -1787,7 +1785,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                                 "border-style:solid;\n"
                                                 "border-color:white;\n")
                     font = QtGui.QFont()
-                    font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+                    font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
                     font.setPointSize(int(self.program_height/40))
                     capture_label.setFont(font)
                     capture_label.setText(str(step+1))
@@ -1801,7 +1799,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.table.scrollToBottom()
                 self.label.setText(self.class_name[self.current_class-1])
                 self.textEdit.setText(self.class_explain[self.current_class-1])
-                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"°³")
+                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"ê°œ")
         except BaseException as b:
             print(str(b))
     def append_table(self,image_label):
@@ -1860,17 +1858,17 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     "border-style:solid;\n"
                     "border-color:white;\n")
                                 font = QtGui.QFont()
-                                font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+                                font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
                                 font.setPointSize(int(self.program_height/40))
                                 capture_label.setFont(font)
                                 capture_label.setText(str(len(self.class_sound)))
                                 self.append_table(capture_label)
-                                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"°³")
+                                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"ê°œ")
                             else:
-                                self.label_4.setText("³ìÀ½ÀÌ Á¦´ë·Î ¾ÈµÆ½À´Ï´Ù.")
+                                self.label_4.setText("ë…¹ìŒì´ ì œëŒ€ë¡œ ì•ˆëìŠµë‹ˆë‹¤.")
                             self.cam_viewer1.setValue(0)
                             self.capture_checked = 0
-                            self.pushButton_8.setText("¼Ò ¸® ³ì À½ ÇÏ ±â")
+                            self.pushButton_8.setText("ì†Œ ë¦¬ ë…¹ ìŒ í•˜ ê¸°")
                             check_frame = []
                     
                     elif self.preview == 1:
@@ -1925,7 +1923,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def menu_show_event(self):
         try:
             if self.capture_checked:
-                self.label_4.setText("»çÁø ÃÔ¿µ Áß¿¡´Â ´Ù¸¥ °ÍÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù!!")
+                self.label_4.setText("ì‚¬ì§„ ì´¬ì˜ ì¤‘ì—ëŠ” ë‹¤ë¥¸ ê²ƒì„ í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤!!")
                 return
             else:
                 if self.menu_clicked==1:
@@ -1968,10 +1966,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def exit(self):
         try:
             if self.learning==1:
-                self.label_4.setText('ÇĞ½À Áß¿¡´Â ¾ÈµË´Ï´Ù.')
+                self.label_4.setText('í•™ìŠµ ì¤‘ì—ëŠ” ì•ˆë©ë‹ˆë‹¤.')
                 return
             if self.saved ==0:
-                tt = train_alam.Ui_Dialog('ÇöÀç ÇÁ·ÎÁ§Æ®¸¦\nÀúÀå ÇÏ½Ã°Ú½À´Ï±î?')
+                tt = train_alam.Ui_Dialog('í˜„ì¬ í”„ë¡œì íŠ¸ë¥¼\nì €ì¥ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?')
                 aa = tt.showModal()
                 if aa:
                     r= self.save_project()
@@ -2003,9 +2001,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             try:
                 if self.capture_checked==0:
                     self.capture_checked = 1 - self.capture_checked
-                    self.pushButton_8.setText("¼Ò ¸® ³ì À½ Áß")
+                    self.pushButton_8.setText("ì†Œ ë¦¬ ë…¹ ìŒ ì¤‘")
                 else:
-                    self.label_4.setText("³ìÀ½ Áß ÀÔ´Ï´Ù.")
+                    self.label_4.setText("ë…¹ìŒ ì¤‘ ì…ë‹ˆë‹¤.")
             except BaseException as b:
                 print(str(b))
         except BaseException as b:
@@ -2020,7 +2018,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.pushButton.move(self.program_width*0.02,self.program_width*0.02)
                 self.menu_clicked = 1 - self.menu_clicked
             if self.capture_checked:
-                self.label_4.setText("¼Ò¸® ³ìÀ½ Áß¿¡´Â ´Ù¸¥ °ÍÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù!!")
+                self.label_4.setText("ì†Œë¦¬ ë…¹ìŒ ì¤‘ì—ëŠ” ë‹¤ë¥¸ ê²ƒì„ í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤!!")
                 return True
             else:
                 self.label_4.setText("")
@@ -2036,7 +2034,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.pushButton.move(self.program_width*0.02,self.program_width*0.02)
                 self.menu_clicked = 1 - self.menu_clicked
             if self.preview:
-                self.label_4.setText("¿¹Ãø Áß¿¡´Â ÇÒ¼ö ¾ø½À´Ï´Ù.")
+                self.label_4.setText("ì˜ˆì¸¡ ì¤‘ì—ëŠ” í• ìˆ˜ ì—†ìŠµë‹ˆë‹¤.")
                 return True
             else:
                 self.label_4.setText("")
@@ -2094,12 +2092,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def save_project(self):
         try:
             if self.learning==1:
-                self.label_4.setText('ÇĞ½ÀÁß¿¡´Â ¾ÈµË´Ï´Ù.')
+                self.label_4.setText('í•™ìŠµì¤‘ì—ëŠ” ì•ˆë©ë‹ˆë‹¤.')
                 return
             if self.check_capture():
                 return
             if self.saved==1:
-                self.label_4.setText('ÇĞ½À ÈÄ¿¡ ÀúÀåÀÌ °¡´ÉÇÕ´Ï´Ù.')
+                self.label_4.setText('í•™ìŠµ í›„ì— ì €ì¥ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤.')
                 return
             else:
                 file_dialog = QFileDialog()
@@ -2162,7 +2160,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                                             try:
                                                                 self.make_dir(path)
                                                             except:
-                                                                self.label_4.setText("ÇØ´ç °æ·ÎÀÇ ´Ù¸¥ ÇÁ·ÎÁ§Æ®¸¦ Áö¿öÁÖ¼¼¿ä!")
+                                                                self.label_4.setText("í•´ë‹¹ ê²½ë¡œì˜ ë‹¤ë¥¸ í”„ë¡œì íŠ¸ë¥¼ ì§€ì›Œì£¼ì„¸ìš”!")
                                                                 return 'e'
                     sound_path = path+"/sound"
                     sound_file = np.asarray(self.sound_data)
@@ -2177,7 +2175,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     explain_file = np.asarray(self.class_explain)
                     np.save(explain_path,explain_file)
                     self.saved = 1
-                    al = alam.Ui_Dialog('ÀúÀåµÇ¾ú½À´Ï´Ù.')
+                    al = alam.Ui_Dialog('ì €ì¥ë˜ì—ˆìŠµë‹ˆë‹¤.')
                     ala = al.showModal()
                     if ala:
                         return 'y'
@@ -2188,16 +2186,16 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def load_project(self):
         try:
             if self.learning==1:
-                self.label_4.setText('ÇĞ½ÀÁß¿¡´Â ¾ÈµË´Ï´Ù.')
+                self.label_4.setText('í•™ìŠµì¤‘ì—ëŠ” ì•ˆë©ë‹ˆë‹¤.')
                 return
             if self.check_capture():
-                self.label_4.setText('³ìÀ½Áß¿¡´Â ºÒ·¯¿Ã¼ö ¾ø½À´Ï´Ù.')
+                self.label_4.setText('ë…¹ìŒì¤‘ì—ëŠ” ë¶ˆëŸ¬ì˜¬ìˆ˜ ì—†ìŠµë‹ˆë‹¤.')
                 return
             if self.connect == 1:
-                self.label_4.setText('EV3 ¿¬°áÁß¿¡´Â ¾ÈµË´Ï´Ù.')
+                self.label_4.setText('EV3 ì—°ê²°ì¤‘ì—ëŠ” ì•ˆë©ë‹ˆë‹¤.')
                 return
             if self.saved ==0:
-                tt = train_alam.Ui_Dialog('ÇöÀç ÇÁ·ÎÁ§Æ®¸¦\nÀúÀå ÇÏ½Ã°Ú½À´Ï±î?')
+                tt = train_alam.Ui_Dialog('í˜„ì¬ í”„ë¡œì íŠ¸ë¥¼\nì €ì¥ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?')
                 aa = tt.showModal()
                 if aa:
                     r= self.save_project()
@@ -2215,7 +2213,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     class_name = np.load(paths[0]+"/name.npy",allow_pickle=True).tolist()
                     class_explain = np.load(paths[0]+"/explain.npy",allow_pickle=True).tolist()
                 except:
-                    self.label_4.setText("¼±ÅÃÇÑ ÇÁ·ÎÁ§Æ®¿¡ ÆÄÀÏÀÌ ¾ø°Å³ª\nÇÁ·ÎÁ§Æ®°¡ ¾Æ´Õ´Ï´Ù.")
+                    self.label_4.setText("ì„ íƒí•œ í”„ë¡œì íŠ¸ì— íŒŒì¼ì´ ì—†ê±°ë‚˜\ní”„ë¡œì íŠ¸ê°€ ì•„ë‹™ë‹ˆë‹¤.")
                     return
                 self.model = False
                 self.sound_data = sound_data
@@ -2242,7 +2240,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                                     "border-style:solid;\n"
                                                     "border-color:white;\n")
                         font = QtGui.QFont()
-                        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+                        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
                         font.setPointSize(int(self.program_height/40))
                         capture_label.setFont(font)
                         capture_label.setText(str(step+1))
@@ -2258,8 +2256,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.preview = 0
                     self.label.setText(self.class_name[0])
                     self.textEdit.setText(self.class_explain[0])
-                    self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"°³")
-                    self.pushButton_12.setText("¿¹Ãø ÁßÁö")
+                    self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_sound))+"ê°œ")
+                    self.pushButton_12.setText("ì˜ˆì¸¡ ì¤‘ì§€")
                     self.table.scrollToBottom()
                     self.frame_23.resize(QtCore.QSize(self.program_width*0.36,self.program_height*0.085+(len(self.class_name)*self.program_height*0.08)))
                     self.pushButton_31.setText(self.class_name[0])
@@ -2281,12 +2279,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def new_project(self):
         try:
             if self.learning==1:
-                self.label_4.setText('ÇĞ½ÀÁß¿¡´Â ¾ÈµË´Ï´Ù.')
+                self.label_4.setText('í•™ìŠµì¤‘ì—ëŠ” ì•ˆë©ë‹ˆë‹¤.')
                 return
             if self.capture_checked:
                 return
             if self.saved ==0:
-                tt = train_alam.Ui_Dialog('ÇöÀç ÇÁ·ÎÁ§Æ®¸¦\nÀúÀå ÇÏ½Ã°Ú½À´Ï±î?')
+                tt = train_alam.Ui_Dialog('í˜„ì¬ í”„ë¡œì íŠ¸ë¥¼\nì €ì¥ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?')
                 aa = tt.showModal()
                 if aa:
                     r= self.save_project()
@@ -2339,25 +2337,25 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             self.pushButton_37.setText('CLASS_7')
             self.pushButton_38.setText('CLASS_8')
             self.label_2.setText("CLASS_1")
-            self.pushButton_2.setText("ÇÁ·ÎÁ§Æ® ºÒ·¯¿À±â")
-            self.pushButton_3.setText("ÇÁ·ÎÁ§Æ® ÀúÀåÇÏ±â")
-            self.pushButton_4.setText("¸ŞÀÎ¸Ş´º·Î ÀÌµ¿")
-            self.pushButton_8.setText("¼Ò ¸® ³ì À½ ÇÏ ±â")
-            self.pushButton_9.setText("»ç¿îµå ºÒ·¯¿À±â")
-            self.pushButton_10.setText("»ç¿îµå »èÁ¦ÇÏ±â")
-            self.pushButton_11.setText("Å¬·¡½º »èÁ¦ÇÏ±â")
-            self.pushButton_12.setText("ÇĞ½ÀÇÏ·¯°¡±â")
-            self.pushButton_13.setText("Á¾·áÇÏ±â")
-            self.label_6.setText("Å¬·¡½º ÀÌ¸§")
-            self.label_7.setText("Å¬·¡½º ¼³¸í")
+            self.pushButton_2.setText("í”„ë¡œì íŠ¸ ë¶ˆëŸ¬ì˜¤ê¸°")
+            self.pushButton_3.setText("í”„ë¡œì íŠ¸ ì €ì¥í•˜ê¸°")
+            self.pushButton_4.setText("ë©”ì¸ë©”ë‰´ë¡œ ì´ë™")
+            self.pushButton_8.setText("ì†Œ ë¦¬ ë…¹ ìŒ í•˜ ê¸°")
+            self.pushButton_9.setText("ì‚¬ìš´ë“œ ë¶ˆëŸ¬ì˜¤ê¸°")
+            self.pushButton_10.setText("ì‚¬ìš´ë“œ ì‚­ì œí•˜ê¸°")
+            self.pushButton_11.setText("í´ë˜ìŠ¤ ì‚­ì œí•˜ê¸°")
+            self.pushButton_12.setText("í•™ìŠµí•˜ëŸ¬ê°€ê¸°")
+            self.pushButton_13.setText("ì¢…ë£Œí•˜ê¸°")
+            self.label_6.setText("í´ë˜ìŠ¤ ì´ë¦„")
+            self.label_7.setText("í´ë˜ìŠ¤ ì„¤ëª…")
             self.label.setText("CLASS_1")
-            self.label_5.setText("¾Ë ¸² ÆÇ")
+            self.label_5.setText("ì•Œ ë¦¼ íŒ")
             self.textEdit.setText("")
-            self.pushButton_29.setText("»õ ÇÁ·ÎÁ§Æ®")
+            self.pushButton_29.setText("ìƒˆ í”„ë¡œì íŠ¸")
             self.frame_22.hide()
             self.frame_23.resize(QtCore.QSize(self.program_width*0.36,self.program_height*0.1))
             self.frame_23.show()
-            self.label_4.setText('»õ·Î¿î ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.')
+            self.label_4.setText('ìƒˆë¡œìš´ í”„ë¡œì íŠ¸ì…ë‹ˆë‹¤.')
         except BaseException as b:
             print(str(b))    
         
@@ -2477,4 +2475,3 @@ class predict_worker(QtCore.QThread):
         
     def normalize(self,S,min_level_db):
         return np.clip((S - min_level_db) / -min_level_db, 0, 1)
-

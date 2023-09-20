@@ -1,5 +1,3 @@
-# -*- coding: euc-kr -*-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 import ctypes
 import custom_widgets as cw
@@ -88,7 +86,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label = QtWidgets.QLabel(self)
         self.label.setGeometry(QtCore.QRect(self.program_width*0.67,self.program_height*0.15,self.program_width*0.25,self.program_height*0.1))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.label.setFont(font)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
@@ -101,7 +99,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label_2 = QtWidgets.QLabel(self)
         self.label_2.setGeometry(QtCore.QRect(self.program_width*0.67,self.program_height*0.3,self.program_width*0.25,self.program_height*0.1))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.label_2.setFont(font)
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
@@ -114,7 +112,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label_3 = QtWidgets.QLabel(self)
         self.label_3.setGeometry(QtCore.QRect(self.program_width*0.67,self.program_height*0.45,self.program_width*0.25,self.program_height*0.1))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.label_3.setFont(font)
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
@@ -127,7 +125,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label_4 = QtWidgets.QLabel(self)
         self.label_4.setGeometry(QtCore.QRect(self.program_width*0.67,self.program_height*0.6,self.program_width*0.25,self.program_height*0.1))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.label_4.setFont(font)
         self.label_4.setAlignment(QtCore.Qt.AlignCenter)
@@ -143,7 +141,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         font_pt = int(self.program_width/60)
         self.pushButton_3.setStyleSheet("border:none;\n"
 "background-color: rgba(0, 0, 0, 0);\n"
-"font: "+str(font_pt)+"pt \"ÈŞ¸Õ¿¢½ºÆ÷\";"
+"font: "+str(font_pt)+"pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\";"
 "color:white;")
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_4 = QtWidgets.QPushButton(self)
@@ -151,7 +149,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_4.setStyleSheet("border:none;\n"
 "background-color: rgba(0, 0, 0, 0);\n"
 "color:white;\n"
-"font: "+str(font_pt)+"pt \"ÈŞ¸Õ¿¢½ºÆ÷\";")
+"font: "+str(font_pt)+"pt \"íœ´ë¨¼ì—‘ìŠ¤í¬\";")
         self.pushButton_4.setText("")
         self.pushButton_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_4.setObjectName("pushButton_4")
@@ -163,8 +161,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             self.player_pannel.move(0,137)
             self.ball.move(317,195)
         
-        self.pushButton_3.setText("ÀÌÀü")
-        self.pushButton_4.setText("Á¾·á")
+        self.pushButton_3.setText("ì´ì „")
+        self.pushButton_4.setText("ì¢…ë£Œ")
         
         
         self.pushButton_3.clicked.connect(self.go_back)
@@ -204,7 +202,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def play_ball(self):
         try:
             self.round += 1
-            self.label.setText("ÇöÀç ¶ó¿îµå: "+str(self.round)+"¶ó¿îµå")
+            self.label.setText("í˜„ì¬ ë¼ìš´ë“œ: "+str(self.round)+"ë¼ìš´ë“œ")
             self.label_2.setText("")
             self.label_3.setText("")
             self.label_4.setText("")
@@ -250,7 +248,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             self.ai_pannel.move(629,0)
             self.ai_pannel.y = 0
             self.ball.move(317,195)
-        ui = train_alam.Ui_Dialog('°ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù.')
+        ui = train_alam.Ui_Dialog('ê²Œì„ì„ ì‹œì‘í•©ë‹ˆë‹¤.')
         aa = ui.showModal()
         if aa:
             self.play_ball()
@@ -260,7 +258,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     @QtCore.pyqtSlot()
     def game_over(self):
         try:
-            over = train_alam.Ui_Dialog('µµ´ŞÇÑ ÃÖ´ë ¶ó¿îµå´Â '+str(self.round)+'¶ó¿îµåÀÔ´Ï´Ù.\n´Ù½ÃÇÏ½Ã°Ú½À´Ï±î?')
+            over = train_alam.Ui_Dialog('ë„ë‹¬í•œ ìµœëŒ€ ë¼ìš´ë“œëŠ” '+str(self.round)+'ë¼ìš´ë“œì…ë‹ˆë‹¤.\në‹¤ì‹œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?')
             aa = over.showModal()
             if aa:
                 self.restart()
@@ -285,8 +283,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def move_ball(self,data):
         try:
             self.ball.move(data[0],data[1])
-            self.label_3.setText("°øÀÇ °¢µµ : "+str(data[2]))
-            self.label_4.setText("°øÀÇ ¼Óµµ: "+str(data[3]))
+            self.label_3.setText("ê³µì˜ ê°ë„ : "+str(data[2]))
+            self.label_4.setText("ê³µì˜ ì†ë„: "+str(data[3]))
         except BaseException as b:
             print(str(b))
             
@@ -398,7 +396,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     move_point = []
                     move_point.append(ball_x)
                     move_point.append(ball_y)
-                self.label_2.setText("°øÀÇ ¿¹»ó ÁÂÇ¥ : "+str(int(move_point[1])))
+                self.label_2.setText("ê³µì˜ ì˜ˆìƒ ì¢Œí‘œ : "+str(int(move_point[1])))
                 self.ai_pannel.move(move_point[0],int(move_point[1])-85)
                 self.ai_pannel.y = int(move_point[1])-85
             else:
@@ -416,7 +414,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     move_point = []
                     move_point.append(ball_x)
                     move_point.append(ball_y)
-                self.label_2.setText("°øÀÇ ¿¹»ó ÁÂÇ¥ : "+str(int(move_point[1])))
+                self.label_2.setText("ê³µì˜ ì˜ˆìƒ ì¢Œí‘œ : "+str(int(move_point[1])))
                 self.ai_pannel.move(move_point[0],int(move_point[1])-65)
                 self.ai_pannel.y = int(move_point[1])-65
         except BaseException as b:
@@ -704,4 +702,3 @@ class ball_coord(QtCore.QThread):
                     num = random.randint(10,40)
                     self.angle = num
                 continue
-    

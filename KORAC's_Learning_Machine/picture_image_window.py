@@ -1,5 +1,3 @@
-# -*- coding: euc-kr -*-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 import custom_widgets as cw
 import cv2
@@ -58,7 +56,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.quit_clicked = False
         try:
             self.setCursor(QtCore.Qt.BusyCursor)
-            self.label_4.setText('±â´Ù·ÁÁÖ¼¼¿ä. ÁØºñÁßÀÔ´Ï´Ù.')
+            self.label_4.setText('ê¸°ë‹¤ë ¤ì£¼ì„¸ìš”. ì¤€ë¹„ì¤‘ì…ë‹ˆë‹¤.')
             self.cam = cv2.VideoCapture(0)
             if self.program_width*0.34 < 480:
                 self.cam.set(3,640) 
@@ -68,25 +66,25 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.cam.set(4,540)
         except BaseException as b:
             print(str(b))
-            self.label_4.setText("Ä·À» Ã£Áö ¸øÇß½À´Ï´Ù.")
+            self.label_4.setText("ìº ì„ ì°¾ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.")
             
         try:
             _, image = self.cam.read()
             self.height, self.width = image.shape[:2]
         except BaseException as b:
             print(str(b))
-            self.label_4.setText("Ä·¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù.")
+            self.label_4.setText("ìº ì— ë¬¸ì œê°€ ìˆìŠµë‹ˆë‹¤.")
         
         try:
             self.VideoSignal1.connect(self.cam_viewer1.setImage)
             self.VideoSignal2.connect(self.cam_viewer2.setImage)
             self.MessageSignal.connect(self.send_msg_ev3)
-            self.label_4.setText('ÁØºñ°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù.')
+            self.label_4.setText('ì¤€ë¹„ê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.')
             self.setCursor(QtCore.Qt.ArrowCursor)
             self.show_video()
         except BaseException as b:
             print(str(b))
-            self.label_4.setText("Ä·ÀÇ ½Ã±×³ÎÀÌ ¸ØÃè½À´Ï´Ù. Àç½ÃÀÛÇØÁÖ¼¼¿ä.")
+            self.label_4.setText("ìº ì˜ ì‹œê·¸ë„ì´ ë©ˆì·„ìŠµë‹ˆë‹¤. ì¬ì‹œì‘í•´ì£¼ì„¸ìš”.")
             
     def setupUi(self):
         screen_height = ctypes.windll.user32.GetSystemMetrics(1)
@@ -131,7 +129,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_29 = QtWidgets.QPushButton(self.frame_2)
         self.pushButton_29.setGeometry(QtCore.QRect(0, self.program_height*0.2, self.program_width*0.3, self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.pushButton_29.setFont(font)
         self.pushButton_29.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -140,7 +138,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_2 = QtWidgets.QPushButton(self.frame_2)
         self.pushButton_2.setGeometry(QtCore.QRect(0, self.program_height*0.3, self.program_width*0.3, self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.pushButton_2.setFont(font)
         self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -150,7 +148,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_3 = QtWidgets.QPushButton(self.frame_2)
         self.pushButton_3.setGeometry(QtCore.QRect(0, self.program_height*0.4, self.program_width*0.3, self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.pushButton_3.setFont(font)
         self.pushButton_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -162,7 +160,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_4 = QtWidgets.QPushButton(self.frame_2)
         self.pushButton_4.setGeometry(QtCore.QRect(0, self.program_height*0.5, self.program_width*0.3, self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.pushButton_4.setFont(font)
         self.pushButton_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -175,7 +173,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_13 = QtWidgets.QPushButton(self.frame_2)
         self.pushButton_13.setGeometry(QtCore.QRect(0, self.program_height*0.6, self.program_width*0.3, self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.pushButton_13.setFont(font)
         self.pushButton_13.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -185,7 +183,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label_2.setGeometry(QtCore.QRect(self.program_width*0.48, self.program_height*0.03, self.program_width*0.44, self.program_height*0.06))
         self.label_2.setStyleSheet("background-color: rgb(194, 194, 194);border-style:solid;border-color:white;border-width:"+str(self.border_px)+"px;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
@@ -198,7 +196,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label_6 = QtWidgets.QLabel(self.centralwidget)
         self.label_6.setGeometry(QtCore.QRect(self.program_width*0.02, self.program_width*0.36+self.program_height*0.11, self.program_width*0.36, self.program_width*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_width/60))
         self.label_6.setFont(font)
         self.label_6.setStyleSheet("background-color:black;\n"
@@ -207,7 +205,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label = QtWidgets.QLineEdit(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(self.program_width*0.02, self.program_width*0.36+self.program_height*0.17, self.program_width*0.36, self.program_width*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_width/60))
         self.label.setFont(font)
         self.label.setStyleSheet("background-color: rgb(194, 194, 194);\n"
@@ -219,7 +217,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label_7 = QtWidgets.QLabel(self.centralwidget)
         self.label_7.setGeometry(QtCore.QRect(self.program_width*0.02, self.program_width*0.36+self.program_height*0.26, self.program_width*0.36, self.program_width*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_width/60))
         self.label_7.setFont(font)
         self.label_7.setStyleSheet("background-color:black;\n"
@@ -228,7 +226,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
         self.textEdit.setGeometry(QtCore.QRect(self.program_width*0.02, self.program_width*0.36+self.program_height*0.32, self.program_width*0.36, self.program_width*0.2))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_width/70))
         self.textEdit.setFont(font)
         self.textEdit.setStyleSheet("background-color: rgb(194, 194, 194);\n"
@@ -371,7 +369,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.line = QtWidgets.QLineEdit(self.frame_22)
         self.line.setGeometry(QtCore.QRect(self.program_width*0.3, self.program_height*0.89, self.program_width*0.05, self.program_height*0.03))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_width/80))
         self.line.setFont(font)
         self.line.setAlignment(QtCore.Qt.AlignCenter)
@@ -393,7 +391,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             "border-width:"+str(self.border_px)+"px;"
             "border-radius:"+str(self.border_px*7)+"px;"
             )
-        self.pushButton_15.setText("EV3 ¿¬°áÇÏ±â")
+        self.pushButton_15.setText("EV3 ì—°ê²°í•˜ê¸°")
         
         self.frame_4 = QtWidgets.QFrame(self.frame_22)
         self.frame_4.setGeometry(QtCore.QRect(0, self.program_height*0.57, self.program_width*0.36, self.program_height*0.32))
@@ -404,9 +402,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_1.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_1.setText("1¹ø Å¬·¡½º")
+        self.la_1.setText("1ë²ˆ í´ë˜ìŠ¤")
         self.la_1.setFont(font)
         self.la_2 = QtWidgets.QLabel(self.frame_4)
         self.la_2.setGeometry(QtCore.QRect(0,self.program_height*0.038,self.program_width*0.095, self.program_height*0.038))
@@ -414,9 +412,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_2.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_2.setText("2¹ø Å¬·¡½º")
+        self.la_2.setText("2ë²ˆ í´ë˜ìŠ¤")
         self.la_2.setFont(font)
         self.la_3 = QtWidgets.QLabel(self.frame_4)
         self.la_3.setGeometry(QtCore.QRect(0,self.program_height*0.076,self.program_width*0.095, self.program_height*0.038))
@@ -424,9 +422,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_3.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_3.setText("3¹ø Å¬·¡½º")
+        self.la_3.setText("3ë²ˆ í´ë˜ìŠ¤")
         self.la_3.setFont(font)
         self.la_4 = QtWidgets.QLabel(self.frame_4)
         self.la_4.setGeometry(QtCore.QRect(0,self.program_height*0.114,self.program_width*0.095, self.program_height*0.038))
@@ -434,9 +432,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_4.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_4.setText("4¹ø Å¬·¡½º")
+        self.la_4.setText("4ë²ˆ í´ë˜ìŠ¤")
         self.la_4.setFont(font)
         self.la_5 = QtWidgets.QLabel(self.frame_4)
         self.la_5.setGeometry(QtCore.QRect(0,self.program_height*0.152,self.program_width*0.095, self.program_height*0.038))
@@ -444,9 +442,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_5.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_5.setText("5¹ø Å¬·¡½º")
+        self.la_5.setText("5ë²ˆ í´ë˜ìŠ¤")
         self.la_5.setFont(font)
         self.la_6 = QtWidgets.QLabel(self.frame_4)
         self.la_6.setGeometry(QtCore.QRect(0,self.program_height*0.190,self.program_width*0.095, self.program_height*0.038))
@@ -454,9 +452,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_6.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_6.setText("6¹ø Å¬·¡½º")
+        self.la_6.setText("6ë²ˆ í´ë˜ìŠ¤")
         self.la_6.setFont(font)
         self.la_7 = QtWidgets.QLabel(self.frame_4)
         self.la_7.setGeometry(QtCore.QRect(0,self.program_height*0.228,self.program_width*0.095, self.program_height*0.038))
@@ -464,9 +462,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_7.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_7.setText("7¹ø Å¬·¡½º")
+        self.la_7.setText("7ë²ˆ í´ë˜ìŠ¤")
         self.la_7.setFont(font)
         self.la_8 = QtWidgets.QLabel(self.frame_4)
         self.la_8.setGeometry(QtCore.QRect(0,self.program_height*0.266,self.program_width*0.095, self.program_height*0.038))
@@ -474,9 +472,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_8.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_8.setText("8¹ø Å¬·¡½º")
+        self.la_8.setText("8ë²ˆ í´ë˜ìŠ¤")
         self.la_8.setFont(font)
         self.bar_1 = QtWidgets.QProgressBar(self.frame_4)
         self.bar_1.setGeometry(QtCore.QRect(self.program_width*0.095,0,self.program_width*0.265,self.program_height*0.038))
@@ -510,7 +508,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             "background-color:black;\n"
             "color:white;"
             )
-        self.progress_label.setText("ÇĞ½À ÁßÀÔ´Ï´Ù. ±â´Ù·ÁÁÖ¼¼¿ä.")
+        self.progress_label.setText("í•™ìŠµ ì¤‘ì…ë‹ˆë‹¤. ê¸°ë‹¤ë ¤ì£¼ì„¸ìš”.")
         self.progress_label.setAlignment(QtCore.Qt.AlignCenter)
         self.progress_bar = QtWidgets.QProgressBar(self.centralwidget)
         self.progress_bar.setGeometry(QtCore.QRect(self.program_width*1.03,self.program_height*0.91,self.program_width*0.34,self.program_height*0.06))
@@ -529,7 +527,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                          "border-width:"+str(self.border_px)+"px;\n"
                                          "border-radius:"+str(self.border_px*10)+"px;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/45))
         self.pushButton_8.setFont(font)
         self.pushButton_9 = QtWidgets.QPushButton(self.centralwidget)
@@ -542,7 +540,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                          "border-width:"+str(self.border_px)+"px;\n"
                                          "border-radius:"+str(self.border_px*7)+"px;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/55))
         self.pushButton_9.setFont(font)
         self.pushButton_10 = QtWidgets.QPushButton(self.centralwidget)
@@ -555,7 +553,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                          "border-width:"+str(self.border_px)+"px;\n"
                                          "border-radius:"+str(self.border_px*7)+"px;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/55))
         self.pushButton_10.setFont(font)
         self.pushButton_11 = QtWidgets.QPushButton(self.centralwidget)
@@ -568,7 +566,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                          "border-radius:"+str(self.border_px*7)+"px;")
         self.pushButton_11.setObjectName("pushButton_11")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/55))
         self.pushButton_11.setFont(font)
         self.pushButton_12 = QtWidgets.QPushButton(self.centralwidget)
@@ -581,14 +579,14 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                          "border-radius:"+str(self.border_px*7)+"px;")
         self.pushButton_12.setObjectName("pushButton_12")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/55))
         self.pushButton_12.setFont(font)
         self.label_5 = QtWidgets.QLabel(self.centralwidget)
         self.label_5.setGeometry(QtCore.QRect(self.program_width*0.42, self.program_height*0.84, self.program_width*0.56, self.program_height*0.04))
         self.label_5.setAlignment(QtCore.Qt.AlignCenter)
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.label_5.setFont(font)
         self.label_5.setStyleSheet("background-color: black;\n"
@@ -596,7 +594,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
         self.label_4.setGeometry(QtCore.QRect(self.program_width*0.42, self.program_height*0.88, self.program_width*0.56, self.program_height*0.11))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/60))
         self.label_4.setFont(font)
         self.label_4.setStyleSheet("background-color: rgb(194, 194, 194);\n"
@@ -628,21 +626,21 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
 
         self.label_2.setText("CLASS_1")
-        self.pushButton_2.setText("ÇÁ·ÎÁ§Æ® ºÒ·¯¿À±â")
-        self.pushButton_3.setText("ÇÁ·ÎÁ§Æ® ÀúÀåÇÏ±â")
-        self.pushButton_4.setText("¸ŞÀÎ¸Ş´º·Î ÀÌµ¿")
-        self.pushButton_8.setText("»ç  Áø  ÃÔ  ¿µ")
-        self.pushButton_9.setText("ÀÌ¹ÌÁö ºÒ·¯¿À±â")
-        self.pushButton_10.setText("ÀÌ¹ÌÁö »èÁ¦ÇÏ±â")
-        self.pushButton_11.setText("Å¬·¡½º »èÁ¦ÇÏ±â")
-        self.pushButton_12.setText("ÇĞ½ÀÇÏ·¯°¡±â")
-        self.pushButton_13.setText("Á¾·áÇÏ±â")
-        self.label_6.setText("Å¬·¡½º ÀÌ¸§")
-        self.label_7.setText("Å¬·¡½º ¼³¸í")
+        self.pushButton_2.setText("í”„ë¡œì íŠ¸ ë¶ˆëŸ¬ì˜¤ê¸°")
+        self.pushButton_3.setText("í”„ë¡œì íŠ¸ ì €ì¥í•˜ê¸°")
+        self.pushButton_4.setText("ë©”ì¸ë©”ë‰´ë¡œ ì´ë™")
+        self.pushButton_8.setText("ì‚¬  ì§„  ì´¬  ì˜")
+        self.pushButton_9.setText("ì´ë¯¸ì§€ ë¶ˆëŸ¬ì˜¤ê¸°")
+        self.pushButton_10.setText("ì´ë¯¸ì§€ ì‚­ì œí•˜ê¸°")
+        self.pushButton_11.setText("í´ë˜ìŠ¤ ì‚­ì œí•˜ê¸°")
+        self.pushButton_12.setText("í•™ìŠµí•˜ëŸ¬ê°€ê¸°")
+        self.pushButton_13.setText("ì¢…ë£Œí•˜ê¸°")
+        self.label_6.setText("í´ë˜ìŠ¤ ì´ë¦„")
+        self.label_7.setText("í´ë˜ìŠ¤ ì„¤ëª…")
         self.label.setText("CLASS_1")
-        self.label_5.setText("¾Ë ¸² ÆÇ")
+        self.label_5.setText("ì•Œ ë¦¼ íŒ")
         self.textEdit.setText("")
-        self.pushButton_29.setText("»õ ÇÁ·ÎÁ§Æ®")
+        self.pushButton_29.setText("ìƒˆ í”„ë¡œì íŠ¸")
         
         self.frame_2.hide()
         
@@ -709,13 +707,13 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 aaa = dda.showModal()
                 if aaa:
                     self.ev3 = dda.ev3
-                    self.pushButton_15.setText("EV3 ¿¬°á²÷±â")
+                    self.pushButton_15.setText("EV3 ì—°ê²°ëŠê¸°")
                     self.connect = 1
             else:
                 self.connect = 0
                 self.ev3.write(ev3_message_converter.encodeMessage(ev3_message_converter.MessageType.Text, 'abc', '0'))
                 self.ev3.close()
-                self.pushButton_15.setText("EV3 ¿¬°áÇÏ±â")
+                self.pushButton_15.setText("EV3 ì—°ê²°í•˜ê¸°")
                 self.ev3 = None
         except BaseException as b:
             print(str(b))
@@ -724,7 +722,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             try:
                 if self.current_class==len(self.image_data)+1 and len(self.class_image)>0 and self.current_class>1:
@@ -775,7 +773,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.table.scrollToBottom()
                 self.label.setText(self.class_name[self.current_class-1])
                 self.textEdit.setText(self.class_explain[self.current_class-1])
-                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
             except BaseException as b:
                 print(str(b))
         except BaseException as b:
@@ -785,7 +783,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.image_data)+1 and len(self.class_image)>0 and self.current_class>2:
                 self.image_data.append(self.class_image)
@@ -835,7 +833,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
         except BaseException as b:
             print(str(b))
     def move_class_3(self):
@@ -843,7 +841,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.image_data)+1 and len(self.class_image)>0 and self.current_class>3:
                 self.image_data.append(self.class_image)
@@ -893,7 +891,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
         except BaseException as b:
             print(str(b))
     def move_class_4(self):
@@ -901,7 +899,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.image_data)+1 and len(self.class_image)>0 and self.current_class>4:
                 self.image_data.append(self.class_image)
@@ -951,7 +949,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
         except BaseException as b:
             print(str(b))
     def move_class_5(self):
@@ -959,7 +957,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.image_data)+1 and len(self.class_image)>0 and self.current_class>5:
                 self.image_data.append(self.class_image)
@@ -1009,7 +1007,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
         except BaseException as b:
             print(str(b))
     def move_class_6(self):
@@ -1017,7 +1015,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.image_data)+1 and len(self.class_image)>0 and self.current_class>6:
                 self.image_data.append(self.class_image)
@@ -1067,7 +1065,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
         except BaseException as b:
             print(str(b))
     def move_class_7(self):
@@ -1075,7 +1073,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.image_data)+1 and len(self.class_image)>0 and self.current_class>7:
                 self.image_data.append(self.class_image)
@@ -1125,7 +1123,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
         except BaseException as b:
             print(str(b))
     def move_class_8(self):
@@ -1133,7 +1131,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.image_data)+1 and len(self.class_image)>0 and self.current_class>8:
                 self.image_data.append(self.class_image)
@@ -1181,7 +1179,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
         except BaseException as b:
             print(str(b))    
     def change_button_name(self):
@@ -1205,7 +1203,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 elif self.current_class == 8:
                     self.pushButton_38.setText(self.label.text())
             else:
-                self.label_4.setText("Å¬·¡½ºÀÌ¸§Àº 16ÀÚÀÌ³»·Î ÀÛ¼ºÇØÁÖ¼¼¿ä")
+                self.label_4.setText("í´ë˜ìŠ¤ì´ë¦„ì€ 16ìì´ë‚´ë¡œ ì‘ì„±í•´ì£¼ì„¸ìš”")
                 self.label.setText("")
                 return
         except BaseException as b:
@@ -1214,12 +1212,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     @QtCore.pyqtSlot()        
     def error_learning(self):
         try:
-            self.label_4.setText('ÇĞ½ÀµµÁß ¿¡·¯°¡ ¹ß»ıÇß½À´Ï´Ù.\n ´Ù½ÃÇØÁÖ¼¼¿ä.')
+            self.label_4.setText('í•™ìŠµë„ì¤‘ ì—ëŸ¬ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤.\n ë‹¤ì‹œí•´ì£¼ì„¸ìš”.')
             self.progress_bar.hide()
             self.progress_label.hide()
             self.frame_23.show()
             self.learning -= 1
-            self.pushButton_12.setText("ÇĞ½ÀÇÏ·¯°¡±â")
+            self.pushButton_12.setText("í•™ìŠµí•˜ëŸ¬ê°€ê¸°")
         except:
             pass
     @QtCore.pyqtSlot(list)        
@@ -1249,8 +1247,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             self.preview += 1
             self.model = True
             self.frame_22.show()
-            self.label_4.setText('ÇĞ½ÀÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.')
-            self.pushButton_12.setText("¿¹Ãø ÁßÁö")
+            self.label_4.setText('í•™ìŠµì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.')
+            self.pushButton_12.setText("ì˜ˆì¸¡ ì¤‘ì§€")
         except BaseException as b:
             print(str(b)) 
     @QtCore.pyqtSlot(int)        
@@ -1261,14 +1259,14 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if len(self.image_data) <= 1 and len(self.class_image)==0:
-                self.label_4.setText('Å¬·¡½º°¡ 2°³ ÀÌ»óÀÌ¾î¾ß ÇÕ´Ï´Ù.')
+                self.label_4.setText('í´ë˜ìŠ¤ê°€ 2ê°œ ì´ìƒì´ì–´ì•¼ í•©ë‹ˆë‹¤.')
                 return
             if self.learning==1:
                 self.learning -=1
                 self.t1.stop_learning()
                 self.progress_bar.hide()
                 self.progress_label.hide()
-                self.pushButton_12.setText("ÇĞ½ÀÇÏ·¯ °¡±â")
+                self.pushButton_12.setText("í•™ìŠµí•˜ëŸ¬ ê°€ê¸°")
                 self.frame_23.show()
                 return
             if not self.preview:
@@ -1282,8 +1280,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.class_explain.append(self.textEdit.toPlainText())
                 for step in range(len(self.image_data)):
                     if len(self.image_data[step]) < 24:
-                        self.label_4.setText("ÀÌ¹ÌÁö°¡ 24Àå ÀÌ»óÀÌ¾î¾ß ÇÕ´Ï´Ù.\n"
-                                         "ÇöÀç CLASS_"+str(step+1)+" -> "+str(len(self.image_data[step]))+"Àå")
+                        self.label_4.setText("ì´ë¯¸ì§€ê°€ 24ì¥ ì´ìƒì´ì–´ì•¼ í•©ë‹ˆë‹¤.\n"
+                                         "í˜„ì¬ CLASS_"+str(step+1)+" -> "+str(len(self.image_data[step]))+"ì¥")
                         return
                 dialog = picture_train_dialog.Ui_Dialog(self.image_data)
                 m = dialog.showModal()
@@ -1292,7 +1290,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.frame_23.hide()
                     self.progress_bar.setValue(0)
                     self.progress_label.show()
-                    self.label_4.setText('ÇĞ½ÀÁß ÀÔ´Ï´Ù.')
+                    self.label_4.setText('í•™ìŠµì¤‘ ì…ë‹ˆë‹¤.')
                     td = dialog.train_data
                     tl = dialog.train_label
                     vd = dialog.val_data
@@ -1303,7 +1301,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     ca = len(self.image_data)
                     self.label.setReadOnly(True)
                     self.textEdit.setReadOnly(True)
-                    self.pushButton_12.setText("ÇĞ½À Ãë¼Ò½ÃÅ°±â")
+                    self.pushButton_12.setText("í•™ìŠµ ì·¨ì†Œì‹œí‚¤ê¸°")
                     self.saved = 0
                     self.t1 = ML_class(td,vd,tl,vl,le,ba,ep,ca)
                     self.t1.finish_signal.connect(self.finish_learning)
@@ -1312,7 +1310,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.t1.predict_signal.connect(self.receive_function)
                     self.t1.start()
             else:
-                tt = train_alam.Ui_Dialog('ÇöÀç ÇÁ·ÎÁ§Æ®¸¦\nÀúÀå ÇÏ½Ã°Ú½À´Ï±î?')
+                tt = train_alam.Ui_Dialog('í˜„ì¬ í”„ë¡œì íŠ¸ë¥¼\nì €ì¥ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?')
                 aa = tt.showModal()
                 if aa:
                     r= self.save_project()
@@ -1331,7 +1329,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.ev3.write(ev3_message_converter.encodeMessage(ev3_message_converter.MessageType.Text, 'abc', '0'))
                     self.ev3.close()
                     self.ev3 = None
-                self.pushButton_12.setText("ÇĞ½ÀÇÏ·¯°¡±â")
+                self.pushButton_12.setText("í•™ìŠµí•˜ëŸ¬ê°€ê¸°")
         except BaseException as b:
             print(str(b))   
             
@@ -1363,8 +1361,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if len(self.clicked_label_position)==0:
-                self.label_4.setText("¼±ÅÃµÈ ÀÌ¹ÌÁö°¡ ¾ø½À´Ï´Ù.\n"
-                                    "Áö¿ì·Á´Â ÀÌ¹ÌÁö¸¦ Å¬¸¯ÇØÁÖ¼¼¿ä")
+                self.label_4.setText("ì„ íƒëœ ì´ë¯¸ì§€ê°€ ì—†ìŠµë‹ˆë‹¤.\n"
+                                    "ì§€ìš°ë ¤ëŠ” ì´ë¯¸ì§€ë¥¼ í´ë¦­í•´ì£¼ì„¸ìš”")
                 return
             else:
                 self.clicked_label_position.sort()
@@ -1399,7 +1397,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.table.scrollToBottom()
                 if len(self.class_image)==0:
                     self.delete_class()
-                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
         except BaseException as b:
             print(str(b))
     def clicked_image(self, row, col):
@@ -1470,17 +1468,17 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                             numpyArray = np.asarray(bytes, dtype=np.uint8)
                             img = cv2.imdecode(numpyArray , cv2.IMREAD_UNCHANGED)
                             if img.shape[-1]>3:
-                                self.label_4.setText("ÀÌ¹ÌÁöÃ¤³Î¼ö°¡ ³ô½À´Ï´Ù.\n"
-                                                     "jpgÆÄÀÏ·Î º¯È¯ÇØÁÖ¼¼¿ä")
+                                self.label_4.setText("ì´ë¯¸ì§€ì±„ë„ìˆ˜ê°€ ë†’ìŠµë‹ˆë‹¤.\n"
+                                                     "jpgíŒŒì¼ë¡œ ë³€í™˜í•´ì£¼ì„¸ìš”")
                                 return
                             elif img.shape[-1]<3:
-                                self.label_4.setText("ÄÃ·¯ÀÌ¹ÌÁö¸¸ °¡´ÉÇÕ´Ï´Ù.")
+                                self.label_4.setText("ì»¬ëŸ¬ì´ë¯¸ì§€ë§Œ ê°€ëŠ¥í•©ë‹ˆë‹¤.")
                                 return
                             img = cv2.resize(img,dsize=(224,224),interpolation=cv2.INTER_CUBIC)
                             images.append(img)
                         except BaseException as b:
                             print(str(b))
-                            self.label_4.setText("ÀÌ¹ÌÁö°¡ ¾Æ´Ñ ÆÄÀÏÀÌ ÀÖ½À´Ï´Ù.")
+                            self.label_4.setText("ì´ë¯¸ì§€ê°€ ì•„ë‹Œ íŒŒì¼ì´ ìˆìŠµë‹ˆë‹¤.")
                             return
                     for step in range(len(images)):
                         self.class_image.append(images[step])
@@ -1506,7 +1504,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                             self.table.setRowHeight(self.table_row-1,self.program_height*0.09)
                             self.table.setCellWidget(self.table_row-1,0,capture_label)
                         self.table.scrollToBottom()
-                    self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+                    self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
         except BaseException as b:
             print(str(b))
     def delete_class(self):
@@ -1583,7 +1581,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                         self.table.scrollToBottom()
                     self.label.setText(self.class_name[self.current_class-1])
                     self.textEdit.setText(self.class_explain[self.current_class-1])
-                    self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+                    self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
         except BaseException as b:
             print(str(b))
     def go_next_class(self):
@@ -1591,7 +1589,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if len(self.image_data)>self.current_class:
                 self.clicked_label_position = []
@@ -1632,10 +1630,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.current_class = self.current_class+1
                 self.label.setText(self.class_name[self.current_class-1])
                 self.textEdit.setText(self.class_explain[self.current_class-1])
-                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
             else:
                 if self.current_class == 8:
-                    self.label_4.setText("Å¬·¡½º´Â 8°³±îÁö »ı¼ºÇÒ¼ö ÀÖ½À´Ï´Ù.")
+                    self.label_4.setText("í´ë˜ìŠ¤ëŠ” 8ê°œê¹Œì§€ ìƒì„±í• ìˆ˜ ìˆìŠµë‹ˆë‹¤.")
                     return
                 self.clicked_label_position = []
                 if self.current_class==len(self.image_data)+1 and len(self.class_image)>0:
@@ -1671,7 +1669,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.label_2.setText("CLASS_"+str(self.current_class))
                     self.frame_23.resize(QtCore.QSize(self.program_width*0.36,self.program_height*0.1+((self.current_class-1)*self.program_height*0.08)))
                 else:
-                    self.label_4.setText("ÇöÀç Å¬·¡½º¿¡ ÀÌ¹ÌÁö°¡ ÀÖ¾î¾ßÇÕ´Ï´Ù.")
+                    self.label_4.setText("í˜„ì¬ í´ë˜ìŠ¤ì— ì´ë¯¸ì§€ê°€ ìˆì–´ì•¼í•©ë‹ˆë‹¤.")
                     return
         except BaseException as b:
             print(str(b))
@@ -1680,10 +1678,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==1:
-                self.label_4.setText("Ã¹¹øÂ° Å¬·¡½ºÀÔ´Ï´Ù.")
+                self.label_4.setText("ì²«ë²ˆì§¸ í´ë˜ìŠ¤ì…ë‹ˆë‹¤.")
                 return
             else:
                 self.clicked_label_position = []
@@ -1732,7 +1730,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.table.scrollToBottom()
                 self.label.setText(self.class_name[self.current_class-1])
                 self.textEdit.setText(self.class_explain[self.current_class-1])
-                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
         except BaseException as b:
             print(str(b))
     def append_table(self,image_label):
@@ -1790,7 +1788,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             "border-color:white;\n")
                                 self.append_table(capture_label)
                                 self.while_count = self.while_count+1
-                                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+                                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
                             else:
                                 self.while_count = self.while_count+1
                                 
@@ -1808,7 +1806,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def menu_show_event(self):
         try:
             if self.capture_checked:
-                self.label_4.setText("»çÁø ÃÔ¿µ Áß¿¡´Â ´Ù¸¥ °ÍÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù!!")
+                self.label_4.setText("ì‚¬ì§„ ì´¬ì˜ ì¤‘ì—ëŠ” ë‹¤ë¥¸ ê²ƒì„ í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤!!")
                 return
             else:
                 if self.menu_clicked==1:
@@ -1847,10 +1845,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def exit(self):
         try:
             if self.learning==1:
-                self.label_4.setText('ÇĞ½ÀÁß¿¡´Â ¾ÈµË´Ï´Ù.')
+                self.label_4.setText('í•™ìŠµì¤‘ì—ëŠ” ì•ˆë©ë‹ˆë‹¤.')
                 return
             if self.saved ==0:
-                tt = train_alam.Ui_Dialog('ÇöÀç ÇÁ·ÎÁ§Æ®¸¦\nÀúÀå ÇÏ½Ã°Ú½À´Ï±î?')
+                tt = train_alam.Ui_Dialog('í˜„ì¬ í”„ë¡œì íŠ¸ë¥¼\nì €ì¥ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?')
                 aa = tt.showModal()
                 if aa:
                     r= self.save_project()
@@ -1872,9 +1870,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 return
             self.capture_checked = 1 - self.capture_checked
             if self.capture_checked:
-                self.pushButton_8.setText("»ç  Áø  ÃÔ  ¿µ  Áß  Áö")
+                self.pushButton_8.setText("ì‚¬  ì§„  ì´¬  ì˜  ì¤‘  ì§€")
             else:
-                self.pushButton_8.setText("»ç  Áø  ÃÔ  ¿µ ")
+                self.pushButton_8.setText("ì‚¬  ì§„  ì´¬  ì˜ ")
         except BaseException as b:
             print(str(b))
     def check_capture(self):
@@ -1886,7 +1884,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.pushButton.move(self.program_width*0.02,self.program_width*0.02)
                 self.menu_clicked = 1 - self.menu_clicked
             if self.capture_checked:
-                self.label_4.setText("»çÁø ÃÔ¿µ Áß¿¡´Â ´Ù¸¥ °ÍÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù!!")
+                self.label_4.setText("ì‚¬ì§„ ì´¬ì˜ ì¤‘ì—ëŠ” ë‹¤ë¥¸ ê²ƒì„ í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤!!")
                 return True
             else:
                 self.label_4.setText("")
@@ -1902,7 +1900,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.pushButton.move(self.program_width*0.02,self.program_width*0.02)
                 self.menu_clicked = 1 - self.menu_clicked
             if self.preview:
-                self.label_4.setText("¿¹Ãø Áß¿¡´Â ÇÒ¼ö ¾ø½À´Ï´Ù.")
+                self.label_4.setText("ì˜ˆì¸¡ ì¤‘ì—ëŠ” í• ìˆ˜ ì—†ìŠµë‹ˆë‹¤.")
                 return True
             else:
                 self.label_4.setText("")
@@ -1962,10 +1960,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.learning==1:
-                self.label_4.setText("ÇĞ½ÀÁß¿¡´Â ¾ÈµË´Ï´Ù.")
+                self.label_4.setText("í•™ìŠµì¤‘ì—ëŠ” ì•ˆë©ë‹ˆë‹¤.")
                 return
             if self.model==False:
-                self.label_4.setText("¸ÕÀú ÇĞ½ÀÀ» ÇÏ¼Å¾ßÇÕ´Ï´Ù.")
+                self.label_4.setText("ë¨¼ì € í•™ìŠµì„ í•˜ì…”ì•¼í•©ë‹ˆë‹¤.")
                 return
             else:
                 file_dialog = QFileDialog()
@@ -2028,7 +2026,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                                             try:
                                                                 self.make_dir(path)
                                                             except:
-                                                                self.label_4.setText("ÇØ´ç °æ·ÎÀÇ ´Ù¸¥ ÇÁ·ÎÁ§Æ®¸¦ Áö¿öÁÖ¼¼¿ä!")
+                                                                self.label_4.setText("í•´ë‹¹ ê²½ë¡œì˜ ë‹¤ë¥¸ í”„ë¡œì íŠ¸ë¥¼ ì§€ì›Œì£¼ì„¸ìš”!")
                                                                 return 'e'
                     image_path = path+"/image"
                     image_file = np.asarray(self.image_data)
@@ -2041,7 +2039,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     explain_file = np.asarray(self.class_explain)
                     np.save(explain_path,explain_file)
                     self.saved = 1
-                    al = alam.Ui_Dialog('ÀúÀåµÇ¾ú½À´Ï´Ù.')
+                    al = alam.Ui_Dialog('ì €ì¥ë˜ì—ˆìŠµë‹ˆë‹¤.')
                     ala = al.showModal()
                     if ala:
                         return 'y'
@@ -2052,16 +2050,16 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def load_project(self):
         try:
             if self.learning==1:
-                self.label_4.setText('ÇĞ½ÀÁß¿¡´Â ¾ÈµË´Ï´Ù.')
+                self.label_4.setText('í•™ìŠµì¤‘ì—ëŠ” ì•ˆë©ë‹ˆë‹¤.')
                 return
             if self.check_capture():
-                self.label_4.setText('»çÁø ÃÔ¿µÁß¿¡´Â ºÒ·¯¿Ã ¼ö ¾ø½À´Ï´Ù.')
+                self.label_4.setText('ì‚¬ì§„ ì´¬ì˜ì¤‘ì—ëŠ” ë¶ˆëŸ¬ì˜¬ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.')
                 return
             if self.connect == 1:
-                self.label_4.setText('EV3 ¿¬°áÁß¿¡´Â ¾ÈµË´Ï´Ù.')
+                self.label_4.setText('EV3 ì—°ê²°ì¤‘ì—ëŠ” ì•ˆë©ë‹ˆë‹¤.')
                 return
             if self.saved ==0:
-                tt = train_alam.Ui_Dialog('ÇöÀç ÇÁ·ÎÁ§Æ®¸¦\nÀúÀå ÇÏ½Ã°Ú½À´Ï±î?')
+                tt = train_alam.Ui_Dialog('í˜„ì¬ í”„ë¡œì íŠ¸ë¥¼\nì €ì¥ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?')
                 aa = tt.showModal()
                 if aa:
                     r= self.save_project()
@@ -2081,7 +2079,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     class_name = np.load(paths[0]+"/name.npy",allow_pickle=True).tolist()
                     class_explain = np.load(paths[0]+"/explain.npy",allow_pickle=True).tolist()
                 except:
-                    self.label_4.setText("¼±ÅÃÇÑ ÇÁ·ÎÁ§Æ®¿¡ ÆÄÀÏÀÌ ¾ø°Å³ª\nÇÁ·ÎÁ§Æ®°¡ ¾Æ´Õ´Ï´Ù.")
+                    self.label_4.setText("ì„ íƒí•œ í”„ë¡œì íŠ¸ì— íŒŒì¼ì´ ì—†ê±°ë‚˜\ní”„ë¡œì íŠ¸ê°€ ì•„ë‹™ë‹ˆë‹¤.")
                     return
                 self.image_data = image_data
                 self.class_name = class_name
@@ -2102,8 +2100,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.saved=1
                     self.label.setText(self.class_name[0])
                     self.textEdit.setText(self.class_explain[0])
-                    self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
-                    self.pushButton_12.setText("ÇĞ½ÀÇÏ·¯ °¡±â")
+                    self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
+                    self.pushButton_12.setText("í•™ìŠµí•˜ëŸ¬ ê°€ê¸°")
                     for step in range(len(self.class_image)):
                         color_swapped_image = cv2.cvtColor(self.class_image[step], cv2.COLOR_BGR2RGB)
                         qt_image1 = QtGui.QImage(color_swapped_image.data,
@@ -2138,12 +2136,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def new_project(self):
         try:
             if self.learning==1:
-                self.label_4.setText('ÇĞ½ÀÁß¿¡´Â ¾ÈµË´Ï´Ù.')
+                self.label_4.setText('í•™ìŠµì¤‘ì—ëŠ” ì•ˆë©ë‹ˆë‹¤.')
                 return
             if self.capture_checked:
                 return
             if self.saved ==0:
-                tt = train_alam.Ui_Dialog('ÇöÀç ÇÁ·ÎÁ§Æ®¸¦\nÀúÀå ÇÏ½Ã°Ú½À´Ï±î?')
+                tt = train_alam.Ui_Dialog('í˜„ì¬ í”„ë¡œì íŠ¸ë¥¼\nì €ì¥ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?')
                 aa = tt.showModal()
                 if aa:
                     r= self.save_project()
@@ -2195,102 +2193,102 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             self.pushButton_37.setText('CLASS_7')
             self.pushButton_38.setText('CLASS_8')
             self.label_2.setText("CLASS_1")
-            self.pushButton_2.setText("ÇÁ·ÎÁ§Æ® ºÒ·¯¿À±â")
-            self.pushButton_3.setText("ÇÁ·ÎÁ§Æ® ÀúÀåÇÏ±â")
-            self.pushButton_4.setText("¸ŞÀÎ¸Ş´º·Î ÀÌµ¿")
-            self.pushButton_8.setText("»ç  Áø  ÃÔ  ¿µ")
-            self.pushButton_9.setText("ÀÌ¹ÌÁö ºÒ·¯¿À±â")
-            self.pushButton_10.setText("ÀÌ¹ÌÁö »èÁ¦ÇÏ±â")
-            self.pushButton_11.setText("Å¬·¡½º »èÁ¦ÇÏ±â")
-            self.pushButton_12.setText("ÇĞ½ÀÇÏ·¯°¡±â")
-            self.pushButton_13.setText("Á¾·áÇÏ±â")
-            self.label_6.setText("Å¬·¡½º ÀÌ¸§")
-            self.label_7.setText("Å¬·¡½º ¼³¸í")
+            self.pushButton_2.setText("í”„ë¡œì íŠ¸ ë¶ˆëŸ¬ì˜¤ê¸°")
+            self.pushButton_3.setText("í”„ë¡œì íŠ¸ ì €ì¥í•˜ê¸°")
+            self.pushButton_4.setText("ë©”ì¸ë©”ë‰´ë¡œ ì´ë™")
+            self.pushButton_8.setText("ì‚¬  ì§„  ì´¬  ì˜")
+            self.pushButton_9.setText("ì´ë¯¸ì§€ ë¶ˆëŸ¬ì˜¤ê¸°")
+            self.pushButton_10.setText("ì´ë¯¸ì§€ ì‚­ì œí•˜ê¸°")
+            self.pushButton_11.setText("í´ë˜ìŠ¤ ì‚­ì œí•˜ê¸°")
+            self.pushButton_12.setText("í•™ìŠµí•˜ëŸ¬ê°€ê¸°")
+            self.pushButton_13.setText("ì¢…ë£Œí•˜ê¸°")
+            self.label_6.setText("í´ë˜ìŠ¤ ì´ë¦„")
+            self.label_7.setText("í´ë˜ìŠ¤ ì„¤ëª…")
             self.label.setText("CLASS_1")
-            self.label_5.setText("¾Ë ¸² ÆÇ")
+            self.label_5.setText("ì•Œ ë¦¼ íŒ")
             self.textEdit.setText("")
             self.frame_22.hide()
             self.frame_23.resize(QtCore.QSize(self.program_width*0.36,self.program_height*0.1))
             self.frame_23.show()
-            self.label_4.setText('»õ·Î¿î ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.')
+            self.label_4.setText('ìƒˆë¡œìš´ í”„ë¡œì íŠ¸ì…ë‹ˆë‹¤.')
         except BaseException as b:
             print(str(b))
             
-class ML_class(QtCore.QThread):#ÇĞ½À ¹× ¿¹ÃøÀ» À§ÇÑ ¼­ºê ½º·¹µå-> QThread »ó¼ÓÀ» ¹Ş¾Æ ±¸Çö
+class ML_class(QtCore.QThread):#í•™ìŠµ ë° ì˜ˆì¸¡ì„ ìœ„í•œ ì„œë¸Œ ìŠ¤ë ˆë“œ-> QThread ìƒì†ì„ ë°›ì•„ êµ¬í˜„
     
-    #pyqt5ÀÇ °æ¿ì ½º·¹µå°£ÀÇ Åë½ÅÀ» ÇÒ¶§ ½Ã±×³Î°ú ½½·ÔÀ» ÀÌ¿ëÇÏ¿© ÁøÇàÇÑ´Ù.(±âº»ÀûÀ¸·Î ÀÌº¥Æ®¿¡µµ »ç¿ë)
-    #½Ã±×³Î(¸Ş¼¼Áö)À» º¸³»´Â ½º·¹µå¿¡¼­´Â ½Ã±×³ÎÀÇ Á¾·ù¿Í µ¥ÀÌÅÍ Å¸ÀÔÀ» Á¤ÀÇ 
-    #·ÎÁ÷À» ¼öÇàÇÏ´Â Áß ½ÅÈ£¸¦ º¸³»¾ßÇÒ¶§ emit() ¸Ş¼­µå¸¦ »ç¿ëÇÏ¿© ¼ö½ÅÃø¿¡ ¸Ş¼¼Áö Àü´Ş
-    #½ÅÈ£¸¦ ¹Ş´Â ÂÊ¿¡¼­´Â ÇØ´ç ½Ã±×³ÎÀ» ¹ŞÀ» ÇÔ¼ö(¸Ş¼­µå)¸¦ Á¤ÀÇ. ¼Û½ÅÃøÀÇ ½Ã±×³ÎÀÌ Á¤ÀÇ°¡ µÇ¸é ÇØ´ç ½Ã±×³Î°ú ¼ö½Å¸Ş¼­µå¸¦ connect() ¸Ş¼­µå¸¦ »ç¿ëÇÏ¿© ¿¬°áÇÑ´Ù. ->  ±âº»ÀûÀÎ ÀÌº¥Æ®¿Í µ¿ÀÛ¹æ½Ä°ú ºñ½ÁÇÏ´Ù.
+    #pyqt5ì˜ ê²½ìš° ìŠ¤ë ˆë“œê°„ì˜ í†µì‹ ì„ í• ë•Œ ì‹œê·¸ë„ê³¼ ìŠ¬ë¡¯ì„ ì´ìš©í•˜ì—¬ ì§„í–‰í•œë‹¤.(ê¸°ë³¸ì ìœ¼ë¡œ ì´ë²¤íŠ¸ì—ë„ ì‚¬ìš©)
+    #ì‹œê·¸ë„(ë©”ì„¸ì§€)ì„ ë³´ë‚´ëŠ” ìŠ¤ë ˆë“œì—ì„œëŠ” ì‹œê·¸ë„ì˜ ì¢…ë¥˜ì™€ ë°ì´í„° íƒ€ì…ì„ ì •ì˜ 
+    #ë¡œì§ì„ ìˆ˜í–‰í•˜ëŠ” ì¤‘ ì‹ í˜¸ë¥¼ ë³´ë‚´ì•¼í• ë•Œ emit() ë©”ì„œë“œë¥¼ ì‚¬ìš©í•˜ì—¬ ìˆ˜ì‹ ì¸¡ì— ë©”ì„¸ì§€ ì „ë‹¬
+    #ì‹ í˜¸ë¥¼ ë°›ëŠ” ìª½ì—ì„œëŠ” í•´ë‹¹ ì‹œê·¸ë„ì„ ë°›ì„ í•¨ìˆ˜(ë©”ì„œë“œ)ë¥¼ ì •ì˜. ì†¡ì‹ ì¸¡ì˜ ì‹œê·¸ë„ì´ ì •ì˜ê°€ ë˜ë©´ í•´ë‹¹ ì‹œê·¸ë„ê³¼ ìˆ˜ì‹ ë©”ì„œë“œë¥¼ connect() ë©”ì„œë“œë¥¼ ì‚¬ìš©í•˜ì—¬ ì—°ê²°í•œë‹¤. ->  ê¸°ë³¸ì ì¸ ì´ë²¤íŠ¸ì™€ ë™ì‘ë°©ì‹ê³¼ ë¹„ìŠ·í•˜ë‹¤.
 
-    finish_signal = QtCore.pyqtSignal(list) #ÇĞ½À ¿Ï·á ½Ã±×³Î. ¸ŞÀÎ ½º·¹µå¿¡¼­ ÇØ´ç ½Ã±×³ÎÀ» ¹Ş´Â ¸Ş¼­µå´Â finish_learning() -> ÇØ´ç ½Ã±×³ÎÀÌ ¼ö½ÅµÇ¸é ¿¹ÃøÀ» À§ÇÑ Preview È­¸éÀ» ¶ç¿î´Ù.
-    error_signal = QtCore.pyqtSignal() #¿¡·¯ ½Ã±×³Î. ÇĞ½ÀµµÁß ¿¡·¯°¡ ¹ß»ıÇÏ¸é ÇØ´ç ½Ã±×³ÎÀ» ³»º¸³½´Ù. ¸ŞÀÎ½º·¹µå¿¡¼­ ÇØ´ç ½Ã±×³ÎÀ» ¹Ş´Â ¸Ş¼­µå´Â error_learning() -> ÇØ´ç ½Ã±×³ÎÀÌ ¼ö½ÅµÇ¸é ÇĞ½ÀÀÌ Ãë¼ÒµÇ¸ç, ¼­ºê½º·¹µå´Â Á¾·á.        
-    process_signal = QtCore.pyqtSignal(int) #(»õ·Ó°Ô ¼öÁ¤ÇÑ ÄÚµå¿¡¼­´Â »ç¿ëÇÏÁö ¾ÊÀ½)ÁøÇà ½Ã±×³Î. ÇĞ½ÀÁøÇà·üÀ» ³»º¸³»´Â ½Ã±×³Î. ¸ŞÀÎ½º·¹µå¿¡¼­ ÇØ´ç ½Ã±×³ÎÀ» ¹Ş´Â ¸Ş¼­µå´Â learning_process() -> ÇØ´ç ½Ã±×³ÎÀÌ ¼ö½ÅµÇ¸é progress_barÀÇ °ªÀÌ ¹Ù²ñ.
-    predict_signal = QtCore.pyqtSignal(list) #¿¹Ãø ½Ã±×³Î. preivewÈ­¸éÀÌ ¶ç¾îÁö°í³­ ÈÄ ¸ŞÀÎ½º·¹µå¿¡¼­ º¸³»´Â image data¸¦ ÇĞ½ÀÇÑ ¸ğµ¨À» °ÅÃÄ ¿¹Ãø°ªÀ» »êÃâÇÏ°í, ¸ŞÀÎ½º·¹µå·Î ¹İÈ¯ ->
-                                             #¸ŞÀÎ½º·¹µå¿¡¼­ ÇØ´ç ½Ã±×³ÎÀ» ¹Ş´Â ¸Ş¼­µå´Â receive_function() -> ÇØ´ç ½Ã±×³ÎÀÌ µµÂøÇÏ¸é preiview layout³»ÀÇ progress_barÀÇ °ªÀ» º¯È¯.
+    finish_signal = QtCore.pyqtSignal(list) #í•™ìŠµ ì™„ë£Œ ì‹œê·¸ë„. ë©”ì¸ ìŠ¤ë ˆë“œì—ì„œ í•´ë‹¹ ì‹œê·¸ë„ì„ ë°›ëŠ” ë©”ì„œë“œëŠ” finish_learning() -> í•´ë‹¹ ì‹œê·¸ë„ì´ ìˆ˜ì‹ ë˜ë©´ ì˜ˆì¸¡ì„ ìœ„í•œ Preview í™”ë©´ì„ ë„ìš´ë‹¤.
+    error_signal = QtCore.pyqtSignal() #ì—ëŸ¬ ì‹œê·¸ë„. í•™ìŠµë„ì¤‘ ì—ëŸ¬ê°€ ë°œìƒí•˜ë©´ í•´ë‹¹ ì‹œê·¸ë„ì„ ë‚´ë³´ë‚¸ë‹¤. ë©”ì¸ìŠ¤ë ˆë“œì—ì„œ í•´ë‹¹ ì‹œê·¸ë„ì„ ë°›ëŠ” ë©”ì„œë“œëŠ” error_learning() -> í•´ë‹¹ ì‹œê·¸ë„ì´ ìˆ˜ì‹ ë˜ë©´ í•™ìŠµì´ ì·¨ì†Œë˜ë©°, ì„œë¸ŒìŠ¤ë ˆë“œëŠ” ì¢…ë£Œ.        
+    process_signal = QtCore.pyqtSignal(int) #(ìƒˆë¡­ê²Œ ìˆ˜ì •í•œ ì½”ë“œì—ì„œëŠ” ì‚¬ìš©í•˜ì§€ ì•ŠìŒ)ì§„í–‰ ì‹œê·¸ë„. í•™ìŠµì§„í–‰ë¥ ì„ ë‚´ë³´ë‚´ëŠ” ì‹œê·¸ë„. ë©”ì¸ìŠ¤ë ˆë“œì—ì„œ í•´ë‹¹ ì‹œê·¸ë„ì„ ë°›ëŠ” ë©”ì„œë“œëŠ” learning_process() -> í•´ë‹¹ ì‹œê·¸ë„ì´ ìˆ˜ì‹ ë˜ë©´ progress_barì˜ ê°’ì´ ë°”ë€œ.
+    predict_signal = QtCore.pyqtSignal(list) #ì˜ˆì¸¡ ì‹œê·¸ë„. preivewí™”ë©´ì´ ë„ì–´ì§€ê³ ë‚œ í›„ ë©”ì¸ìŠ¤ë ˆë“œì—ì„œ ë³´ë‚´ëŠ” image dataë¥¼ í•™ìŠµí•œ ëª¨ë¸ì„ ê±°ì³ ì˜ˆì¸¡ê°’ì„ ì‚°ì¶œí•˜ê³ , ë©”ì¸ìŠ¤ë ˆë“œë¡œ ë°˜í™˜ ->
+                                             #ë©”ì¸ìŠ¤ë ˆë“œì—ì„œ í•´ë‹¹ ì‹œê·¸ë„ì„ ë°›ëŠ” ë©”ì„œë“œëŠ” receive_function() -> í•´ë‹¹ ì‹œê·¸ë„ì´ ë„ì°©í•˜ë©´ preiview layoutë‚´ì˜ progress_barì˜ ê°’ì„ ë³€í™˜.
     
     def __init__(self,train_data,val_data,train_label,val_label,learning_rate,batch_size,epoch,class_count):#constructor
         super().__init__()
-        self.model = None #¸ğµ¨À» ´ã´Â º¯¼ö
-        self.train_data = train_data # ÈÆ·Ãµ¥ÀÌÅÍ¸¦ ´ã´Â º¯¼ö
-        self.val_data = val_data # Æò°¡µ¥ÀÌÅÍ¸¦ ´ã´Â º¯¼ö
-        self.train_label = train_label # ÈÆ·Ã ¶óº§À» ´ã´Â º¯¼ö 
-        self.val_label = val_label # Æò°¡ ¶óº§À» ´ã´Â º¯¼ö
-        self.learning_rate = learning_rate # ÇĞ½À·ü
-        self.batch_size = batch_size # ÀÛ¾÷¼ö·®
-        self.epoch_size = epoch # ÇĞ½ÀÈ½¼ö
-        self.class_count = class_count # Å¬·¡½º ¼ö·®
-        self.receive=1 # preview È­¸éÀÌ ¶ç¾îÁ³À»½Ã ¸ŞÀÎ½º·¹µå¿¡¼­ º¸³½ ÀÌ¹ÌÁö°¡ Á¸ÀçÇÏ´ÂÁö¸¦ È®ÀÎÇÏ±â À§ÇÑ º¯¼ö
-        self.learning_history = None # ÇĞ½ÀÀÌ ÁøÇàµÇ´Â µ¿¾ÈÀÇ history¸¦ ´ã´Â º¯¼ö
-        self.br = 0  #¼­ºê½º·¹µå¸¦ Á¾·á½ÃÅ°±âÀ§ÇÑ º¯¼ö
-        self.data = None #¸ŞÀÎ½º·¹µå·ÎºÎÅÍ ¹ŞÀº image data¸¦ ´ã±âÀ§ÇÑ º¯¼ö
+        self.model = None #ëª¨ë¸ì„ ë‹´ëŠ” ë³€ìˆ˜
+        self.train_data = train_data # í›ˆë ¨ë°ì´í„°ë¥¼ ë‹´ëŠ” ë³€ìˆ˜
+        self.val_data = val_data # í‰ê°€ë°ì´í„°ë¥¼ ë‹´ëŠ” ë³€ìˆ˜
+        self.train_label = train_label # í›ˆë ¨ ë¼ë²¨ì„ ë‹´ëŠ” ë³€ìˆ˜ 
+        self.val_label = val_label # í‰ê°€ ë¼ë²¨ì„ ë‹´ëŠ” ë³€ìˆ˜
+        self.learning_rate = learning_rate # í•™ìŠµë¥ 
+        self.batch_size = batch_size # ì‘ì—…ìˆ˜ëŸ‰
+        self.epoch_size = epoch # í•™ìŠµíšŸìˆ˜
+        self.class_count = class_count # í´ë˜ìŠ¤ ìˆ˜ëŸ‰
+        self.receive=1 # preview í™”ë©´ì´ ë„ì–´ì¡Œì„ì‹œ ë©”ì¸ìŠ¤ë ˆë“œì—ì„œ ë³´ë‚¸ ì´ë¯¸ì§€ê°€ ì¡´ì¬í•˜ëŠ”ì§€ë¥¼ í™•ì¸í•˜ê¸° ìœ„í•œ ë³€ìˆ˜
+        self.learning_history = None # í•™ìŠµì´ ì§„í–‰ë˜ëŠ” ë™ì•ˆì˜ historyë¥¼ ë‹´ëŠ” ë³€ìˆ˜
+        self.br = 0  #ì„œë¸ŒìŠ¤ë ˆë“œë¥¼ ì¢…ë£Œì‹œí‚¤ê¸°ìœ„í•œ ë³€ìˆ˜
+        self.data = None #ë©”ì¸ìŠ¤ë ˆë“œë¡œë¶€í„° ë°›ì€ image dataë¥¼ ë‹´ê¸°ìœ„í•œ ë³€ìˆ˜
         
-    def stop_learning(self):#ÇØ´ç ¸Ş¼­µå°¡ È£ÃâµÇ¸é ¼­ºê½º·¹µå Á¾·á
+    def stop_learning(self):#í•´ë‹¹ ë©”ì„œë“œê°€ í˜¸ì¶œë˜ë©´ ì„œë¸ŒìŠ¤ë ˆë“œ ì¢…ë£Œ
         self.br = 1 
         
-    def get_model(self):#¸ğµ¨À» ÀúÀåÇÏ±âÀ§ÇÑ ¸Ş¼­µå
+    def get_model(self):#ëª¨ë¸ì„ ì €ì¥í•˜ê¸°ìœ„í•œ ë©”ì„œë“œ
         return self.model
     
-    def receive_data(self,data):#¸ŞÀÎ½º·¹µå¿¡¼­ ÀÌ¹ÌÁö Àü¼Û½Ã ÇØ´ç ¸Ş¼­µå·Î Àü¼Û
+    def receive_data(self,data):#ë©”ì¸ìŠ¤ë ˆë“œì—ì„œ ì´ë¯¸ì§€ ì „ì†¡ì‹œ í•´ë‹¹ ë©”ì„œë“œë¡œ ì „ì†¡
         if self.receive==0:
             self.receive+=1
             self.data = data
     
         
-    def run(self):#ÇÙ½É ¸Ş¼­µå. start() ¸Ş¼­µåÈ£Ãâ½Ã ÇØ´ç ¸Ş¼­µå°¡ ºÒ·¯¿ÍÁø´Ù.
+    def run(self):#í•µì‹¬ ë©”ì„œë“œ. start() ë©”ì„œë“œí˜¸ì¶œì‹œ í•´ë‹¹ ë©”ì„œë“œê°€ ë¶ˆëŸ¬ì™€ì§„ë‹¤.
         try:
-            #µ¥ÀÌÅÍ¸¦ ndarray·Î ¹Ù²Ù´Â °úÁ¤. data shapeÀº »ùÇÃ ÇÏ³ª´ç (224,224,3)
+            #ë°ì´í„°ë¥¼ ndarrayë¡œ ë°”ê¾¸ëŠ” ê³¼ì •. data shapeì€ ìƒ˜í”Œ í•˜ë‚˜ë‹¹ (224,224,3)
             self.train_data = np.asarray(self.train_data, dtype= np.float32)
             self.train_label = np.asarray(self.train_label, dtype = np.float32)
             self.val_data = np.asarray(self.val_data, dtype = np.float32)
             self.val_label = np.asarray(self.val_label, dtype = np.float32)
             
-            otmz = tf.keras.optimizers.Adam(learning_rate=self.learning_rate)#optimizer¼±¾ğ -> Adam optimizer»ç¿ë. ÇöÀç±îÁö´Â °¡Àå ¹ßÀüµÈ optimizer°¡ AdamÀ¸·Î ¾Ë°í ÀÖÀ½. ÀÌ Àü´Ü°è°¡ RMSprop
+            otmz = tf.keras.optimizers.Adam(learning_rate=self.learning_rate)#optimizerì„ ì–¸ -> Adam optimizerì‚¬ìš©. í˜„ì¬ê¹Œì§€ëŠ” ê°€ì¥ ë°œì „ëœ optimizerê°€ Adamìœ¼ë¡œ ì•Œê³  ìˆìŒ. ì´ ì „ë‹¨ê³„ê°€ RMSprop
             IMG_SHAPE = (224, 224, 3)
             base_model = tf.keras.applications.MobileNetV2(input_shape=IMG_SHAPE, #mobilenetV2
-                                               include_top=False, #ÇØ´ç ÆÄ¶ó¹ÌÅÍ´Â ÃÖ»óÀ§Ãş(Á¦ÀÏ ¸¶Áö¸·)¿¡ fully-connected-layer¸¦ Æ÷ÇÔ½ÃÅ³ÁöÀÇ ¿©ºÎ¸¦ ¼±ÅÃ, False½Ã mobilenetÀÌ ºĞ·ùÃşÀÌ ¾ø´Â convolution network·Î º¯È¯.
-                                                                  # -> ÀüÀÌÇĞ½ÀÀ» ÇÏ±âÀ§ÇÏ¿© False´Â ÇÊ¼ö
+                                               include_top=False, #í•´ë‹¹ íŒŒë¼ë¯¸í„°ëŠ” ìµœìƒìœ„ì¸µ(ì œì¼ ë§ˆì§€ë§‰)ì— fully-connected-layerë¥¼ í¬í•¨ì‹œí‚¬ì§€ì˜ ì—¬ë¶€ë¥¼ ì„ íƒ, Falseì‹œ mobilenetì´ ë¶„ë¥˜ì¸µì´ ì—†ëŠ” convolution networkë¡œ ë³€í™˜.
+                                                                  # -> ì „ì´í•™ìŠµì„ í•˜ê¸°ìœ„í•˜ì—¬ FalseëŠ” í•„ìˆ˜
                                                weights='imagenet')
-            base_model.trainable = True #mobilenetV2¸¦ Ãß°¡ ÇĞ½ÀÀÌ °¡´ÉÇÏ°Ô²û ÇÔ.
+            base_model.trainable = True #mobilenetV2ë¥¼ ì¶”ê°€ í•™ìŠµì´ ê°€ëŠ¥í•˜ê²Œë” í•¨.
             
-            global_average_layer = tf.keras.layers.GlobalAveragePooling2D() #pooling layer¼±¾ğ
-            prediction_layer = tf.keras.layers.Dense(self.class_count,activation='softmax') # fully-connected-layer¼±¾ğ
+            global_average_layer = tf.keras.layers.GlobalAveragePooling2D() #pooling layerì„ ì–¸
+            prediction_layer = tf.keras.layers.Dense(self.class_count,activation='softmax') # fully-connected-layerì„ ì–¸
             
-            self.model = tf.keras.Sequential([ #¸ğµ¨ »ı¼º
+            self.model = tf.keras.Sequential([ #ëª¨ë¸ ìƒì„±
                       base_model,
                       global_average_layer,
                       prediction_layer
                     ])
             
-            self.model.compile(optimizer=otmz, #¸ğµ¨ ÄÄÆÄÀÏ -> optimizer, ¼Õ½ÇÇÔ¼ö, trace¸¦ À§ÇÑ metrics°ª ¼³Á¤.
+            self.model.compile(optimizer=otmz, #ëª¨ë¸ ì»´íŒŒì¼ -> optimizer, ì†ì‹¤í•¨ìˆ˜, traceë¥¼ ìœ„í•œ metricsê°’ ì„¤ì •.
                 loss='sparse_categorical_crossentropy',
                 metrics=['accuracy'])
-            # ±×·¡ÇÁ¸¦ ±×¸®±âÀ§ÇÏ¿© self.history¿¡ ´ã±ä º¯¼ö¸¦ ºĞ·ùÇÏ±â À§ÇÑ º¯¼öµé
+            # ê·¸ë˜í”„ë¥¼ ê·¸ë¦¬ê¸°ìœ„í•˜ì—¬ self.historyì— ë‹´ê¸´ ë³€ìˆ˜ë¥¼ ë¶„ë¥˜í•˜ê¸° ìœ„í•œ ë³€ìˆ˜ë“¤
             acc = []
             val_acc = []
             loss = []
             val_loss = []
-            # ÀÌ¹ÌÁöµ¥ÀÌÅÍ¸¦ ½Ã°¢ÀûÀ¸·Î º¯È­½ÃÅ°±âÀ§ÇÑ ImageDataGenerator °´Ã¼¼±¾ğ
+            # ì´ë¯¸ì§€ë°ì´í„°ë¥¼ ì‹œê°ì ìœ¼ë¡œ ë³€í™”ì‹œí‚¤ê¸°ìœ„í•œ ImageDataGenerator ê°ì²´ì„ ì–¸
             datagen = tf.keras.preprocessing.image.ImageDataGenerator(
                 featurewise_center=True,
                 featurewise_std_normalization=True,
@@ -2299,13 +2297,13 @@ class ML_class(QtCore.QThread):#ÇĞ½À ¹× ¿¹ÃøÀ» À§ÇÑ ¼­ºê ½º·¹µå-> QThread »ó¼ÓÀ»
                 height_shift_range=0.2,
                 horizontal_flip=True)
           
-            datagen.fit(self.train_data)#ÈÆ·Ãµ¥ÀÌÅÍ¸¦ À§¿¡¼­ ¼±¾ğÇÑ ImageDataGenerator¸¦ »ç¿ëÇÏ¿© ½Ã°¢ÀûÀ¸·Î º¯È­½ÃÅ´.
+            datagen.fit(self.train_data)#í›ˆë ¨ë°ì´í„°ë¥¼ ìœ„ì—ì„œ ì„ ì–¸í•œ ImageDataGeneratorë¥¼ ì‚¬ìš©í•˜ì—¬ ì‹œê°ì ìœ¼ë¡œ ë³€í™”ì‹œí‚´.
             
-            earlystop = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=1, mode='min',baseline=0.001)#Á¶±âÁ¾·á¸¦ À§ÇÑ earlystop°´Ã¼ ¼±¾ğ(ÃßÀûÇÒ º¯¼ö,Á¶°ÇÀ» ¸¸Á·ÇÑ ÈÄ ÇĞ½ÀÀ» ´õ ¼öÇàÇÒ È½¼ö, ÃßÀûÇÒ °ªÀÌ Ä¿Áö´ÂÁö ÀÛ¾ÆÁö´ÂÁö¿¡ ´ëÇÑ ¼³Á¤°ª, ÇĞ½ÀÀ» ¸ØÃâ ÃßÀû´ë»óÀÇ °ª) 
-                                                                                                                   #-> val_loss°ªÀ» ÃßÀûÇÏ¿© ÇØ´ç °ªÀÌ 0.001ÀÌÇÏÀÏ½Ã ÇÑ¹ø ´õ ÇĞ½ÀÀ» ¼öÇàÇÏ°í Á¾·á
-            #¸ğµ¨ ÇĞ½À
+            earlystop = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=1, mode='min',baseline=0.001)#ì¡°ê¸°ì¢…ë£Œë¥¼ ìœ„í•œ earlystopê°ì²´ ì„ ì–¸(ì¶”ì í•  ë³€ìˆ˜,ì¡°ê±´ì„ ë§Œì¡±í•œ í›„ í•™ìŠµì„ ë” ìˆ˜í–‰í•  íšŸìˆ˜, ì¶”ì í•  ê°’ì´ ì»¤ì§€ëŠ”ì§€ ì‘ì•„ì§€ëŠ”ì§€ì— ëŒ€í•œ ì„¤ì •ê°’, í•™ìŠµì„ ë©ˆì¶œ ì¶”ì ëŒ€ìƒì˜ ê°’) 
+                                                                                                                   #-> val_lossê°’ì„ ì¶”ì í•˜ì—¬ í•´ë‹¹ ê°’ì´ 0.001ì´í•˜ì¼ì‹œ í•œë²ˆ ë” í•™ìŠµì„ ìˆ˜í–‰í•˜ê³  ì¢…ë£Œ
+            #ëª¨ë¸ í•™ìŠµ
             self.learning_history = self.model.fit_generator(datagen.flow(self.train_data, self.train_label, batch_size=self.batch_size), validation_data=(self.val_data,self.val_label),callbacks=[earlystop],steps_per_epoch=len(self.train_data) / self.batch_size, epochs=self.epoch_size)
-            #ÇĞ½ÀÇÑ history¸¦ º¯¼öº°·Î ºĞ·ùÇÏ¿© ´ãÀ½(±×·¡ÇÁ¸¦ ±×¸®±âÀ§ÇÑ Á¶Ä¡)
+            #í•™ìŠµí•œ historyë¥¼ ë³€ìˆ˜ë³„ë¡œ ë¶„ë¥˜í•˜ì—¬ ë‹´ìŒ(ê·¸ë˜í”„ë¥¼ ê·¸ë¦¬ê¸°ìœ„í•œ ì¡°ì¹˜)
             acc.append(self.learning_history.history['accuracy'])
             val_acc.append(self.learning_history.history['val_accuracy'])
             loss.append(self.learning_history.history['loss'])
@@ -2350,20 +2348,18 @@ class ML_class(QtCore.QThread):#ÇĞ½À ¹× ¿¹ÃøÀ» À§ÇÑ ¼­ºê ½º·¹µå-> QThread »ó¼ÓÀ»
             his.append(loss)
             his.append(val_loss)
             
-            self.finish_signal.emit(his)#ÇĞ½À¿Ï·á ÇĞ½À¿Ï·á ½Ã±×³Î ¼Û½Å
+            self.finish_signal.emit(his)#í•™ìŠµì™„ë£Œ í•™ìŠµì™„ë£Œ ì‹œê·¸ë„ ì†¡ì‹ 
         except BaseException as b:
             print(str(b))
-            self.error_signal.emit()#¿¡·¯¹ß»ı½Ã ¿¡·¯ ½Ã±×³Î ¼Û½Å
+            self.error_signal.emit()#ì—ëŸ¬ë°œìƒì‹œ ì—ëŸ¬ ì‹œê·¸ë„ ì†¡ì‹ 
             return
-        self.receive = 0 #¸ŞÀÎ½º·¹µå·ÎºÎÅÍ ¿¹ÃøÀ» À§ÇÑ ÀÌ¹ÌÁöµ¥ÀÌÅÍ ¼ö½ÅÁØºñ
+        self.receive = 0 #ë©”ì¸ìŠ¤ë ˆë“œë¡œë¶€í„° ì˜ˆì¸¡ì„ ìœ„í•œ ì´ë¯¸ì§€ë°ì´í„° ìˆ˜ì‹ ì¤€ë¹„
         while True:
-            if self.br == 1:#ÇØ´ç½º·¹µå Á¾·á
+            if self.br == 1:#í•´ë‹¹ìŠ¤ë ˆë“œ ì¢…ë£Œ
                 break
             else:
                 if self.receive==1:
-                    predict = self.model.predict(self.data)#ÇĞ½ÀÇÑ ¸ğµ¨À» »ç¿ëÇÏ¿© Å¬·¡½º ¿¹Ãø
+                    predict = self.model.predict(self.data)#í•™ìŠµí•œ ëª¨ë¸ì„ ì‚¬ìš©í•˜ì—¬ í´ë˜ìŠ¤ ì˜ˆì¸¡
                     predict = predict.tolist()
-                    self.predict_signal.emit(predict)#¿¹Ãø ½Ã±×³Î ¼Û½Å
-                    self.receive = 0 #¸ŞÀÎ½º·¹µå·ÎºÎÅÍ ¿¹ÃøÀ» À§ÇÑ ÀÌ¹ÌÁöµ¥ÀÌÅÍ ¼ö½ÅÁØºñ
-        
-        
+                    self.predict_signal.emit(predict)#ì˜ˆì¸¡ ì‹œê·¸ë„ ì†¡ì‹ 
+                    self.receive = 0 #ë©”ì¸ìŠ¤ë ˆë“œë¡œë¶€í„° ì˜ˆì¸¡ì„ ìœ„í•œ ì´ë¯¸ì§€ë°ì´í„° ìˆ˜ì‹ ì¤€ë¹„

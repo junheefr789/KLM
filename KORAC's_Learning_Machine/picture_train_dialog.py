@@ -1,5 +1,3 @@
-# -*- coding: euc-kr -*-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 import cv2
 import matplotlib.pyplot as plt
@@ -42,7 +40,7 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.label_5 = QtWidgets.QLabel(self)
         self.label_5.setGeometry(QtCore.QRect(self.program_width*0.18,self.program_height*0.13,self.program_width*0.13,self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(self.program_height/45)
         self.label_5.setFont(font)
         self.label_5.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
@@ -50,7 +48,7 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.label_9 = QtWidgets.QLabel(self)
         self.label_9.setGeometry(QtCore.QRect(self.program_width*0.18,self.program_height*0.22,self.program_width*0.13,self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(self.program_height/45)
         self.label_9.setFont(font)
         self.label_9.setText("")
@@ -59,7 +57,7 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.lineEdit_3 = QtWidgets.QLabel(self)
         self.lineEdit_3.setGeometry(QtCore.QRect(self.program_width*0.18,self.program_height*0.31,self.program_width*0.13,self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(self.program_height/45)
         self.lineEdit_3.setFont(font)
         self.lineEdit_3.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
@@ -67,15 +65,15 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.lineEdit_4 = QtWidgets.QLineEdit(self)
         self.lineEdit_4.setGeometry(QtCore.QRect(self.program_width*0.18,self.program_height*0.4,self.program_width*0.13,self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(self.program_height/45)
         self.lineEdit_4.setFont(font)
         self.lineEdit_4.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.lineEdit_4.setObjectName("ÈŞ¸Õ¿¢½ºÆ÷")
+        self.lineEdit_4.setObjectName("íœ´ë¨¼ì—‘ìŠ¤í¬")
         self.lineEdit_5 = QtWidgets.QLineEdit(self)
         self.lineEdit_5.setGeometry(QtCore.QRect(self.program_width*0.18,self.program_height*0.49,self.program_width*0.13,self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(self.program_height/45)
         self.lineEdit_5.setFont(font)
         self.lineEdit_5.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
@@ -88,7 +86,7 @@ class Ui_Dialog(QtWidgets.QDialog):
                                          "border-width:"+str(border_px)+"px;\n"
                                          "border-radius:"+str(border_px*10)+"px;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/40))
         self.pushButton_2.setFont(font)
         self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -101,7 +99,7 @@ class Ui_Dialog(QtWidgets.QDialog):
                                          "border-width:"+str(border_px)+"px;\n"
                                          "border-radius:"+str(border_px*10)+"px;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/40))
         self.pushButton_3.setFont(font)
         self.pushButton_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -110,7 +108,7 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.label_22.setGeometry(QtCore.QRect(self.program_width*0.39,self.program_height*0.04,self.program_width*0.57,self.program_height*0.4))
         self.label_22.setAlignment(QtCore.Qt.AlignCenter)
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/40))
         self.label_22.setFont(font)
         self.label_22.setStyleSheet("border-style:solid;\n"
@@ -121,7 +119,7 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.label_3 = QtWidgets.QLabel(self)
         self.label_3.setGeometry(QtCore.QRect(self.program_width*0.18,self.program_height*0.04,self.program_width*0.13,self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/45))
         self.label_3.setFont(font)
         self.label_3.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
@@ -138,27 +136,27 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.radioButton.setGeometry(QtCore.QRect(self.program_width*0.01,self.program_height*0.01,self.program_width*0.19,self.program_height*0.05))
         self.radioButton.setStyleSheet("border:none;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         self.radioButton.setFont(font)
         self.radioButton.setObjectName("radioButton")
         self.radioButton_2 = QtWidgets.QRadioButton(self.frame_2)
         self.radioButton_2.setGeometry(QtCore.QRect(self.program_width*0.01,self.program_height*0.07,self.program_width*0.19,self.program_height*0.05))
         self.radioButton_2.setStyleSheet("border:none;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         self.radioButton_2.setFont(font)
         self.radioButton_2.setObjectName("radioButton_2")
         self.radioButton_3 = QtWidgets.QRadioButton(self.frame_2)
         self.radioButton_3.setGeometry(QtCore.QRect(self.program_width*0.01,self.program_height*0.13,self.program_width*0.19,self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         self.radioButton_3.setFont(font)
         self.radioButton_3.setObjectName("radioButton_3")
         self.radioButton_3.setStyleSheet("border:none;")
         self.label_35 = QtWidgets.QLabel(self)
         self.label_35.setGeometry(QtCore.QRect(self.program_width*0.39,self.program_height*0.48,self.program_width*0.57,self.program_height*0.2))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(self.program_height/40)
         self.label_35.setFont(font)
         self.label_35.setStyleSheet("color:red;\n"
@@ -171,7 +169,7 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.pushButton_4 = QtWidgets.QPushButton(self)
         self.pushButton_4.setGeometry(QtCore.QRect(self.program_width*0.04,self.program_height*0.04,self.program_width*0.13,self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(self.program_height/50)
         self.pushButton_4.setFont(font)
         self.pushButton_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -181,7 +179,7 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.pushButton_5 = QtWidgets.QPushButton(self)
         self.pushButton_5.setGeometry(QtCore.QRect(self.program_width*0.04,self.program_height*0.13,self.program_width*0.13,self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(self.program_height/50)
         self.pushButton_5.setFont(font)
         self.pushButton_5.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -191,7 +189,7 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.pushButton_6 = QtWidgets.QPushButton(self)
         self.pushButton_6.setGeometry(QtCore.QRect(self.program_width*0.04,self.program_height*0.22,self.program_width*0.13,self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(self.program_height/50)
         self.pushButton_6.setFont(font)
         self.pushButton_6.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -201,7 +199,7 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.pushButton_7 = QtWidgets.QPushButton(self)
         self.pushButton_7.setGeometry(QtCore.QRect(self.program_width*0.04,self.program_height*0.31,self.program_width*0.13,self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(self.program_height/50)
         self.pushButton_7.setFont(font)
         self.pushButton_7.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -211,7 +209,7 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.pushButton_8 = QtWidgets.QPushButton(self)
         self.pushButton_8.setGeometry(QtCore.QRect(self.program_width*0.04,self.program_height*0.40,self.program_width*0.13,self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(self.program_height/50)
         self.pushButton_8.setFont(font)
         self.pushButton_8.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -221,7 +219,7 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.pushButton_9 = QtWidgets.QPushButton(self)
         self.pushButton_9.setGeometry(QtCore.QRect(self.program_width*0.04,self.program_height*0.49,self.program_width*0.13,self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(self.program_height/50)
         self.pushButton_9.setFont(font)
         self.pushButton_9.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -231,7 +229,7 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.pushButton_10 = QtWidgets.QPushButton(self)
         self.pushButton_10.setGeometry(QtCore.QRect(self.program_width*0.1,self.program_height*0.6,self.program_width*0.15,self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(self.program_height/50)
         self.pushButton_10.setFont(font)
         self.pushButton_10.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -244,20 +242,20 @@ class Ui_Dialog(QtWidgets.QDialog):
         self.lineEdit_3.setText("0.001")
         self.lineEdit_4.setText("16")
         self.lineEdit_5.setText("50")
-        self.pushButton_2.setText("ÇĞ½À½ÃÅ°±â")
-        self.pushButton_3.setText("´İ±â")
+        self.pushButton_2.setText("í•™ìŠµì‹œí‚¤ê¸°")
+        self.pushButton_3.setText("ë‹«ê¸°")
         self.label_3.setText("224 * 224")
-        self.radioButton.setText("ÁÂ¿ì¹İÀü ÀÌ¹ÌÁö Ãß°¡")
-        self.radioButton_2.setText("»óÇÏ¹İÀü ÀÌ¹ÌÁö Ãß°¡")
-        self.radioButton_3.setText("Ãß°¡ ¾øÀ½")
-        self.pushButton_4.setText("ÀÌ¹ÌÁö ÇØ»óµµ")
-        self.pushButton_5.setText("Ã¤³Î¼ö")
-        self.pushButton_6.setText("Å¬·¡½º ¼ö")
-        self.pushButton_7.setText("ÇĞ½À·ü")
-        self.pushButton_8.setText("ÀÛ¾÷ ¼ö·®")
-        self.pushButton_9.setText("ÇĞ½À È½¼ö")
-        self.pushButton_10.setText("ÀÌ¹ÌÁö Ãß°¡")
-        self.label_22.setText("´Ü¾î¸¦ Å¬¸¯ÇÏ½Ã¸é ¼³¸íÀ» º¼ ¼ö ÀÖ½À´Ï´Ù.")
+        self.radioButton.setText("ì¢Œìš°ë°˜ì „ ì´ë¯¸ì§€ ì¶”ê°€")
+        self.radioButton_2.setText("ìƒí•˜ë°˜ì „ ì´ë¯¸ì§€ ì¶”ê°€")
+        self.radioButton_3.setText("ì¶”ê°€ ì—†ìŒ")
+        self.pushButton_4.setText("ì´ë¯¸ì§€ í•´ìƒë„")
+        self.pushButton_5.setText("ì±„ë„ìˆ˜")
+        self.pushButton_6.setText("í´ë˜ìŠ¤ ìˆ˜")
+        self.pushButton_7.setText("í•™ìŠµë¥ ")
+        self.pushButton_8.setText("ì‘ì—… ìˆ˜ëŸ‰")
+        self.pushButton_9.setText("í•™ìŠµ íšŸìˆ˜")
+        self.pushButton_10.setText("ì´ë¯¸ì§€ ì¶”ê°€")
+        self.label_22.setText("ë‹¨ì–´ë¥¼ í´ë¦­í•˜ì‹œë©´ ì„¤ëª…ì„ ë³¼ ìˆ˜ ìˆìŠµë‹ˆë‹¤.")
         self.radioButton_3.setChecked(True)
         
         self.pushButton_4.clicked.connect(self.set_explain1)
@@ -283,30 +281,30 @@ class Ui_Dialog(QtWidgets.QDialog):
         try:
             self.learning_rate = float(self.lineEdit_3.text())
             if self.learning_rate <=0:
-                self.label_35.setText("ÇĞ½À·üÀº 0º¸´Ù Ä¿¾ßÇÕ´Ï´Ù.")
+                self.label_35.setText("í•™ìŠµë¥ ì€ 0ë³´ë‹¤ ì»¤ì•¼í•©ë‹ˆë‹¤.")
                 return
         except:
-            self.label_35.setText("ÇĞ½À·ü¿£ ¼ıÀÚ¸¸ ³ÖÀ» ¼ö ÀÖ½À´Ï´Ù.\n"
-                                  "¼Ò¼öÁ¡Àº 8ÀÚ¸®±îÁö ³Ö¾îÁÖ¼¼¿ä")
+            self.label_35.setText("í•™ìŠµë¥ ì—” ìˆ«ìë§Œ ë„£ì„ ìˆ˜ ìˆìŠµë‹ˆë‹¤.\n"
+                                  "ì†Œìˆ˜ì ì€ 8ìë¦¬ê¹Œì§€ ë„£ì–´ì£¼ì„¸ìš”")
             return        
         try:
             self.batch_size = int(self.lineEdit_4.text())
             if self.batch_size <= 0:
-                self.label_35.setText("ÀÛ¾÷ ¼ö·®ÀÌ 1º¸´Ù ÀÛÀ¸¸é ¾ÈµË´Ï´Ù.")
+                self.label_35.setText("ì‘ì—… ìˆ˜ëŸ‰ì´ 1ë³´ë‹¤ ì‘ìœ¼ë©´ ì•ˆë©ë‹ˆë‹¤.")
                 return
         except:
-            self.label_35.setText("ÀÛ¾÷ ¼ö·®¿£ ¼ıÀÚ¸¸ ³ÖÀ» ¼ö ÀÖ½À´Ï´Ù.")
+            self.label_35.setText("ì‘ì—… ìˆ˜ëŸ‰ì—” ìˆ«ìë§Œ ë„£ì„ ìˆ˜ ìˆìŠµë‹ˆë‹¤.")
             return        
         try:
             self.epoch_size = int(self.lineEdit_5.text())
             if self.epoch_size <= 0:
-                self.label_35.setText("ÇĞ½À È½¼ö°¡ 1º¸´Ù ÀÛÀ¸¸é ¾ÈµË´Ï´Ù.")
+                self.label_35.setText("í•™ìŠµ íšŸìˆ˜ê°€ 1ë³´ë‹¤ ì‘ìœ¼ë©´ ì•ˆë©ë‹ˆë‹¤.")
                 return
         except:
-            self.label_35.setText("ÇĞ½À È½¼ö¿£ ¼ıÀÚ¸¸ ³ÖÀ» ¼ö ÀÖ½À´Ï´Ù.")
+            self.label_35.setText("í•™ìŠµ íšŸìˆ˜ì—” ìˆ«ìë§Œ ë„£ì„ ìˆ˜ ìˆìŠµë‹ˆë‹¤.")
             return
         if self.image_count<self.batch_size:
-                self.label_35.setText("ÀÛ¾÷ ¼ö·®ÀÌ ÀÌ¹ÌÁö ¼öº¸´Ù ¸¹½À´Ï´Ù.")
+                self.label_35.setText("ì‘ì—… ìˆ˜ëŸ‰ì´ ì´ë¯¸ì§€ ìˆ˜ë³´ë‹¤ ë§ìŠµë‹ˆë‹¤.")
                 return
         try:
             for step in range(len(self.image_data)):
@@ -340,28 +338,28 @@ class Ui_Dialog(QtWidgets.QDialog):
         except BaseException as b:
             print(str(b))
     def set_explain1(self):
-        text=" ÀÌ¹ÌÁö ÇØ»óµµ´Â °¡·Î *¼¼·Î ÇÈ¼¿ ¼öÀÌ´Ù.\n ¿©±â¼­´Â 224*224·Î °íÁ¤ÀÌ´Ù."
+        text=" ì´ë¯¸ì§€ í•´ìƒë„ëŠ” ê°€ë¡œ *ì„¸ë¡œ í”½ì…€ ìˆ˜ì´ë‹¤.\n ì—¬ê¸°ì„œëŠ” 224*224ë¡œ ê³ ì •ì´ë‹¤."
         self.label_22.setText(text)
     def set_explain2(self):
-        text=" ÀÌ¹ÌÁö Ã¤³Î¼öÀÌ´Ù.\n °¢°¢ R,G,B¸¦ ÀÇ¹ÌÇÑ´Ù.\n ¿©±â¼­´Â 3Ã¤³Î·Î °íÁ¤ÀÌ´Ù."
+        text=" ì´ë¯¸ì§€ ì±„ë„ìˆ˜ì´ë‹¤.\n ê°ê° R,G,Bë¥¼ ì˜ë¯¸í•œë‹¤.\n ì—¬ê¸°ì„œëŠ” 3ì±„ë„ë¡œ ê³ ì •ì´ë‹¤."
         self.label_22.setText(text)
     def set_explain3(self):
-        text=" »çÁøÀ» ÀúÀåÇÑ Å¬·¡½ºÀÇ °¹¼öÀÌ´Ù."
+        text=" ì‚¬ì§„ì„ ì €ì¥í•œ í´ë˜ìŠ¤ì˜ ê°¯ìˆ˜ì´ë‹¤."
         self.label_22.setText(text)
     def set_explain4(self):
-        text=" ÇĞ½ÀÀ» ÁøÇàÇÏ´Â ¼ÓµµÀÌ´Ù.\n ³ôÀ¸¸é ºü¸£°Ô ÁøÇàÇÏÁö¸¸ ºÒ¾ÈÇØÁö°í\n³·À¸¸é ÃµÃµÈ÷ÁøÇàÇÏÁö¸¸ ¾ÈÁ¤µÇ°Ô ÇĞ½ÀÇÑ´Ù."
+        text=" í•™ìŠµì„ ì§„í–‰í•˜ëŠ” ì†ë„ì´ë‹¤.\n ë†’ìœ¼ë©´ ë¹ ë¥´ê²Œ ì§„í–‰í•˜ì§€ë§Œ ë¶ˆì•ˆí•´ì§€ê³ \në‚®ìœ¼ë©´ ì²œì²œíˆì§„í–‰í•˜ì§€ë§Œ ì•ˆì •ë˜ê²Œ í•™ìŠµí•œë‹¤."
         self.label_22.setText(text)
     def set_explain5(self):
-        text=" ÇÑ¹øÀÇ ÇĞ½ÀÀ» ÁøÇàÇÒ¶§\n¿©·¯¹øÀÇ ÀÛ¾÷À¸·Î ³ª´©¾î¼­ ÁøÇàÇÑ´Ù.\nÀÌ ¶§ ÇÑ¹øÀÇ ÀÛ¾÷´ç ¼öÇàÇÒ µ¥ÀÌÅÍ·®ÀÌ´Ù."
+        text=" í•œë²ˆì˜ í•™ìŠµì„ ì§„í–‰í• ë•Œ\nì—¬ëŸ¬ë²ˆì˜ ì‘ì—…ìœ¼ë¡œ ë‚˜ëˆ„ì–´ì„œ ì§„í–‰í•œë‹¤.\nì´ ë•Œ í•œë²ˆì˜ ì‘ì—…ë‹¹ ìˆ˜í–‰í•  ë°ì´í„°ëŸ‰ì´ë‹¤."
         self.label_22.setText(text)
     def set_explain6(self):
-        text=" ¸î¹øÀÇ ÇĞ½ÀÀ» ÇÒ °ÍÀÎÁö¿¡ ´ëÇÑ È½¼öÀÌ´Ù."
+        text=" ëª‡ë²ˆì˜ í•™ìŠµì„ í•  ê²ƒì¸ì§€ì— ëŒ€í•œ íšŸìˆ˜ì´ë‹¤."
         self.label_22.setText(text)
     def set_explain7(self):
-        text=" ÈÆ·Ã¿ë ÀÌ¹ÌÁöµ¥ÀÌÅÍ Ãß°¡¸¦ ÀÇ¹ÌÇÑ´Ù."  
+        text=" í›ˆë ¨ìš© ì´ë¯¸ì§€ë°ì´í„° ì¶”ê°€ë¥¼ ì˜ë¯¸í•œë‹¤."  
         self.label_22.setText(text)
     def set_explain8(self):
-        text=" ÀÌ¹ÌÁöµ¥ÀÌÅÍ¸¦ ¸ğµ¨¿¡ Áı¾î³ÖÀ» ½Ã \n ·£´ıÀ¸·Î ÀÌ¹ÌÁö¸¦ º¯È¯À» ½ÃÅ²´Ù."
+        text=" ì´ë¯¸ì§€ë°ì´í„°ë¥¼ ëª¨ë¸ì— ì§‘ì–´ë„£ì„ ì‹œ \n ëœë¤ìœ¼ë¡œ ì´ë¯¸ì§€ë¥¼ ë³€í™˜ì„ ì‹œí‚¨ë‹¤."
         self.label_22.setText(text)
 
     def quit(self):

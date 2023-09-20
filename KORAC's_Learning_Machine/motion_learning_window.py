@@ -1,5 +1,3 @@
-# -*- coding: euc-kr -*-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 import ctypes
 import custom_widgets as cw
@@ -76,7 +74,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.setupUi()
     def set_cam(self):
         try:
-            self.label_4.setText('±â´Ù·ÁÁÖ¼¼¿ä. ÁØºñÁßÀÔ´Ï´Ù.')
+            self.label_4.setText('ê¸°ë‹¤ë ¤ì£¼ì„¸ìš”. ì¤€ë¹„ì¤‘ì…ë‹ˆë‹¤.')
             self.setCursor(QtCore.Qt.BusyCursor)
             self.dq=0
             if self.args.file is not None:
@@ -104,18 +102,18 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.cap.set(4,540)
                     self.nomal = 900
         except:
-            self.label_4.setText("Ä·À» Ã£Áö ¸øÇß½À´Ï´Ù.")
+            self.label_4.setText("ìº ì„ ì°¾ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.")
             
         try:
             ret, image = self.cap.read()
         except:
-            self.label_4.setText("Ä·¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù.")
+            self.label_4.setText("ìº ì— ë¬¸ì œê°€ ìˆìŠµë‹ˆë‹¤.")
 
         try:
             self.VideoSignal1.connect(self.cam_viewer1.setImage)
             self.VideoSignal2.connect(self.cam_viewer2.setImage)
             self.MessageSignal.connect(self.send_msg_ev3)
-            self.label_4.setText('ÁØºñ°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù.')
+            self.label_4.setText('ì¤€ë¹„ê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.')
             self.setCursor(QtCore.Qt.ArrowCursor)
             self.show_video()
         except:
@@ -164,12 +162,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_2 = QtWidgets.QPushButton(self.frame_2)
         self.pushButton_2.setGeometry(QtCore.QRect(0, self.program_height*0.3, self.program_width*0.3, self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.pushButton_29 = QtWidgets.QPushButton(self.frame_2)
         self.pushButton_29.setGeometry(QtCore.QRect(0, self.program_height*0.2, self.program_width*0.3, self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.pushButton_29.setFont(font)
         self.pushButton_29.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -183,7 +181,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_3 = QtWidgets.QPushButton(self.frame_2)
         self.pushButton_3.setGeometry(QtCore.QRect(0, self.program_height*0.4, self.program_width*0.3, self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.pushButton_3.setFont(font)
         self.pushButton_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -195,7 +193,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_4 = QtWidgets.QPushButton(self.frame_2)
         self.pushButton_4.setGeometry(QtCore.QRect(0, self.program_height*0.5, self.program_width*0.3, self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.pushButton_4.setFont(font)
         self.pushButton_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -208,7 +206,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_13 = QtWidgets.QPushButton(self.frame_2)
         self.pushButton_13.setGeometry(QtCore.QRect(0, self.program_height*0.6, self.program_width*0.3, self.program_height*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.pushButton_13.setFont(font)
         self.pushButton_13.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -218,7 +216,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label_2.setGeometry(QtCore.QRect(self.program_width*0.48, self.program_height*0.03, self.program_width*0.44, self.program_height*0.06))
         self.label_2.setStyleSheet("background-color: rgb(194, 194, 194);border-style:solid;border-color:white;border-width:"+str(self.border_px)+"px;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
@@ -231,7 +229,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label_6 = QtWidgets.QLabel(self.centralwidget)
         self.label_6.setGeometry(QtCore.QRect(self.program_width*0.02, self.program_width*0.36+self.program_height*0.11, self.program_width*0.36, self.program_width*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_width/60))
         self.label_6.setFont(font)
         self.label_6.setStyleSheet("background-color:black;\n"
@@ -240,7 +238,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label = QtWidgets.QLineEdit(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(self.program_width*0.02, self.program_width*0.36+self.program_height*0.17, self.program_width*0.36, self.program_width*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_width/60))
         self.label.setFont(font)
         self.label.setStyleSheet("background-color: rgb(194, 194, 194);\n"
@@ -252,7 +250,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label_7 = QtWidgets.QLabel(self.centralwidget)
         self.label_7.setGeometry(QtCore.QRect(self.program_width*0.02, self.program_width*0.36+self.program_height*0.26, self.program_width*0.36, self.program_width*0.05))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_width/60))
         self.label_7.setFont(font)
         self.label_7.setStyleSheet("background-color:black;\n"
@@ -261,7 +259,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
         self.textEdit.setGeometry(QtCore.QRect(self.program_width*0.02, self.program_width*0.36+self.program_height*0.32, self.program_width*0.36, self.program_width*0.2))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_width/70))
         self.textEdit.setFont(font)
         self.textEdit.setStyleSheet("background-color: rgb(194, 194, 194);\n"
@@ -360,7 +358,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.line = QtWidgets.QLineEdit(self.frame_22)
         self.line.setGeometry(QtCore.QRect(self.program_width*0.3, self.program_height*0.89, self.program_width*0.05, self.program_height*0.03))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_width/80))
         self.line.setFont(font)
         self.line.setAlignment(QtCore.Qt.AlignCenter)
@@ -382,7 +380,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             "border-width:"+str(self.border_px)+"px;"
             "border-radius:"+str(self.border_px*7)+"px;"
             )
-        self.pushButton_15.setText("EV3 ¿¬°áÇÏ±â")
+        self.pushButton_15.setText("EV3 ì—°ê²°í•˜ê¸°")
         
         self.frame_3 = QtWidgets.QFrame(self.frame_22)
         self.frame_3.setGeometry(QtCore.QRect(self.program_width*0.02, 0, self.program_width*0.32, self.program_height*0.384))
@@ -438,9 +436,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_1.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_1.setText("1¹ø Å¬·¡½º")
+        self.la_1.setText("1ë²ˆ í´ë˜ìŠ¤")
         self.la_1.setFont(font)
         self.la_2 = QtWidgets.QLabel(self.frame_4)
         self.la_2.setGeometry(QtCore.QRect(0,self.program_height*0.038,self.program_width*0.095, self.program_height*0.038))
@@ -448,9 +446,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_2.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_2.setText("2¹ø Å¬·¡½º")
+        self.la_2.setText("2ë²ˆ í´ë˜ìŠ¤")
         self.la_2.setFont(font)
         self.la_3 = QtWidgets.QLabel(self.frame_4)
         self.la_3.setGeometry(QtCore.QRect(0,self.program_height*0.076,self.program_width*0.095, self.program_height*0.038))
@@ -458,9 +456,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_3.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_3.setText("3¹ø Å¬·¡½º")
+        self.la_3.setText("3ë²ˆ í´ë˜ìŠ¤")
         self.la_3.setFont(font)
         self.la_4 = QtWidgets.QLabel(self.frame_4)
         self.la_4.setGeometry(QtCore.QRect(0,self.program_height*0.114,self.program_width*0.095, self.program_height*0.038))
@@ -468,9 +466,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_4.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_4.setText("4¹ø Å¬·¡½º")
+        self.la_4.setText("4ë²ˆ í´ë˜ìŠ¤")
         self.la_4.setFont(font)
         self.la_5 = QtWidgets.QLabel(self.frame_4)
         self.la_5.setGeometry(QtCore.QRect(0,self.program_height*0.152,self.program_width*0.095, self.program_height*0.038))
@@ -478,9 +476,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_5.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_5.setText("5¹ø Å¬·¡½º")
+        self.la_5.setText("5ë²ˆ í´ë˜ìŠ¤")
         self.la_5.setFont(font)
         self.la_6 = QtWidgets.QLabel(self.frame_4)
         self.la_6.setGeometry(QtCore.QRect(0,self.program_height*0.190,self.program_width*0.095, self.program_height*0.038))
@@ -488,9 +486,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_6.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_6.setText("6¹ø Å¬·¡½º")
+        self.la_6.setText("6ë²ˆ í´ë˜ìŠ¤")
         self.la_6.setFont(font)
         self.la_7 = QtWidgets.QLabel(self.frame_4)
         self.la_7.setGeometry(QtCore.QRect(0,self.program_height*0.228,self.program_width*0.095, self.program_height*0.038))
@@ -498,9 +496,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_7.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_7.setText("7¹ø Å¬·¡½º")
+        self.la_7.setText("7ë²ˆ í´ë˜ìŠ¤")
         self.la_7.setFont(font)
         self.la_8 = QtWidgets.QLabel(self.frame_4)
         self.la_8.setGeometry(QtCore.QRect(0,self.program_height*0.266,self.program_width*0.095, self.program_height*0.038))
@@ -508,9 +506,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.la_8.setStyleSheet("background-color:black;\n"
                            "color:white;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/75))
-        self.la_8.setText("8¹ø Å¬·¡½º")
+        self.la_8.setText("8ë²ˆ í´ë˜ìŠ¤")
         self.la_8.setFont(font)
         self.bar_1 = QtWidgets.QProgressBar(self.frame_4)
         self.bar_1.setGeometry(QtCore.QRect(self.program_width*0.095,0,self.program_width*0.265,self.program_height*0.038))
@@ -544,7 +542,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             "background-color:black;\n"
             "color:white;"
             )
-        self.progress_label.setText("ÇĞ½À ÁøÇà »óÈ²")
+        self.progress_label.setText("í•™ìŠµ ì§„í–‰ ìƒí™©")
         self.progress_label.setAlignment(QtCore.Qt.AlignCenter)
         self.progress_bar = QtWidgets.QProgressBar(self.centralwidget)
         self.progress_bar.setGeometry(QtCore.QRect(self.program_width*1.03,self.program_height*0.91,self.program_width*0.34,self.program_height*0.06))
@@ -563,7 +561,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                          "border-width:"+str(self.border_px)+"px;\n"
                                          "border-radius:"+str(self.border_px*10)+"px;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/45))
         self.pushButton_8.setFont(font)
         self.pushButton_9 = QtWidgets.QPushButton(self.centralwidget)
@@ -576,7 +574,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                          "border-width:"+str(self.border_px)+"px;\n"
                                          "border-radius:"+str(self.border_px*7)+"px;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/55))
         self.pushButton_9.setFont(font)
         self.pushButton_10 = QtWidgets.QPushButton(self.centralwidget)
@@ -589,7 +587,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                          "border-width:"+str(self.border_px)+"px;\n"
                                          "border-radius:"+str(self.border_px*7)+"px;")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/55))
         self.pushButton_10.setFont(font)
         self.pushButton_11 = QtWidgets.QPushButton(self.centralwidget)
@@ -602,7 +600,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                          "border-radius:"+str(self.border_px*7)+"px;")
         self.pushButton_11.setObjectName("pushButton_11")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/55))
         self.pushButton_11.setFont(font)
         self.pushButton_12 = QtWidgets.QPushButton(self.centralwidget)
@@ -615,14 +613,14 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                          "border-radius:"+str(self.border_px*7)+"px;")
         self.pushButton_12.setObjectName("pushButton_12")
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/55))
         self.pushButton_12.setFont(font)
         self.label_5 = QtWidgets.QLabel(self.centralwidget)
         self.label_5.setGeometry(QtCore.QRect(self.program_width*0.42, self.program_height*0.84, self.program_width*0.56, self.program_height*0.04))
         self.label_5.setAlignment(QtCore.Qt.AlignCenter)
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/50))
         self.label_5.setFont(font)
         self.label_5.setStyleSheet("background-color: black;\n"
@@ -630,7 +628,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
         self.label_4.setGeometry(QtCore.QRect(self.program_width*0.42, self.program_height*0.88, self.program_width*0.56, self.program_height*0.11))
         font = QtGui.QFont()
-        font.setFamily("ÈŞ¸Õ¿¢½ºÆ÷")
+        font.setFamily("íœ´ë¨¼ì—‘ìŠ¤í¬")
         font.setPointSize(int(self.program_height/60))
         self.label_4.setFont(font)
         self.label_4.setStyleSheet("background-color: rgb(194, 194, 194);\n"
@@ -660,21 +658,21 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label_4.raise_()
         self.setCentralWidget(self.centralwidget)
 
-        self.pushButton_29.setText("»õ ÇÁ·ÎÁ§Æ®")
+        self.pushButton_29.setText("ìƒˆ í”„ë¡œì íŠ¸")
         self.label_2.setText("CLASS_1")
-        self.pushButton_2.setText("ÇÁ·ÎÁ§Æ® ºÒ·¯¿À±â")
-        self.pushButton_3.setText("ÇÁ·ÎÁ§Æ® ÀúÀåÇÏ±â")
-        self.pushButton_4.setText("¸ŞÀÎ¸Ş´º·Î ÀÌµ¿")
-        self.pushButton_8.setText("»ç  Áø  ÃÔ  ¿µ")
-        self.pushButton_9.setText("ÀÌ¹ÌÁö ºÒ·¯¿À±â")
-        self.pushButton_10.setText("ÀÌ¹ÌÁö »èÁ¦ÇÏ±â")
-        self.pushButton_11.setText("Å¬·¡½º »èÁ¦ÇÏ±â")
-        self.pushButton_12.setText("ÇĞ½ÀÇÏ·¯°¡±â")
-        self.pushButton_13.setText("Á¾·áÇÏ±â")
-        self.label_6.setText("Å¬·¡½º ÀÌ¸§")
-        self.label_7.setText("Å¬·¡½º ¼³¸í")
+        self.pushButton_2.setText("í”„ë¡œì íŠ¸ ë¶ˆëŸ¬ì˜¤ê¸°")
+        self.pushButton_3.setText("í”„ë¡œì íŠ¸ ì €ì¥í•˜ê¸°")
+        self.pushButton_4.setText("ë©”ì¸ë©”ë‰´ë¡œ ì´ë™")
+        self.pushButton_8.setText("ì‚¬  ì§„  ì´¬  ì˜")
+        self.pushButton_9.setText("ì´ë¯¸ì§€ ë¶ˆëŸ¬ì˜¤ê¸°")
+        self.pushButton_10.setText("ì´ë¯¸ì§€ ì‚­ì œí•˜ê¸°")
+        self.pushButton_11.setText("í´ë˜ìŠ¤ ì‚­ì œí•˜ê¸°")
+        self.pushButton_12.setText("í•™ìŠµí•˜ëŸ¬ê°€ê¸°")
+        self.pushButton_13.setText("ì¢…ë£Œí•˜ê¸°")
+        self.label_6.setText("í´ë˜ìŠ¤ ì´ë¦„")
+        self.label_7.setText("í´ë˜ìŠ¤ ì„¤ëª…")
         self.label.setText("CLASS_1")
-        self.label_5.setText("¾Ë ¸² ÆÇ")
+        self.label_5.setText("ì•Œ ë¦¼ íŒ")
         self.textEdit.setText("")
         
         self.frame_2.hide()
@@ -744,7 +742,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 if aaa:
                     try:
                         self.ev3 = dda.ev3
-                        self.pushButton_15.setText("EV3 ¿¬°á²÷±â")
+                        self.pushButton_15.setText("EV3 ì—°ê²°ëŠê¸°")
                         self.connect = 1
                     except BaseException as b:
                         print(str(b))
@@ -755,7 +753,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.ev3.close()
                 except:
                     pass
-                self.pushButton_15.setText("EV3 ¿¬°áÇÏ±â")
+                self.pushButton_15.setText("EV3 ì—°ê²°í•˜ê¸°")
                 self.ev3 = None    
         except BaseException as b:
             print(str(b))
@@ -766,7 +764,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             try:
                 if self.current_class==len(self.image_data)+1 and len(self.class_image)>0 and self.current_class>1:
@@ -820,7 +818,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.table.scrollToBottom()
                 self.label.setText(self.class_name[self.current_class-1])
                 self.textEdit.setText(self.class_explain[self.current_class-1])
-                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
             except BaseException as b:
                 print(str(b))
         except BaseException as b:
@@ -830,7 +828,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.image_data)+1 and len(self.class_image)>0 and self.current_class>2:
                 self.image_data.append(self.class_image)
@@ -883,7 +881,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
         except BaseException as b:
             print(str(b))
     def move_class_3(self):
@@ -891,7 +889,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.image_data)+1 and len(self.class_image)>0 and self.current_class>3:
                 self.image_data.append(self.class_image)
@@ -944,7 +942,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
         except BaseException as b:
             print(str(b))
     def move_class_4(self):
@@ -952,7 +950,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.image_data)+1 and len(self.class_image)>0 and self.current_class>4:
                 self.image_data.append(self.class_image)
@@ -1005,7 +1003,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
         except BaseException as b:
             print(str(b))
     def move_class_5(self):
@@ -1013,7 +1011,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.image_data)+1 and len(self.class_image)>0 and self.current_class>5:
                 self.image_data.append(self.class_image)
@@ -1066,7 +1064,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
         except BaseException as b:
             print(str(b))
     def move_class_6(self):
@@ -1074,7 +1072,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.image_data)+1 and len(self.class_image)>0 and self.current_class>6:
                 self.image_data.append(self.class_image)
@@ -1127,7 +1125,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
         except BaseException as b:
             print(str(b))
     def move_class_7(self):
@@ -1135,7 +1133,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.image_data)+1 and len(self.class_image)>0 and self.current_class>7:
                 self.image_data.append(self.class_image)
@@ -1188,7 +1186,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
         except BaseException as b:
             print(str(b))
     def move_class_8(self):
@@ -1196,7 +1194,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==len(self.image_data)+1 and len(self.class_image)>0 and self.current_class>8:
                 self.image_data.append(self.class_image)
@@ -1247,7 +1245,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.table.scrollToBottom()
             self.label.setText(self.class_name[self.current_class-1])
             self.textEdit.setText(self.class_explain[self.current_class-1])
-            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+            self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
         except BaseException as b:
             print(str(b))   
     def change_button_name(self):
@@ -1271,7 +1269,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 elif self.current_class == 8:
                     self.pushButton_38.setText(self.label.text())
             else:
-                self.label_4.setText("Å¬·¡½ºÀÌ¸§Àº 16ÀÚÀÌ³»·Î ÀÛ¼ºÇØÁÖ¼¼¿ä")
+                self.label_4.setText("í´ë˜ìŠ¤ì´ë¦„ì€ 16ìì´ë‚´ë¡œ ì‘ì„±í•´ì£¼ì„¸ìš”")
                 self.label.setText("")
                 return
         except BaseException as b:
@@ -1279,12 +1277,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     @QtCore.pyqtSlot()        
     def error_learning(self):
         try:
-            self.label_4.setText('ÇĞ½ÀµµÁß ¿¡·¯°¡ ¹ß»ıÇß½À´Ï´Ù.\n ´Ù½ÃÇØÁÖ¼¼¿ä.')
+            self.label_4.setText('í•™ìŠµë„ì¤‘ ì—ëŸ¬ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤.\n ë‹¤ì‹œí•´ì£¼ì„¸ìš”.')
             self.progress_bar.hide()
             self.progress_label.hide()
             self.frame_23.show()
             self.learning -= 1
-            self.pushButton_12.setText("ÇĞ½ÀÇÏ·¯°¡±â")
+            self.pushButton_12.setText("í•™ìŠµí•˜ëŸ¬ê°€ê¸°")
         except:
             pass
     @QtCore.pyqtSlot(list)        
@@ -1314,8 +1312,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             self.preview += 1
             self.model = True
             self.frame_22.show()
-            self.label_4.setText('ÇĞ½ÀÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.')
-            self.pushButton_12.setText("¿¹Ãø ÁßÁö")
+            self.label_4.setText('í•™ìŠµì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.')
+            self.pushButton_12.setText("ì˜ˆì¸¡ ì¤‘ì§€")
         except BaseException as b:
             print(str(b)) 
     @QtCore.pyqtSlot(int)        
@@ -1330,11 +1328,11 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.t1.stop_learning()
                 self.progress_bar.hide()
                 self.progress_label.hide()
-                self.pushButton_12.setText("ÇĞ½ÀÇÏ·¯ °¡±â")
+                self.pushButton_12.setText("í•™ìŠµí•˜ëŸ¬ ê°€ê¸°")
                 self.frame_23.show()
                 return
             if len(self.train_coords)<=1 and self.current_class==1:
-                self.label_4.setText('Å¬·¡½º°¡ 2°³ ÀÌ»óÀÌ¾î¾ß ÇÕ´Ï´Ù.')
+                self.label_4.setText('í´ë˜ìŠ¤ê°€ 2ê°œ ì´ìƒì´ì–´ì•¼ í•©ë‹ˆë‹¤.')
                 return
             if not self.preview:
                 try:
@@ -1348,13 +1346,13 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                         self.class_explain.append(self.textEdit.toPlainText())
                     for step in range(len(self.image_data)):
                         if len(self.image_data[step]) < 1:
-                            self.label_4.setText("ÀÌ¹ÌÁö°¡ 1Àå ÀÌ»óÀÌ¾î¾ß ÇÕ´Ï´Ù.\n"
-                                             "ÇöÀç CLASS_"+str(step+1)+" -> "+str(len(self.image_data[step]))+"Àå")
+                            self.label_4.setText("ì´ë¯¸ì§€ê°€ 1ì¥ ì´ìƒì´ì–´ì•¼ í•©ë‹ˆë‹¤.\n"
+                                             "í˜„ì¬ CLASS_"+str(step+1)+" -> "+str(len(self.image_data[step]))+"ì¥")
                             return
                     for step in range(len(self.image_data)):
                         if len(self.image_data[step]) < 50:
-                            self.label_4.setText("ÀÌ¹ÌÁö°¡ 50Àå ÀÌ»óÀÌ¾î¾ß ÇÕ´Ï´Ù.\n"
-                                             "ÇöÀç CLASS_"+str(step+1)+" -> "+str(len(self.image_data[step]))+"Àå")
+                            self.label_4.setText("ì´ë¯¸ì§€ê°€ 50ì¥ ì´ìƒì´ì–´ì•¼ í•©ë‹ˆë‹¤.\n"
+                                             "í˜„ì¬ CLASS_"+str(step+1)+" -> "+str(len(self.image_data[step]))+"ì¥")
                             return
                     dialog = motion_train_dialog.Ui_Dialog(self.train_coords,self.learning_count)
                     m = dialog.showModal()
@@ -1364,7 +1362,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                         self.progress_bar.setValue(0)
                         self.progress_bar.show()
                         self.progress_label.show()
-                        self.label_4.setText('ÇĞ½ÀÁß ÀÔ´Ï´Ù.')
+                        self.label_4.setText('í•™ìŠµì¤‘ ì…ë‹ˆë‹¤.')
                         td = dialog.train_data
                         tl = dialog.train_label
                         vd = dialog.val_data
@@ -1375,7 +1373,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                         ca = len(self.image_data)
                         self.label.setReadOnly(True)
                         self.textEdit.setReadOnly(True)
-                        self.pushButton_12.setText("ÇĞ½À Ãë¼Ò½ÃÅ°±â")
+                        self.pushButton_12.setText("í•™ìŠµ ì·¨ì†Œì‹œí‚¤ê¸°")
                         self.learning_count = dialog.learning_count
                         self.saved = 0
                         self.t1 = ML_class(td,vd,tl,vl,le,ba,ep,ca,self.learning_count)
@@ -1387,7 +1385,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 except BaseException as b:
                     print(str(b))
             else:
-                tt = train_alam.Ui_Dialog('ÇöÀç ÇÁ·ÎÁ§Æ®¸¦\nÀúÀå ÇÏ½Ã°Ú½À´Ï±î?')
+                tt = train_alam.Ui_Dialog('í˜„ì¬ í”„ë¡œì íŠ¸ë¥¼\nì €ì¥ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?')
                 aa = tt.showModal()
                 if aa:
                     r= self.save_project()
@@ -1402,7 +1400,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.frame_22.hide()
                 self.frame_23.show()
                 self.preview = self.preview-1
-                self.pushButton_12.setText("ÇĞ½ÀÇÏ·¯°¡±â")
+                self.pushButton_12.setText("í•™ìŠµí•˜ëŸ¬ê°€ê¸°")
         except BaseException as b:
             print(str(b))  
     @QtCore.pyqtSlot(list)
@@ -1434,8 +1432,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 return
             try:
                 if len(self.clicked_label_position)==0:
-                    self.label_4.setText("¼±ÅÃµÈ ÀÌ¹ÌÁö°¡ ¾ø½À´Ï´Ù.\n"
-                                        "Áö¿ì·Á´Â ÀÌ¹ÌÁö¸¦ Å¬¸¯ÇØÁÖ¼¼¿ä")
+                    self.label_4.setText("ì„ íƒëœ ì´ë¯¸ì§€ê°€ ì—†ìŠµë‹ˆë‹¤.\n"
+                                        "ì§€ìš°ë ¤ëŠ” ì´ë¯¸ì§€ë¥¼ í´ë¦­í•´ì£¼ì„¸ìš”")
                     return
                 else:
                     self.clicked_label_position.sort()
@@ -1471,7 +1469,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                         self.table.scrollToBottom()
                     if len(self.class_image)==0:
                         self.delete_class()
-                    self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+                    self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
             except BaseException as b:
                 print(str(b))
         except BaseException as b:
@@ -1565,10 +1563,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                     min_pose_score=0.25)
                                 
                                 if pose_scores[0]==0:
-                                    self.label_4.setText('ÀÚ¼¼¸¦ ÀÎ½ÄÇÒ ´ë»óÀÌ ¾ø´Â »çÁøÀÌ ÀÖ½À´Ï´Ù.')
+                                    self.label_4.setText('ìì„¸ë¥¼ ì¸ì‹í•  ëŒ€ìƒì´ ì—†ëŠ” ì‚¬ì§„ì´ ìˆìŠµë‹ˆë‹¤.')
                                     continue
                                 elif pose_scores[2]!=0:
-                                    self.label_4.setText('2¸í ÀÌ»óÀÇ »çÁøÀº ºÒ·¯¿Ã¼ö ¾ø½À´Ï´Ù.')
+                                    self.label_4.setText('2ëª… ì´ìƒì˜ ì‚¬ì§„ì€ ë¶ˆëŸ¬ì˜¬ìˆ˜ ì—†ìŠµë‹ˆë‹¤.')
                                 else:
                                     keypoint_coords *= output_scale
                                     keypoint_count = []
@@ -1615,9 +1613,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                         self.table.setRowHeight(self.table_row-1,76)
                                         self.table.setCellWidget(self.table_row-1,0,capture_label)
                                     self.table.scrollToBottom()
-                                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+                                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
                     except:
-                        self.label_4.setText('ÀÌ¹ÌÁö°¡ ¾Æ´Ñ ÆÄÀÏÀÌ ÀÖ½À´Ï´Ù.')
+                        self.label_4.setText('ì´ë¯¸ì§€ê°€ ì•„ë‹Œ íŒŒì¼ì´ ìˆìŠµë‹ˆë‹¤.')
                         return
         except BaseException as b:
             print(str(b))
@@ -1700,7 +1698,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                             self.table.scrollToBottom()
                         self.label.setText(self.class_name[self.current_class-1])
                         self.textEdit.setText(self.class_explain[self.current_class-1])
-                        self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+                        self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
             except BaseException as b:
                 print(str(b))
         except BaseException as b:
@@ -1710,7 +1708,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if len(self.image_data)>self.current_class:
                 self.clicked_label_position = []
@@ -1754,10 +1752,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.current_class = self.current_class+1
                 self.label.setText(self.class_name[self.current_class-1])
                 self.textEdit.setText(self.class_explain[self.current_class-1])
-                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
             else:
                 if self.current_class == 8:
-                    self.label_4.setText("Å¬·¡½º´Â 8°³±îÁö »ı¼ºÇÒ¼ö ÀÖ½À´Ï´Ù.")
+                    self.label_4.setText("í´ë˜ìŠ¤ëŠ” 8ê°œê¹Œì§€ ìƒì„±í• ìˆ˜ ìˆìŠµë‹ˆë‹¤.")
                     return
                 self.clicked_label_position = []
                 if self.current_class==len(self.image_data)+1 and len(self.class_image)>0:
@@ -1797,7 +1795,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.label_2.setText("CLASS_"+str(self.current_class))
                     self.frame_23.resize(QtCore.QSize(self.program_width*0.36,self.program_height*0.1+((self.current_class-1)*self.program_height*0.08)))
                 else:
-                    self.label_4.setText("ÇöÀç Å¬·¡½º¿¡ ÀÌ¹ÌÁö°¡ ÀÖ¾î¾ßÇÕ´Ï´Ù.")
+                    self.label_4.setText("í˜„ì¬ í´ë˜ìŠ¤ì— ì´ë¯¸ì§€ê°€ ìˆì–´ì•¼í•©ë‹ˆë‹¤.")
                     return
         except BaseException as b:
             print(str(b))
@@ -1807,10 +1805,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.check_capture():
                 return
             if self.label.text()=="":
-                self.label_4.setText("Å¬·¡½ºÀÇ ÀÌ¸§À» Àû¾îÁÖ¼Å¾ß ÇÕ´Ï´Ù.")
+                self.label_4.setText("í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ì ì–´ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.")
                 return
             if self.current_class==1:
-                self.label_4.setText("Ã¹¹øÂ° Å¬·¡½ºÀÔ´Ï´Ù.")
+                self.label_4.setText("ì²«ë²ˆì§¸ í´ë˜ìŠ¤ì…ë‹ˆë‹¤.")
                 return
             else:
                 self.clicked_label_position = []
@@ -1862,7 +1860,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.table.scrollToBottom()
                 self.label.setText(self.class_name[self.current_class-1])
                 self.textEdit.setText(self.class_explain[self.current_class-1])
-                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
         except BaseException as b:
             print(str(b))
     def append_table(self,image_label):
@@ -1959,20 +1957,20 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     "border-style:solid;\n"
     "border-color:white;\n")
                         self.append_table(capture_label)
-                        self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
+                        self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
                         score = []
                         keypoint_count = []
                         motion_count = []
                         if pose_scores[2]!=0:
                             self.capture_checked = 0
-                            self.label_4.setText("¸ğ¼ÇÀº ÃÖ´ë 2»ç¶÷¸¸ Ä¸ÃÄ°¡ °¡´ÉÇÕ´Ï´Ù.")
-                            self.pushButton_8.setText("»ç Áø ÃÔ ¿µ")
+                            self.label_4.setText("ëª¨ì…˜ì€ ìµœëŒ€ 2ì‚¬ëŒë§Œ ìº¡ì³ê°€ ê°€ëŠ¥í•©ë‹ˆë‹¤.")
+                            self.pushButton_8.setText("ì‚¬ ì§„ ì´¬ ì˜")
                             continue
                         
                         if pose_scores[0]==0:
                             self.capture_checked = 0
-                            self.label_4.setText("¸ğ¼ÇÀ» ÀÎ½ÄÇÒ ´ë»óÀÌ È­¸é¿¡ ¾ø½À´Ï´Ù.")
-                            self.pushButton_8.setText("»ç Áø ÃÔ ¿µ")
+                            self.label_4.setText("ëª¨ì…˜ì„ ì¸ì‹í•  ëŒ€ìƒì´ í™”ë©´ì— ì—†ìŠµë‹ˆë‹¤.")
+                            self.pushButton_8.setText("ì‚¬ ì§„ ì´¬ ì˜")
                             continue
                             
                         for step2 in range(17):
@@ -1997,7 +1995,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def menu_show_event(self):
         try:
             if self.capture_checked:
-                self.label_4.setText("»çÁø ÃÔ¿µ Áß¿¡´Â ´Ù¸¥ °ÍÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù!!")
+                self.label_4.setText("ì‚¬ì§„ ì´¬ì˜ ì¤‘ì—ëŠ” ë‹¤ë¥¸ ê²ƒì„ í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤!!")
                 return
             else:
                 if self.menu_clicked==1:
@@ -2038,10 +2036,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def exit(self):
         try:
             if self.learning==1:
-                self.label_4.setText('ÇĞ½ÀÁß¿¡´Â ¾ÈµË´Ï´Ù.')
+                self.label_4.setText('í•™ìŠµì¤‘ì—ëŠ” ì•ˆë©ë‹ˆë‹¤.')
                 return
             if self.saved ==0:
-                tt = train_alam.Ui_Dialog('ÇöÀç ÇÁ·ÎÁ§Æ®¸¦\nÀúÀå ÇÏ½Ã°Ú½À´Ï±î?')
+                tt = train_alam.Ui_Dialog('í˜„ì¬ í”„ë¡œì íŠ¸ë¥¼\nì €ì¥ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?')
                 aa = tt.showModal()
                 if aa:
                     r= self.save_project()
@@ -2067,11 +2065,11 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def capture_image(self):
         try:
             if self.check_previewed():
-                self.label_4.setText("¿¹Ãø Áß¿¡´Â ÇÒ ¼ö ¾ø½À´Ï´Ù.")
+                self.label_4.setText("ì˜ˆì¸¡ ì¤‘ì—ëŠ” í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.")
                 return
             self.capture_checked = 1 - self.capture_checked
             if self.capture_checked:
-                self.pushButton_8.setText("»ç  Áø  ÃÔ  ¿µ  Áß  Áö")
+                self.pushButton_8.setText("ì‚¬  ì§„  ì´¬  ì˜  ì¤‘  ì§€")
             else:
                 self.table_row = 0
                 self.table.clearContents()
@@ -2098,8 +2096,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                         self.table.setRowHeight(self.table_row-1,self.program_height*0.09)
                         self.table.setCellWidget(self.table_row-1,0,capture_label2)
                     self.table.scrollToBottom()
-                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
-                self.pushButton_8.setText("»ç  Áø  ÃÔ  ¿µ ")
+                self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
+                self.pushButton_8.setText("ì‚¬  ì§„  ì´¬  ì˜ ")
         except BaseException as b:
             print(str(b))    
     def check_capture(self):
@@ -2111,7 +2109,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.pushButton.move(self.program_width*0.02,self.program_width*0.02)
                 self.menu_clicked = 1 - self.menu_clicked
             if self.capture_checked:
-                self.label_4.setText("»çÁø ÃÔ¿µ Áß¿¡´Â ´Ù¸¥ °ÍÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù!!")
+                self.label_4.setText("ì‚¬ì§„ ì´¬ì˜ ì¤‘ì—ëŠ” ë‹¤ë¥¸ ê²ƒì„ í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤!!")
                 return True
             else:
                 self.label_4.setText("")
@@ -2127,7 +2125,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.pushButton.move(self.program_width*0.02,self.program_width*0.02)
                 self.menu_clicked = 1 - self.menu_clicked
             if self.preview:
-                self.label_4.setText("¿¹Ãø Áß¿¡´Â ÇÒ¼ö ¾ø½À´Ï´Ù.")
+                self.label_4.setText("ì˜ˆì¸¡ ì¤‘ì—ëŠ” í• ìˆ˜ ì—†ìŠµë‹ˆë‹¤.")
                 return True
             else:
                 self.label_4.setText("")
@@ -2184,12 +2182,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def save_project(self):
         try:
             if self.learning==1:
-                self.label_4.setText('ÇĞ½ÀÁß¿¡´Â ¾ÈµË´Ï´Ù.')
+                self.label_4.setText('í•™ìŠµì¤‘ì—ëŠ” ì•ˆë©ë‹ˆë‹¤.')
                 return
             if self.check_capture():
                 return
             if self.model==False:
-                self.label_4.setText("¸ÕÀú ÇĞ½ÀÀ» ÇÏ¼Å¾ßÇÕ´Ï´Ù.")
+                self.label_4.setText("ë¨¼ì € í•™ìŠµì„ í•˜ì…”ì•¼í•©ë‹ˆë‹¤.")
                 return
             else:
                 file_dialog = QFileDialog()
@@ -2252,9 +2250,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                                                             try:
                                                                 self.make_dir(path)
                                                             except:
-                                                                self.label_4.setText("ÇØ´ç °æ·ÎÀÇ ´Ù¸¥ ÇÁ·ÎÁ§Æ®¸¦ Áö¿öÁÖ¼¼¿ä!")
+                                                                self.label_4.setText("í•´ë‹¹ ê²½ë¡œì˜ ë‹¤ë¥¸ í”„ë¡œì íŠ¸ë¥¼ ì§€ì›Œì£¼ì„¸ìš”!")
                                                                 return 'e'
-                    self.pushButton_12.setText("ÇĞ½À½ÃÅ°±â")
+                    self.pushButton_12.setText("í•™ìŠµì‹œí‚¤ê¸°")
                     image_path = path+"/image"
                     image_file = np.asarray(self.image_data)
                     np.save(image_path,image_file)
@@ -2269,7 +2267,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     np.save(coord_path,coord_file)
                     self.model = False
                     self.saved = 1
-                    al = alam.Ui_Dialog('ÀúÀåµÇ¾ú½À´Ï´Ù.')
+                    al = alam.Ui_Dialog('ì €ì¥ë˜ì—ˆìŠµë‹ˆë‹¤.')
                     ala = al.showModal()
                     if ala:
                         return 'y'
@@ -2281,16 +2279,16 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def load_project(self):
         try:
             if self.learning==1:
-                self.label_4.setText('ÇĞ½ÀÁß¿¡´Â ¾ÈµË´Ï´Ù.')
+                self.label_4.setText('í•™ìŠµì¤‘ì—ëŠ” ì•ˆë©ë‹ˆë‹¤.')
                 return
             if self.check_capture():
-                self.label_4.setText('Ä¸Ã³Áß¿¡´Â ºÒ·¯¿Ã¼ö ¾ø½À´Ï´Ù.')
+                self.label_4.setText('ìº¡ì²˜ì¤‘ì—ëŠ” ë¶ˆëŸ¬ì˜¬ìˆ˜ ì—†ìŠµë‹ˆë‹¤.')
                 return
             if self.connect == 1:
-                self.label_4.setText('EV3 ¿¬°áÁß¿¡´Â ¾ÈµË´Ï´Ù.')
+                self.label_4.setText('EV3 ì—°ê²°ì¤‘ì—ëŠ” ì•ˆë©ë‹ˆë‹¤.')
                 return
             if self.saved ==0:
-                tt = train_alam.Ui_Dialog('ÇöÀç ÇÁ·ÎÁ§Æ®¸¦\nÀúÀå ÇÏ½Ã°Ú½À´Ï±î?')
+                tt = train_alam.Ui_Dialog('í˜„ì¬ í”„ë¡œì íŠ¸ë¥¼\nì €ì¥ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?')
                 aa = tt.showModal()
                 if aa:
                     r= self.save_project()
@@ -2311,7 +2309,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     train_coords = np.load(paths[0]+"/coord.npy",allow_pickle=True).tolist()
                 except BaseException as b:
                     print(str(b))    
-                    self.label_4.setText("¼±ÅÃÇÑ ÇÁ·ÎÁ§Æ®¿¡ ÆÄÀÏÀÌ ¾ø°Å³ª\nÇÁ·ÎÁ§Æ®°¡ ¾Æ´Õ´Ï´Ù.")
+                    self.label_4.setText("ì„ íƒí•œ í”„ë¡œì íŠ¸ì— íŒŒì¼ì´ ì—†ê±°ë‚˜\ní”„ë¡œì íŠ¸ê°€ ì•„ë‹™ë‹ˆë‹¤.")
                     return
                 
                 self.image_data = image_data
@@ -2334,8 +2332,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                     self.preview = 0
                     self.label.setText(self.class_name[0])
                     self.textEdit.setText(self.class_explain[0])
-                    self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"Àå")
-                    self.pushButton_12.setText("ÇĞ½ÀÇÏ·¯ °¡±â")
+                    self.label_2.setText("CLASS_"+str(self.current_class)+" -> "+str(len(self.class_image))+"ì¥")
+                    self.pushButton_12.setText("í•™ìŠµí•˜ëŸ¬ ê°€ê¸°")
                     for step in range(len(self.class_image)):
                         color_swapped_image = cv2.cvtColor(self.class_image[step], cv2.COLOR_BGR2RGB)
                         qt_image1 = QtGui.QImage(color_swapped_image.data,
@@ -2372,7 +2370,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.capture_checked:
                 return
             if self.saved ==0:
-                tt = train_alam.Ui_Dialog('ÇöÀç ÇÁ·ÎÁ§Æ®¸¦\nÀúÀå ÇÏ½Ã°Ú½À´Ï±î?')
+                tt = train_alam.Ui_Dialog('í˜„ì¬ í”„ë¡œì íŠ¸ë¥¼\nì €ì¥ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?')
                 aa = tt.showModal()
                 if aa:
                     r= self.save_project()
@@ -2414,24 +2412,24 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             self.preview = 0
             self.table.clearContents()
             self.label_2.setText("CLASS_1")
-            self.pushButton_2.setText("ÇÁ·ÎÁ§Æ® ºÒ·¯¿À±â")
-            self.pushButton_3.setText("ÇÁ·ÎÁ§Æ® ÀúÀåÇÏ±â")
-            self.pushButton_4.setText("¸ŞÀÎ¸Ş´º·Î ÀÌµ¿")
-            self.pushButton_8.setText("»ç  Áø  ÃÔ  ¿µ")
-            self.pushButton_9.setText("ÀÌ¹ÌÁö ºÒ·¯¿À±â")
-            self.pushButton_10.setText("ÀÌ¹ÌÁö »èÁ¦ÇÏ±â")
-            self.pushButton_11.setText("Å¬·¡½º »èÁ¦ÇÏ±â")
-            self.pushButton_12.setText("ÇĞ½ÀÇÏ·¯°¡±â")
-            self.pushButton_13.setText("Á¾·áÇÏ±â")
-            self.label_6.setText("Å¬·¡½º ÀÌ¸§")
-            self.label_7.setText("Å¬·¡½º ¼³¸í")
+            self.pushButton_2.setText("í”„ë¡œì íŠ¸ ë¶ˆëŸ¬ì˜¤ê¸°")
+            self.pushButton_3.setText("í”„ë¡œì íŠ¸ ì €ì¥í•˜ê¸°")
+            self.pushButton_4.setText("ë©”ì¸ë©”ë‰´ë¡œ ì´ë™")
+            self.pushButton_8.setText("ì‚¬  ì§„  ì´¬  ì˜")
+            self.pushButton_9.setText("ì´ë¯¸ì§€ ë¶ˆëŸ¬ì˜¤ê¸°")
+            self.pushButton_10.setText("ì´ë¯¸ì§€ ì‚­ì œí•˜ê¸°")
+            self.pushButton_11.setText("í´ë˜ìŠ¤ ì‚­ì œí•˜ê¸°")
+            self.pushButton_12.setText("í•™ìŠµí•˜ëŸ¬ê°€ê¸°")
+            self.pushButton_13.setText("ì¢…ë£Œí•˜ê¸°")
+            self.label_6.setText("í´ë˜ìŠ¤ ì´ë¦„")
+            self.label_7.setText("í´ë˜ìŠ¤ ì„¤ëª…")
             self.label.setText("CLASS_1")
-            self.label_5.setText("¾Ë ¸² ÆÇ")
+            self.label_5.setText("ì•Œ ë¦¼ íŒ")
             self.textEdit.setText("")
             self.frame_22.hide()
             self.frame_23.resize(QtCore.QSize(self.program_width*0.36,self.program_height*0.1))
             self.frame_23.show()
-            self.label_4.setText('»õ·Î¿î ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.')
+            self.label_4.setText('ìƒˆë¡œìš´ í”„ë¡œì íŠ¸ì…ë‹ˆë‹¤.')
         except BaseException as b:
             print(str(b))
             
